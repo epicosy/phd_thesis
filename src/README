@@ -1,0 +1,150 @@
+1. Distributions
+
+The current distribution defines setups for theses presented at FEUP.
+
+Currently, it supports a generic PhD format (default) and formats for specific MSc degrees.
+Both Portuguese and English versions are supported.
+
+Main file for each setup: 
+- mci_tese.tex     % MCI master degree in PT language
+- mci-thesis.tex   % MCI master degree in EN language
+- meec_tese.tex    % M.EEC master degree in PT language
+- meec_thesis.tex  % M.EEC master degree in EN language
+- meic_tese.tex    % M.EIC master degree in PT language
+- meic_thesis.tex  % M.EIC master degree in EN language
+- mem_tese.tex     % MEM master degree in PT language
+- mem_thesis.tex   % MEM master degree in EN language
+- mesw_tese.tex    % MESW master degree in PT language
+- mesw_thesis.tex  % MESW master degree in EN language
+- tese.tex         % PRODEI PhD degree in PT language
+- thesis.tex       % PRODEI PhD degree in EN language
+
+Choose the appropriate main file for your document and modify it accordingly.
+
+Use folder ``figures'' to keep all your figures.
+
+The distribution has been tested with ''pdflatex''.
+
+All versions are based on the "feupteses.sty" package.  
+
+There's an (official) **template at Overleaf**: 
+https://www.overleaf.com/latex/templates/feup-dissertation-format/qrsrxjjwzrzf
+
+2. feupteses.sty style package
+
+The package "feupteses.sty" defines styles for theses presented at FEUP.
+Currently, it supports a generic PhD format (default) and formats for specific MSc degrees.
+Both Portuguese and English versions are supported.
+
+To use the package, please ensure that:
+- you are using the the "report" document class with "a4paper" 
+\documentclass[a4paper]{report}
+- your files are UFT8 encoded
+\usepackage[utf8]{inputenc}
+
+To load the package, use the usual method:
+
+\usepackage[<options>]{feupteses}
+
+Additional options for feupteses.sty:
+- portugues: titles, etc in Portuguese
+- onpaper: links are not shown (for paper versions)
+- backrefs: include back references from bibliography to citation place
+- iso: format references according to ISO 690 standard (default is chicago).
+
+3. Available options and commands
+
+The document should start with a Prolog environment (see examples).
+
+\StartBody should be used to indicate the start of the main text.
+
+Use the command \PrintBib where you want to place the references.
+
+4. Packages automatically loaded 
+ 
+The package loads the following standard packages:
+- ifpdf
+- fontenc
+- babel
+- indentfirst
+- geometry
+- mathptmx
+- couriers
+- helvet
+- graphicx
+- url
+- setspace
+- caption
+- xcolor
+- float
+- multirow
+- lineno
+- draftwatermark
+- csquotes
+- biblatex
+- fancyhdr
+- hyperref
+- backref
+
+5. External options
+
+- Language: ''portugues'' (English by default)
+- Degree: ''meec'', ''meic'', ''mem'', ''mesw'', ''mci'' (PRODEI by default)
+- Layout: ''juri'', ''final'' ("provisional" by default)
+- Media: ''onpaper'' ("online" by default)
+- Internal references: ''backrefs'' (not used by default)
+
+6.  Versions
+
+Distribution: FEUP-TESES
+Current version: v2024
+feupteses.sty: 1.2.1
+
+Changes for v2024:
+1. added prologue section for "UN Sustainable Development Goals"
+2. added mci option for MCI
+3. bibtex replaced by biblatex
+
+Changes for v2021:
+1. Appendices after bibliography
+2. Single page documents by default
+3. Link colors are now 'engineering'
+4. Automatic centering of figure and table contents with extra space
+
+Changes for v2017:
+1. added mesw option for MESW
+2. master thesis use numeric referencing (sorted)
+
+Changes for v2014:
+1. use indentfirst for portuguese
+2. added miem option (Daniel Moura) for MIEM
+
+Changes for v2012b:
+1. references before the numbered appendixes
+
+Changes for v2012:
+1. new logo (UPorto FEUP)
+2. new Portuguese spelling rules 
+3. uses feupteses.sty 1.1
+4. new option (backrefs) for reversed references from bibliography to citation page
+5. new command to define additional text for the front page (\additionalfronttext)
+
+Changes for v2011b:
+1. support for url and lastcheckd fields in bibliographies (conversion
+done with urlbst: http://ctan.mackichan.com/biblio/bibtex/contrib/urlbst/urlbst.htm)
+
+Changes for v2011a:
+1. correct indication of technical report in unsrt-pt.bst (thanks to Marcelo Almeida)
+
+Changes for v2011:
+1. new option scheme
+2. support for line numbers in jury version
+3. changes to status indication (jury, final)
+4. removed support for versioning
+
+Changes for v2009f:
+1. option onpaper: hide hyperlinks
+
+Changes for v2009e:
+1. plainnat-pt.bst: finished conversion to Portuguese.
+2. unsrt-pt.bst: added to the distribution
