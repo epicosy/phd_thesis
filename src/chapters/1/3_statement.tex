@@ -1,0 +1,7 @@
+\section{Problem Statement} \label{sec:ae3}
+
+This thesis addresses the challenge of improving the repair capabilities of APR tools in the context of software vulnerabilities. While APR techniques have advanced significantly in recent years, they still struggle with certain classes of faults, particularly those related to security. These include vulnerabilities caused by memory mismanagement, incorrect data checks, and type-related computation errors in languages such as C, C++, and Java.
+
+\eduard{Our investigation found that fault localization remains a critical bottleneck. For example... Additionally, the standard test-based validation mechanisms employed by these tools are often insufficient to confirm patch correctness in the context of vulnerabilities. APR tools still generated correct patches for only a limited subset of security faults across multiple open-source C projects. In our experiments, validation and fault localization were consistently among the top reasons for failed repairs.}
+
+The problem, therefore, lies in the limitations of existing APR techniques to correctly and consistently patch vulnerabilities. This research explores whether integrating vulnerability detection into the repair workflow can enhance localization, reduce incorrect patching, and ultimately increase repair effectiveness.

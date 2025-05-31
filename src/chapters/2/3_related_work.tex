@@ -1,0 +1,76 @@
+\section{Related Work}
+\eduard{needs to be validated/aligned with the gap analysis in the proposal}
+\newline
+\eduard{there are more recent works that need to be added, e.g., Software Vulnerability Analysis Across Programming Language and Program Representation Landscapes: A Survey}
+\newline
+
+\eduard{Add Summary Table of Reviewed Taxonomies}
+
+%5.1. Cause-Oriented Taxonomies
+%Piessens [139]: Focus on root causes (e.g., data flow errors, logic missteps) to support code review processes.
+%Key Points: Categorizes vulnerabilities by “cause families” (e.g., memory mismanagement, faulty authorization).
+%Limitation: Primarily addresses code reviewers’ needs; does not account for technology or language context.
+
+%Weber et al. [178]: Taxonomy for code analysis, derived from Landwehr et al.’s OS taxonomy.
+%Key Points: Emphasizes vulnerabilities detectable by static code analysis; excludes OS-configuration errors.
+%Limitation: Narrow scope—least applicable to high-level application stacks or runtime frameworks.
+
+%5.2. Resource-Oriented Taxonomies
+%Bazaz & Arthur [11]: Principal categories based on computable resources: Memory, I/O, Crypto.
+%Key Points: Bottom-level taxonomy includes “violable constraints and assumptions” (e.g., buffer sizes).
+%Limitation: Resource-centric view can obscure language- or technology-specific patterns (e.g., web frameworks).
+
+%5.3. Susceptibility-Based Taxonomies
+%Hughes & Cybenko [77]: NVD-derived eight categories based on a system’s susceptibility (e.g., authentication flaws, data validation).
+%Key Points: Data-driven from NVD; correlates categories with prevalence in real CVEs.
+%Limitation: Coarse granularity; does not tie back to software type or language.
+
+%5.4. Comprehensive Taxonomy Overviews
+%Joshi et al. [82]: Comparative analysis of 25 taxonomies (attack- vs. vulnerability-oriented, OS- vs. software-oriented).
+%Key Findings: Only 3/25 are explicitly software-oriented (Piessens [139], Weber [178], Bazaz & Arthur [11]).
+%None satisfy all “properties of a good classification” (completeness, mutual exclusivity, etc.). Many are outdated or lack adaptability to modern software ecosystems.
+
+%5.5. Software-Type/Domain-Oriented Taxonomies
+%Garg et al. [62]: Classes by software system type (Application, Embedded, OS), severity, technique, and cause.
+%Key Findings: 76% of vulnerabilities from 2012–2016 stem from only five vulnerability types; emergent patterns by vendor (e.g., iOS → memory corruption).
+%Limitation: Aggregate analyses at a coarse software type; does not examine programming language correlations.
+
+%Tate et al. [167]: Large-scale Linux distro vulnerability classification (Ubuntu, Fedora, SUSE, Debian).
+%Key Findings: Out-of-bounds memory access prominently affects kernel and system libraries; logical code design can mitigate detection gaps.
+
+%Ezenwoye et al. [49, 50]: Two complementary studies:
+
+%Ezenwoye et al. [50]: Classify 51,110 NVD entries into seven software types: OS, Browser, Middleware, Utility, Web Application, Framework, Server.
+%Findings: Patterns of fault prevalence by software type (e.g., browsers → XSS, servers → configuration issues).
+
+%Ezenwoye et al. [49]: Profile web application faults over ten years by attack method, attack vector, and technology.
+%Findings: Web apps most often suffer from injection (SQLi, XSS), cross-site request forgery (CWE-352), and remote file inclusion.
+
+
+Several studies suggest vulnerability taxonomies oriented toward particular scopes, such as prevalent vulnerability types in specific operating systems~\cite{Tate2020CharacterizingVI}. In this section, we offer a summary of the different taxonomies. A standard vulnerability classification method or scheme can augment the security assessment of software systems by providing a common language and a good overview of the field of study. 
+
+\par
+Frank Piessens~\cite{Piessens2002ATO} proposes a structured taxonomy focusing on the causes of software vulnerabilities to foster the identification of vulnerabilities during software review. Weber \textit{et al.}~\cite{Weber2005ASF} propose a taxonomy of software security faults oriented toward designing code analysis tools. Their taxonomy leverages Landwehr’s work~\cite{taxonomy_security_flaws} and descriptions of vulnerabilities and threats. They re-design the prior classification of security faults by genesis and remove faults not relevant to code analysis tools, such as configuration errors. Anil Bazaz and James Arthur~\cite{Bazaz2007TowardsAT} present a taxonomy of vulnerabilities for assessing software security with verification and validation strategies. Their scheme uses computer resources as the top categories of the taxonomy, covering memory, I/O, and cryptographic resources. The bottom level of the taxonomy conveys violable constraints and assumptions, which allows checking if a software application permits the violation of such constraints and assumptions. Jeff Hughes and George Cybenko~\cite{Hughes2013QuantitativeMA} categorize vulnerabilities by system susceptibility into eight categories based on the NVD records. 
+\par
+Joshi \textit{et al.}~\cite{Joshi2015ARO} summarize and compare the characteristics of 25 taxonomies of attacks and vulnerabilities in computer and network systems. Most taxonomies are attack or OS oriented, and only three~\cite{Bazaz2007TowardsAT, Piessens2002ATO, Weber2005ASF} are software oriented. Their analysis indicates that none of the taxonomies satisfy all the necessary principles about classifications. In addition, the existing taxonomies are outdated and limited in use. Garg \textit{et al.}~\cite{Garg2019AnalysisOS} classify software vulnerabilities based on software systems, severity level, techniques, and causes. Their classification scheme intends to give a comprehensive view of vulnerabilities in various domains, as vulnerabilities can happen for several reasons in a system. The authors also analyze recent trends in software vulnerabilities from 2012–2016 data from the NVD and CVE Details sources. Their analysis indicates that $76\%$ of the total vulnerabilities in the software industry result from only five types of vulnerabilities. It also emerged from the data that few vulnerabilities have a high prominence of affecting specific software systems. For instance, iOS devices are mainly susceptible to \textit{Memory Corruption} vulnerabilities, while Adobe application software is to the \textit{Execution of Code} and \textit{Overflow Memory Corruption}.
+\par
+Tate \textit{et al.}~\cite{Tate2020CharacterizingVI} classify a large set of vulnerabilities in 4 major Linux distributions by the most prevalent vulnerability types. Additionally, the authors examine characteristics of out-of-bounds memory access vulnerabilities and identify that explicit-stated logical design of code can considerably improve the identification of vulnerabilities. Ezenwoye \textit{et al.}~\cite{Ezenwoye2020ClassifyingCS} classify into seven software types (OS, browser, middleware, utility, web application, framework, and server) a total of 51,110 vulnerability entries from the NVD database. Their analysis demonstrates the pattern of prevalence of software faults by software type. Subsequently, Ezenwoye \textit{et al.}~\cite{Ezenwoye2022WebAW} review ten years of vulnerability data in the NVD database to profile the most common web application faults according to three attributes: attack method, attack vectors, and technology. The latter attribute captures the susceptibility of technologies to faults, including programming languages, frameworks, communication protocols, and data formats.
+
+%\begin{itemize}
+%  \item \textbf{Ezenwoye et al. \cite{Ezenwoye2020ClassifyingCS, Ezenwoye2022WebAW}} classify 51,110 CVE entries (2015–2019) by software product type (operating system, browser, middleware, utility, web application, framework, and server). This software-type taxonomy reveals how the prevalence of common weakness categories (such as buffer errors or access-control faults) varies across different platforms, and how certain weakness types persist over time in particular software domains. Their findings provide insights into the vulnerability landscape of each software category.
+%  \item \textbf{Garg et al.~\cite{Garg2019AnalysisOS}} propose a holistic taxonomy that links each vulnerability to multiple dimensions simultaneously: the affected software system, the vulnerability’s severity, the exploitation technique, and the root cause of the flaw. By mapping vulnerabilities along these axes, their framework relates each weakness to its context and attributes, enabling a broad, multi-faceted profiling of security faults.
+%  \item \textbf{Tate et al.~\cite{Tate2020CharacterizingVI}} perform a longitudinal study of vulnerabilities in a major Linux distribution (Ubuntu) over several years. Analyzing 3,232 security advisories from 2012–2019, they find that out-of-bounds memory access (e.g. classic buffer overflows) consistently dominates the vulnerability profile. Their study identifies trends in vulnerability types over time and examines detailed characteristics of specific exploit instances.  This work underscores the persistent threat of memory-safety errors in open-source Operating System software.
+%  \item \textbf{Joshi et al.~\cite{Joshi2015ARO}} review 25 existing taxonomies of attacks and vulnerabilities. They observe that most prior taxonomies focus on attack scenarios or specific platforms (notably operating systems and network protocols). Only a small fraction of the reviewed schemes explicitly target vulnerabilities in the context of general software systems. In other words, Joshi \textit{et al.} find that only a few of the 25 taxonomies are software-oriented, while the majority emphasize attack types or OS-level faults.
+%\end{itemize}
+
+\subsection{Identified Gaps}
+Despite these efforts, several important gaps remain:
+\begin{itemize}
+  \item \textbf{OS- and attack-centric focus:} Existing taxonomies predominantly emphasize operating systems or particular attack vectors (for example, network attacks or web application exploits)~\cite{Joshi2015ARO}.  There is little focus on vulnerabilities specific to application frameworks or general-purpose software contexts.
+  \item \textbf{Scarcity of software-oriented taxonomies:} Very few taxonomies (only about 3 of the 25 reviewed by Joshi \textit{et al.}~\cite{Joshi2015ARO}) explicitly classify vulnerabilities by the characteristics of the underlying software system. Most classification schemes do not consider factors such as software architecture, implementation language, or development environment, leaving a gap in understanding vulnerabilities at the application level.
+  \item \textbf{Lack of multi-dimensional profiling:} Current classification schemes are largely unidimensional. No existing taxonomy jointly profiles vulnerabilities by intersecting factors (for example, programming language \emph{and} fault type, or software layer and vulnerability cause). This lack of intersectional profiling means we cannot directly relate specific software attributes (such as language or framework) to the kinds of security faults they most frequently exhibit.
+  \item \textbf{Absence of unified empirical methods:} There is no single unified, data-driven approach that ties vulnerability records systematically to software characteristics (such as code metrics, library usage, or development practices). Existing approaches either analyze raw CVE data by one attribute (like severity) or propose ad-hoc taxonomies, but none provide an empirical profiling of vulnerabilities linked to software attributes.
+\end{itemize}
+
+\subsection{Summary of Research Gap}
+In summary, no single comprehensive taxonomy currently exists that profiles software vulnerabilities across multiple levels of granularity and multiple classification dimensions simultaneously.  Existing schemes tend to cover only specific domains or one dimension at a time, leaving gaps in our understanding of how vulnerabilities correlate with software characteristics.  This gap implies that threat modeling and design-time security decisions often lack systematic guidance on which weaknesses are likely in which kinds of software. A more holistic, multi-dimensional vulnerability profiling approach is needed to support effective risk assessment and mitigation. In particular, a unified taxonomy linking vulnerability types to software context and implementation details would enable practitioners to anticipate likely security faults and tailor their prevention strategies across the software development lifecycle~\cite{Joshi2015ARO}.

@@ -1,0 +1,12 @@
+\section{Research Gap} \label{sec:ae2}
+
+While recent advances in SVD and Automated Program Repair APR have shown promise individually, significant challenges remain in their integration and systematic evaluation for security-critical applications. Current limitations span three interconnected areas:
+
+\begin{enumerate}
+    \item \textbf{Limited systematic integration between SVD and APR}: Although preliminary studies have explored using static analysis patterns for patch generation~\cite{Liu2018AVATARF,AlBataineh2021TowardsMR}, no comprehensive framework systematically leverages SVD outputs to guide APR fault localization and patch synthesis. Existing integration attempts focus on specific bug types rather than providing a unified approach for diverse vulnerability classes. \eduard{ver interesting and relevant work to be added: InferFix: End-to-End Program Repair with LLMs over
+Retrieval-Augmented Prompts}
+    \item \textbf{Evaluation gaps in security-specific contexts}: Current empirical evaluations suffer from two key limitations: (a) SVD tools are predominantly evaluated on synthetic datasets with known biases~\cite{Guo2024DataQI}, limiting generalizability to real-world vulnerability patterns; and (b) APR tools are primarily validated on generic functional bugs rather than security vulnerabilities, which exhibit distinct characteristics requiring specialized repair patterns~\cite{apr4vul}.
+    \item \textbf{Limited understanding of trade-offs between detection techniques}: Traditional SAST tools and ML-based SVD approaches each have their strengths, granularity, and explainability versus speed and adaptability. However, few comparative or hybrid studies evaluate their combined effectiveness in detecting or patching vulnerabilities.
+\end{enumerate}
+
+This thesis addresses these gaps by developing the first systematic framework that integrates SVD and APR capabilities, validated through comprehensive empirical evaluation on real-world vulnerabilities, with explicit analysis of the detection-repair trade-offs.

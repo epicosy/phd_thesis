@@ -1,11 +1,6 @@
 %% FEUP THESIS STYLE for LaTeX2e
 %% how to use feupteses (English version)
 %% FEUP, JCL & JCF, October 2024
-%%
-%% Read the documentation inline and at the included `README` file
-%%
-%% PLEASE send improvements to jcf at fe.up.pt and to jlopes at fe.up.pt
-%%
 %% This is the english version of the main file
 
 \documentclass[11pt,a4paper]{report}
@@ -16,6 +11,12 @@
 
 %% Source text uses in UTF-8 encoding
 \usepackage[utf8]{inputenc}
+\usepackage{amssymb} % Put this in the preamble
+\usepackage{amsthm} % For theoremstyle
+\usepackage{acronym} % For \ac
+\usepackage{listings} % For lstlisting
+\usepackage[many]{tcolorbox} % For COLORED BOXES (tikz and xcolor included)
+\usetikzlibrary{positioning}
 
 %% The package feupteses.sty may take several options
 %% There are options for specific FEUP programmes/degrees
@@ -60,6 +61,19 @@
 \addbibresource{bibliography.bib}
 
 %% Commands
+\colorlet{tablerowcolor}{gray!10} % Table row separator colour = 10% gray
+\newcommand{\headcol}{\rowcolor{tableheadcolor}}
+\newcommand{\rowcol}{\rowcolor{tablerowcolor}}
+
+\definecolor{Goldenrod}{rgb}{1,0.87,0.32}
+\definecolor{applegreen}{rgb}{0.55, 0.71, 0.0}
+\definecolor{lightgray}{rgb}{0.95, 0.95, 0.95}
+
+\newtheorem{definition}{Definition}[section]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+
 \newcommand{\eduard}[1]{\colorbox{teal}{{\scriptsize\bfseries\color{white}Eduard:}} {\color{teal}#1} \colorbox{teal}{\scriptsize\color{white}END}}
 
 %%========================================
@@ -108,10 +122,9 @@
 
 % remove unnecessary \include{} commands
 \begin{Prolog}
-  \include{abstract} % the abstract
-  \include{un-sdg}   % United Nations Sustainable Development Goals (SGD)
-  \include{acknows}  % the acknowledgments
-  \include{quote}    % initial quotation if desired
+  \include{prolog/abstract} % the abstract
+  \include{prolog/acknows}  % the acknowledgments
+  \include{prolog/quote}    % initial quotation if desired
   \cleardoublepage
   %% Uncomment next line for PT
   %\renewcommand{\contentsname}{Índice}
@@ -125,7 +138,7 @@
   \listoftables
   %% Abbreviations are in the `abbrevs.tex' file
   %% Omit if there aren't any
-  \include{abbrevs}  % the list of abbreviations used
+  \include{prolog/abbrevs}  % the list of abbreviations used
 \end{Prolog}
 
 %%----------------------------------------
@@ -133,12 +146,8 @@
 %%----------------------------------------
 \StartBody
 
-%% TIP: use a separate file for each chapter
-\include{chapter1} 
-\include{chapter2}
-\include{chapter3}
-%% Uncomment to see a listing example (cp meic.cfg meec.cfg)
-%\include{chapter45-listing}
+\include{chapters/1/0_main}
+\include{chapters/2/0_main}
 
 %%----------------------------------------
 %% Final materials
@@ -148,7 +157,7 @@
 \PrintBib
 
 %% comment next 2 commands if numbered appendices are not used
-\appendix
-\include{appendix1}
+%\appendix
+%\include{appendix1}
 
 \end{document}

@@ -1,0 +1,42 @@
+\section{Introduction}
+
+Understanding software vulnerabilities is central to improving system resilience and guiding secure software engineering practices. Security faults represent fundamental weaknesses in the construction of software systems that adversaries can exploit to compromise functionality, confidentiality, integrity, or availability. Despite decades of research, the prevalence and evolution of such faults remain only partially understood.
+
+One of the current challenges lies in the limited understanding of the prevalence and structure of security faults across software systems. Numerous studies have attempted to organize vulnerability data and detect recurring patterns, typically driven by specific objectives: identifying root causes, building automated detection tools, or framing vulnerabilities within particular operational contexts. However, such efforts often suffer from scope limitations or overly narrow classification schemes.
+
+A more comprehensive approach is needed—one that captures the complexity of security faults by profiling them through multiple dimensions. We posit that a granular, multi-dimensional profiling of vulnerabilities—considering attributes such as the root cause, programming language, affected components, and software type—can offer a deeper insight into the software security landscape. Classifying large numbers of vulnerability instances across distinct levels of software granularity enables a systematic decomposition of their complexity, helping bridge the gap between isolated technical analyses and broader software security assessments.
+
+Preliminary investigations highlight this gap. Existing classification schemes are predominantly attack- or operating-system-oriented, with only a minority addressing the software level directly. For instance, among 25 classification methodologies surveyed, only three focus on software characteristics. Prior efforts, such as those by Landwehr et al., Garg et al., and Ezenwoye et al., represent valuable foundations. Yet, none provide a unified profiling that scales from the programming language level up to broader software categories. As vulnerabilities increasingly span multiple layers of abstraction and technology, such profiling becomes vital to threat modeling, secure design, and targeted mitigation strategies.
+
+\subsection{Research Question and Objectives}
+
+This chapter addresses the following overarching research question:
+
+\begin{quote}
+\textit{How do software security faults profile regarding software type, technology, causes, and programming language?}
+\end{quote}
+
+To answer this, we explore several subquestions:
+
+\begin{itemize}
+    \item How do vulnerability patterns differ across software types (e.g., web applications, utilities, operating systems)?
+    \item Which technologies (e.g., frameworks, protocols, libraries) are most commonly affected by specific fault classes?
+    \item What are the leading causes (e.g., improper input validation, memory management issues) associated with each vulnerability category?
+    \item How does the choice of programming language correlate with the occurrence of particular security faults?
+\end{itemize}
+
+The primary objective is to profile security faults at four distinct levels of software granularity by identifying empirical patterns in publicly available vulnerability repositories. This approach aims to reveal associations between intrinsic software characteristics and the types of security faults observed, offering actionable insights into their root causes and distribution.
+
+\subsection{Scope and Contributions}
+
+This work focuses on vulnerabilities disclosed over the past 25 years, as cataloged by the National Vulnerability Database (NVD). We restrict our analysis to application-level vulnerabilities, filtering out CVEs marked as Rejected, Deferred, Disputed, or Unsupported, and considering only those with a valid CPE designation and an associated primary weakness.
+
+The key contributions of this chapter include:
+
+\begin{itemize}
+    \item A unified and holistic taxonomy of software vulnerabilities that intersects and extends existing classification frameworks.
+    \item Empirical patterns of fault occurrence across software types, technologies, causes, and programming languages, illuminating multi-level software susceptibility.
+    \item A reproducible data collection and analysis pipeline that supports future vulnerability research and classification efforts.
+\end{itemize}
+
+By providing a systematic, multi-dimensional profile of security faults, this work aims to enhance our understanding of software vulnerability trends and support more effective strategies in secure software design, maintenance, and threat modeling.

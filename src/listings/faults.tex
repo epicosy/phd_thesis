@@ -1,0 +1,37 @@
+% ############################## EXAMPLES ########################################
+\begin{figure}[!htbp]
+    \centering
+    \noindent\begin{minipage}{0.48\textwidth}
+        % ############################ BUG EXAMPLE ########################################
+        \begin{lstlisting}[language = C, numbers = none, escapechar = !, linewidth=0.9\linewidth, basicstyle = \small, backgroundcolor=\color{lightgray}, frame=tb, caption={Fault example (\textit{cf.} \cite{Jason:2000}).}, captionpos=b, label=bug_ex, numbers=left, stepnumber=1]
+for (i=0; i<numrows; i++)
+    for (j=0; j<numcols; j++)!\textcolor{red}{;}!!\tikz[remember picture] \node [] (a) {};!
+        pixels++;
+        \end{lstlisting}
+    \end{minipage}
+    \begin{minipage}{0.45\textwidth}
+        % ########################### VULN EXAMPLE ########################################
+        \begin{lstlisting}[language = C++, numbers = none, escapechar = !, linewidth=\linewidth, basicstyle = \small, backgroundcolor=\color{lightgray}, frame=tb, caption={Security fault example (\textit{cf.} \cite{Castro:2016}).}, captionpos=b, label=vuln_ex, numbers=left, stepnumber=1] 
+void vuln(){
+ 	int i;
+ 	int buf[128];
+ 	
+ 	for (i=0; !\textcolor{red}{i <= 128}!; i++) !\tikz[remember picture] \node [] (b){};!
+ 	    cin >> buf[i];
+}
+        \end{lstlisting}
+    \end{minipage}
+    \begin{tikzpicture}[remember picture, overlay,
+        every edge/.append style = { ->, thick, >=stealth,
+                                      darkgray, dashed, line width = 1pt },
+        every node/.append style = { align = center, minimum height = 10pt,
+                                     font = \bfseries, fill= red!20},
+                      text width = 2.5cm ]
+      \node [above left = 0.9cm and -0.5cm of a, text width = 2.cm]  (A) {accidental semicolon};
+      \node [above left = 1.1cm and 0.5cm of b,text width = 2.cm] (B) {off-by-one error};
+      \draw (A.south) + (0.55, 0) coordinate(x1) edge (x1|-a.north);
+      \draw (B.south) + (0, 0) coordinate(x1) edge (x1|-b.north);
+    \end{tikzpicture}
+    \caption{Example of a fault (left) and a security fault (right).}
+    \label{fig:sec_fault_example}
+\end{figure}
