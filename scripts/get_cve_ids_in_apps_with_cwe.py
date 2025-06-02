@@ -187,12 +187,16 @@ class DetailedCVELoader(JSONDefaultLoader):
 
         return best_product[0]
 
+if output_file_path.exists():
+    df = pd.read_csv(output_file_path)
+    print(df[["cwe_id"]].value_counts().head(25))
+    print(df[["software_type", "language", "cwe_id"]].value_counts().head(25))
+else:
+    loader = DetailedCVELoader(
+        product_lang_df_path=data_path / "rq1" / "products_language.csv",
+        product_sw_type_df_path=data_path / "rq1" / "software_type.csv",
+        cwe_properties_df_path=data_path / "rq1" / "cwe_properties.csv"
+    )
 
-loader = DetailedCVELoader(
-    product_lang_df_path=data_path / "rq1" / "products_language.csv",
-    product_sw_type_df_path=data_path / "rq1" / "software_type.csv",
-    cwe_properties_df_path=data_path / "rq1" / "cwe_properties.csv"
-)
-
-cve_dict = loader(data_path=Path("~/.nvdutils/nvd-json-data-feeds"), include_subdirectories=True)
-#print(f"Loaded {len(cve_dict)} CVEs")
+    cve_dict = loader(data_path=Path("~/.nvdutils/nvd-json-data-feeds"), include_subdirectories=True)
+    #print(f"Loaded {len(cve_dict)} CVEs")

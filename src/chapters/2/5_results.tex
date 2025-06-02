@@ -1,2 +1,90 @@
 \section{Results}
-\eduard{TODO}
+
+Our analysis of the National Vulnerability Database (NVD) yielded a comprehensive dataset that allows us to profile security faults across multiple dimensions. Following the methodology outlined in Phase II, we present the results of our data collection and analysis, addressing the research question of how software security faults profile regarding software type, technology, causes, and programming language.
+
+\subsection{Software Type Distribution}
+
+The software type categorization process identified 32,666 vulnerable software products across seven major categories. Figure~\ref{fig:software-type-dist} illustrates this distribution:
+
+\begin{itemize}
+    \item Extensions represent the largest category (20.4\%, 6,664 samples), indicating the significant security challenges in browser and application extensions.
+    \item Servers (18.8\%, 6,151 samples) and utilities (18.1\%, 5,919 samples) follow closely, highlighting the prevalence of vulnerabilities in these critical infrastructure components.
+    \item Packages (14.2\%, 4,623 samples), frameworks (10.6\%, 3,469 samples), and web applications (10.5\%, 3,443 samples) form the middle tier of vulnerability distribution.
+    \item Mobile applications (7.3\%, 2,382 samples) represent the smallest major category, possibly reflecting their more recent emergence compared to other software types.
+\end{itemize}
+
+This distribution reveals that extensions, which often have privileged access to user data and system resources, are particularly susceptible to security vulnerabilities. The high representation of servers and utilities underscores the security challenges in infrastructure software that often serves as the backbone of digital systems.
+
+\subsection{Programming Language Analysis}
+
+Our language mapping process successfully identified the primary programming language for 10,562 vulnerable software products. The distribution reveals several key insights:
+
+\begin{itemize}
+    \item Web-oriented languages dominate the vulnerability landscape, with PHP (33.5\%, 3,543 samples) and JavaScript (15.4\%, 1,625 samples) accounting for nearly half of all identified vulnerabilities.
+    \item Java (11.8\%, 1,245 samples) represents a significant portion, reflecting its widespread use in enterprise applications.
+    \item Systems programming languages like C (5.4\%, 574 samples) and C++ (2.9\%, 310 samples) show fewer vulnerabilities in absolute numbers but may represent more severe issues when they occur.
+    \item Modern languages like Python (6.2\%, 658 samples), Go (4.1\%, 431 samples), and Rust (2.1\%, 220 samples) are present but with lower frequency, potentially indicating better security properties or less widespread adoption.
+\end{itemize}
+
+The predominance of PHP and JavaScript vulnerabilities aligns with their extensive use in web development, where exposure to user input creates numerous attack vectors. The relatively lower representation of systems languages may reflect either better security practices or the challenges in vulnerability discovery for these languages.
+
+\subsection{Common Weakness Enumeration (CWE) Analysis}
+
+Our analysis extracted 17,990 CVE entries with associated CWE identifiers, revealing the most common vulnerability types:
+
+\begin{itemize}
+    \item Cross-Site Scripting (CWE-79) dominates with 32.8\% (5,901 samples) of all vulnerabilities, highlighting the persistent challenge of securing user input in web applications.
+    \item Cross-Site Request Forgery (CWE-352, 7.9\%, 1,421 samples) and SQL Injection (CWE-89, 7.3\%, 1,308 samples) represent the next tier of common web vulnerabilities.
+    \item Path Traversal (CWE-22, 4.8\%, 865 samples) and Authorization Issues (CWE-862, 4.0\%, 722 samples) round out the top five.
+    \item Memory corruption vulnerabilities like Out-of-bounds Write (CWE-787, 3.6\%, 639 samples) and Out-of-bounds Read (CWE-125, 2.3\%, 411 samples) appear less frequently but often represent higher severity issues.
+\end{itemize}
+
+The prevalence of web-related vulnerabilities (CWE-79, CWE-352, CWE-89) reflects the extensive attack surface of web applications and the challenges in properly validating and sanitizing user input. Memory corruption vulnerabilities, while less common, remain a persistent threat, particularly in systems programming contexts.
+
+\subsection{Multi-dimensional Vulnerability Profiling}
+
+The consolidated dataset reveals important patterns across software types, programming languages, and vulnerability classes:
+
+\begin{itemize}
+    \item PHP-based extensions and web applications are particularly susceptible to Cross-Site Scripting (CWE-79), with 2,124 and 1,436 instances respectively, representing the most common vulnerability profiles.
+    \item Cross-Site Request Forgery (CWE-352) is also prevalent in PHP extensions (587 instances) and web applications (317 instances).
+    \item SQL Injection (CWE-89) affects PHP web applications (438 instances) and extensions (381 instances) most frequently.
+    \item JavaScript applications show significant vulnerability to Cross-Site Scripting (CWE-79, 238 instances), while Java packages exhibit both XSS (217 instances) and CSRF (188 instances) vulnerabilities.
+    \item Memory corruption vulnerabilities cluster in C-based frameworks (CWE-125, 142 instances) and utilities (CWE-125, 156 instances; CWE-787, 136 instances).
+\end{itemize}
+
+These patterns reveal distinct vulnerability profiles across the software ecosystem:
+
+\begin{enumerate}
+    \item \textbf{Web Application Profile:} Dominated by input validation vulnerabilities (XSS, CSRF, SQLi) in PHP and JavaScript applications, particularly in extensions and web applications.
+    \item \textbf{Systems Software Profile:} Characterized by memory corruption issues (buffer overflows, use-after-free) in C and C++ utilities and frameworks.
+    \item \textbf{Enterprise Application Profile:} Represented by a mix of web vulnerabilities and authorization issues in Java packages and frameworks.
+\end{enumerate}
+
+\subsection{Addressing the Research Question}
+
+Returning to our research question—\textit{How do software security faults profile regarding software type, technology, causes, and programming language?}—our analysis reveals several key insights:
+
+\begin{itemize}
+    \item \textbf{Software Type:} Extensions and web applications are most vulnerable to input validation issues, while utilities and frameworks show greater susceptibility to memory corruption. Servers exhibit a more diverse vulnerability profile spanning both categories.
+    
+    \item \textbf{Technology:} Web technologies dominate the vulnerability landscape, with client-side (XSS, CSRF) and server-side (SQLi, path traversal) issues being most prevalent.
+    
+    \item \textbf{Causes:} Improper input validation emerges as the dominant root cause across the ecosystem, followed by memory management issues in systems software and authorization problems across multiple software types.
+    
+    \item \textbf{Programming Language:} Strong correlations exist between languages and vulnerability types: PHP and JavaScript with web vulnerabilities, C and C++ with memory corruption, and Java with a mix of web and authorization issues.
+\end{itemize}
+
+These findings demonstrate that vulnerability profiles are not uniform across the software ecosystem but rather cluster into distinct patterns based on software type, implementation language, and application domain. This multi-dimensional profiling provides a more nuanced understanding of security fault distribution than previous single-dimension analyses.
+
+\subsection{Limitations}
+
+While our analysis provides valuable insights, several limitations should be acknowledged:
+
+\begin{itemize}
+    \item The language mapping process successfully identified languages for only 10,562 of the 32,666 software products, potentially introducing selection bias.
+    \item The consolidated dataset represents only the most frequent combinations, not the complete cross-product of all dimensions.
+    \item The reliance on NVD data means our analysis is limited to reported and publicly disclosed vulnerabilities, which may not represent the complete vulnerability landscape.
+\end{itemize}
+
+Despite these limitations, the large sample sizes and clear patterns observed provide confidence in the overall trends identified in our analysis.
