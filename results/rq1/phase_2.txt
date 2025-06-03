@@ -7,78 +7,81 @@ Software Type Categorization (get_software_type.py) (Total Samples: 32 666):
  - web_application: 3443
  - mobile_app: 2382
 
-Product Language Mapping (get_products_language.py) (Total Samples: 10 562):
- - PHP: 3543
- - JavaScript: 1625
- - Java: 1245
- - Python: 658
- - C: 574
- - Go: 431
- - TypeScript: 364
- - C++: 310
- - Ruby: 246
- - Rust: 220
- - C#: 135
- - HTML: 121
- - CSS: 97
- - Perl: 94
- - Shell: 80
- - Others: 363
+Product Language Mapping (get_products_language.py) (Total Samples: 13 081):
+ - PHP: 4236
+ - JavaScript: 1824
+ - Java: 1415
+ - C: 887
+ - Python: 817
+ - Go: 496
+ - C++: 448
+ - TypeScript: 417
+ - Ruby: 371
+ - Rust: 267
+ - C#: 187
+ - Perl: 187
+ - HTML: 149
+ - Shell: 125
+ - CSS: 123
+ - Kotlin: 43
+ - Scala: 33
+ - Objective-C: 30
+ - Swift: 25
+ - Elixir: 22
+ - Others: 356
 
-CVE Data Extraction (get_cve_ids_in_apps_with_cwe.py) (Total Samples: 17990):
- - CWE-79: 5901
- - CWE-352: 1421
- - CWE-89: 1308
- - CWE-22: 865
- - CWE-862: 722
- - CWE-787: 639
- - CWE-434: 516
+CVE Data Extraction (get_cve_ids_in_apps_with_cwe.py) (Total Samples: 18057):
+ - CWE-79: 5910
+ - CWE-352: 1422
+ - CWE-89: 1310
+ - CWE-22: 870
+ - CWE-862: 723
+ - CWE-787: 641
+ - CWE-434: 517
  - CWE-125: 411
- - CWE-94: 310
- - CWE-502: 298
- - CWE-78: 287
- - CWE-863: 280
+ - CWE-94: 311
+ - CWE-502: 303
+ - CWE-78: 288
+ - CWE-863: 281
  - CWE-476: 270
- - CWE-918: 229
+ - CWE-918: 230
  - CWE-601: 209
- - CWE-522: 204
+ - CWE-522: 206
  - CWE-770: 180
  - CWE-416: 176
- - CWE-1321: 164
+ - CWE-1321: 166
  - CWE-190: 154
- - CWE-611: 150
- - CWE-295: 137
+ - CWE-611: 153
+ - CWE-295: 140
  - CWE-732: 127
  - CWE-639: 114
  - CWE-835: 108
- - Others: 2810
-
 
 Dataset consolidation:
 
 software_type    language    cwe_id
-extension        PHP         CWE-79      2124
-web_application  PHP         CWE-79      1436
-extension        PHP         CWE-352      587
-web_application  PHP         CWE-89       438
-extension        PHP         CWE-89       381
-framework        PHP         CWE-79       342
+extension        PHP         CWE-79      2125
+web_application  PHP         CWE-79      1433
+extension        PHP         CWE-352      588
+web_application  PHP         CWE-89       437
+extension        PHP         CWE-89       382
+framework        PHP         CWE-79       345
 web_application  PHP         CWE-352      317
 extension        PHP         CWE-862      317
-                 JavaScript  CWE-79       238
-package          Java        CWE-79       217
-web_application  PHP         CWE-434      211
-package          Java        CWE-352      188
+                 JavaScript  CWE-79       239
+package          Java        CWE-79       219
+web_application  PHP         CWE-434      212
+package          Java        CWE-352      190
                              CWE-862      187
 web_application  PHP         CWE-22       178
                  JavaScript  CWE-79       174
 framework        JavaScript  CWE-787      164
-                 C           CWE-787      156
 utility          C           CWE-125      156
-framework        C           CWE-125      142
+framework        C           CWE-787      156
+                             CWE-125      142
 utility          C           CWE-787      136
 package          Java        CWE-522      132
 server           PHP         CWE-79       120
 utility          PHP         CWE-79       119
 web_application  JavaScript  CWE-89       115
-package          JavaScript  CWE-1321     106
+package          JavaScript  CWE-1321     107

@@ -142,11 +142,13 @@ CVE-2016-4991,CWE-77,nodepdf_project,nodepdf,package,JavaScript
 CVE-2016-5402,CWE-94,redhat,cloudforms,utility,Ruby
 CVE-2016-5431,CWE-327,php_jose_project,php_jose,framework,PHP
 CVE-2016-0750,CWE-502,infinispan,infinispan,framework,Java
+CVE-2016-1000338,CWE-347,bouncycastle,legion-of-the-bouncy-castle-java-crytography-api,framework,C#
 CVE-2016-4572,CWE-863,cloudera,cdh,framework,Groovy
 CVE-2016-7075,CWE-295,redhat,openshift,package,HCL
 CVE-2016-7064,CWE-347,pritunl,pritunl-client,server,Python
 CVE-2016-7063,CWE-22,pritunl,pritunl-client,server,Python
 CVE-2016-7043,CWE-260,redhat,kie-server,server,Java
+CVE-2016-7041,CWE-22,redhat,jboss_brms,server,Java
 CVE-2016-9600,CWE-476,jasper_project,jasper,utility,C
 CVE-2016-9605,CWE-79,cobbler_project,cobbler,server,Python
 CVE-2016-9602,CWE-59,qemu,qemu,utility,C
@@ -183,7 +185,9 @@ CVE-2016-3735,CWE-335,piwigo,piwigo,web_application,PHP
 CVE-2016-8609,CWE-384,redhat,keycloak,package,Java
 CVE-2016-8654,CWE-122,jasper_project,jasper,utility,C
 CVE-2016-8608,CWE-79,redhat,jboss_bpm_suite,server,Java
+CVE-2016-8648,CWE-502,redhat,jboss_fuse,package,Java
 CVE-2016-8635,CWE-358,mozilla,network_security_services,framework,C
+CVE-2016-8653,CWE-502,redhat,jboss_fuse,package,Java
 CVE-2010-5304,CWE-476,libvncserver_project,libvncserver,framework,C
 CVE-2010-3438,CWE-134,libpoe-component-irc-perl_project,libpoe-component-irc-perl,extension,Perl
 CVE-2010-2250,CWE-79,drupal,drupal,web_application,PHP
@@ -246,6 +250,7 @@ CVE-2021-44082,CWE-79,textpattern,textpattern,web_application,PHP
 CVE-2021-44038,CWE-59,quagga,quagga,utility,C
 CVE-2021-44093,CWE-434,zrlog,zrlog,framework,Java
 CVE-2021-32073,CWE-352,dedecms,dedecms,web_application,PHP
+CVE-2021-30134,CWE-79,shopello_api_project,shopello_api,extension,PHP
 CVE-2021-30155,CWE-862,mediawiki,mediawiki,framework,PHP
 CVE-2021-30108,CWE-918,feehi,feehi_cms,web_application,PHP
 CVE-2021-30154,CWE-79,mediawiki,mediawiki,framework,PHP
@@ -283,7 +288,7 @@ CVE-2021-21351,CWE-434,oracle,mysql_server,server,C++
 CVE-2021-21365,CWE-79,typo3,typo3,web_application,PHP
 CVE-2021-21302,CWE-1236,prestashop,prestashop,web_application,PHP
 CVE-2021-21357,CWE-22,typo3,typo3,web_application,PHP
-CVE-2021-21353,CWE-94,pugjs,pug,package,JavaScript
+CVE-2021-21353,CWE-94,pugjs,pug-code-gen,package,JavaScript
 CVE-2021-21359,CWE-405,typo3,typo3,web_application,PHP
 CVE-2021-21378,CWE-303,envoyproxy,envoy,server,C++
 CVE-2021-21315,CWE-78,systeminformation,systeminformation,package,JavaScript
@@ -340,7 +345,7 @@ CVE-2021-20264,CWE-732,oracle,openjdk,framework,Java
 CVE-2021-20254,CWE-125,samba,samba,server,C
 CVE-2021-20291,CWE-667,redhat,openshift_container_platform,package,HCL
 CVE-2021-20263,CWE-281,qemu,qemu,utility,C
-CVE-2021-20218,CWE-22,redhat,openshift_container_platform,package,HCL
+CVE-2021-20218,CWE-22,redhat,jboss_fuse,package,Java
 CVE-2021-20251,CWE-362,samba,samba,server,C
 CVE-2021-20262,CWE-306,redhat,keycloak,package,Java
 CVE-2021-20277,CWE-787,samba,samba,server,C
@@ -350,7 +355,7 @@ CVE-2021-20244,CWE-369,imagemagick,imagemagick,utility,C
 CVE-2021-20238,CWE-306,redhat,openshift_container_platform,package,HCL
 CVE-2021-20270,CWE-835,redhat,openshift_container_platform,package,HCL
 CVE-2021-20295,CWE-125,qemu,qemu,utility,C
-CVE-2021-20257,CWE-835,redhat,openstack_platform,framework,Ruby
+CVE-2021-20257,CWE-835,qemu,qemu,utility,C
 CVE-2021-20221,CWE-125,qemu,qemu,utility,C
 CVE-2021-20222,CWE-79,redhat,keycloak,package,Java
 CVE-2021-20240,CWE-191,gnome,gdk-pixbuf,framework,C
@@ -468,7 +473,7 @@ CVE-2021-24810,CWE-79,wp-eventmanager,wp_event_manager,extension,PHP
 CVE-2021-24879,CWE-352,supportcandy,supportcandy,extension,PHP
 CVE-2021-24802,CWE-352,gesundheit-bewegt,colorful_categories,extension,PHP
 CVE-2021-24860,CWE-89,bannersky,bsk_pdf_manager,extension,PHP
-CVE-2021-24867,CWE-912,accesspressthemes,ap_mega_menu,extension,PHP
+CVE-2021-24867,CWE-912,accesspressthemes,accesspress_social_icons,extension,PHP
 CVE-2021-24885,CWE-79,yop-poll,yop-poll,extension,PHP
 CVE-2021-39190,CWE-862,teclib-edition,system_center_configuration_manager,utility,PHP
 CVE-2021-39156,CWE-706,istio,istio,server,Go
@@ -585,7 +590,7 @@ CVE-2021-37267,CWE-79,kindsoft,kindeditor,utility,JavaScript
 CVE-2021-37271,CWE-79,baidu,ueditor,utility,JavaScript
 CVE-2021-44277,CWE-79,librenms,librenms,framework,PHP
 CVE-2021-44266,CWE-79,gunet,open_eclass_platform,web_application,PHP
-CVE-2021-44228,CWE-502,cisco,unified_contact_center_express,server,Java
+CVE-2021-44228,CWE-502,intel,genomics_kernel_library,package,C
 CVE-2021-44278,CWE-22,librenms,librenms,framework,PHP
 CVE-2021-44299,CWE-79,naviwebs,navigate_cms,web_application,PHP
 CVE-2021-44279,CWE-79,librenms,librenms,framework,PHP
@@ -974,7 +979,7 @@ CVE-2021-4082,CWE-352,pimcore,pimcore,web_application,PHP
 CVE-2021-45096,CWE-611,knime,knime_analytics_platform,web_application,Java
 CVE-2021-45017,CWE-352,catfish-cms,catfish_cms,web_application,PHP
 CVE-2021-45081,CWE-319,cobbler_project,cobbler,server,Python
-CVE-2021-45046,CWE-917,cvat,computer_vision_annotation_tool,utility,Python
+CVE-2021-45046,CWE-917,intel,genomics_kernel_library,package,C
 CVE-2021-45083,CWE-276,cobbler_project,cobbler,server,Python
 CVE-2021-45018,CWE-79,catfish-cms,catfish_cms,web_application,PHP
 CVE-2021-45015,CWE-22,taogogo,taocms,web_application,PHP
@@ -988,6 +993,7 @@ CVE-2021-24722,CWE-79,motopress,restaurant_menu,extension,PHP
 CVE-2021-24776,CWE-352,wp_performance_score_booster_project,wp_performance_score_booster,extension,PHP
 CVE-2021-24794,CWE-79,connections-pro,connections_business_directory,extension,PHP
 CVE-2021-24710,CWE-79,print-o-matic_project,print-o-matic,extension,PHP
+CVE-2021-24752,CWE-352,catchplugins,catch_web_tools,extension,PHP
 CVE-2021-24778,CWE-89,wpaffiliatefeed,tradetracker-store,extension,PHP
 CVE-2021-24793,CWE-79,etruel,wpematico_rss_feed_fetcher,extension,PHP
 CVE-2021-24715,CWE-79,wp_sitemap_page_project,wp_sitemap_page,extension,PHP
@@ -1278,9 +1284,10 @@ CVE-2021-26794,CWE-434,frogcms_project,frogcms,web_application,PHP
 CVE-2021-26713,CWE-787,digium,asterisk,server,C
 CVE-2021-26715,CWE-918,mitreid,connect,framework,Java
 CVE-2021-26754,CWE-89,wpdatatables,wpdatatables,extension,PHP
+CVE-2021-26707,CWE-1321,merge-deep_project,merge-deep,package,JavaScript
 CVE-2021-26776,CWE-79,cszcms,csz_cms,web_application,PHP
 CVE-2021-41130,CWE-290,google,extensible_service_proxy,server,C++
-CVE-2021-41183,CWE-79,drupal,drupal,web_application,PHP
+CVE-2021-41183,CWE-79,jqueryui,jquery_ui,framework,JavaScript
 CVE-2021-41142,CWE-79,enalean,tuleap,web_application,PHP
 CVE-2021-41157,CWE-306,freeswitch,freeswitch,server,C
 CVE-2021-41113,CWE-352,typo3,typo3,web_application,PHP
@@ -1308,14 +1315,14 @@ CVE-2021-41101,CWE-79,wire,wire_server,server,Haskell
 CVE-2021-41189,CWE-863,duraspace,dspace,server,Java
 CVE-2021-41177,CWE-799,nextcloud,nextcloud_server,server,PHP
 CVE-2021-41145,CWE-401,freeswitch,freeswitch,server,C
-CVE-2021-41182,CWE-79,drupal,drupal,web_application,PHP
+CVE-2021-41182,CWE-79,jqueryui,jquery_ui,framework,JavaScript
 CVE-2021-41192,CWE-1188,redash,redash,web_application,Python
 CVE-2021-41188,CWE-79,shopware,shopware,web_application,PHP
 CVE-2021-41115,CWE-1333,zulip,zulip,mobile_app,Python
 CVE-2021-41180,CWE-601,nextcloud,talk,server,JavaScript
 CVE-2021-41135,CWE-754,interchain,cosmos_sdk,package,Go
 CVE-2021-41171,CWE-307,elabftw,elabftw,web_application,PHP
-CVE-2021-41184,CWE-79,drupal,drupal,web_application,PHP
+CVE-2021-41184,CWE-79,jqueryui,jquery_ui,framework,JavaScript
 CVE-2021-3272,CWE-125,jasper_project,jasper,utility,C
 CVE-2021-3223,CWE-22,nodered,node-red-dashboard,package,HTML
 CVE-2021-3291,CWE-78,zen-cart,zen_cart,web_application,PHP
@@ -1333,7 +1340,7 @@ CVE-2021-36212,CWE-79,misp,misp,web_application,PHP
 CVE-2021-36221,CWE-362,golang,go,framework,Go
 CVE-2021-36222,CWE-476,oracle,mysql_server,server,C++
 CVE-2021-22051,CWE-863,vmware,spring_cloud_gateway,server,Java
-CVE-2021-22098,CWE-601,cloudfoundry,cf-deployment,server,Go
+CVE-2021-22098,CWE-601,cloudfoundry,user_account_and_authentication,server,Java
 CVE-2021-22053,CWE-94,vmware,spring_cloud_netflix,server,Java
 CVE-2021-33926,CWE-918,plone,plone,web_application,Python
 CVE-2021-33948,CWE-89,hotels_server_project,hotels_server,server,PHP
@@ -1343,7 +1350,7 @@ CVE-2021-23760,CWE-1321,keyget_project,keyget,package,JavaScript
 CVE-2021-23702,CWE-1321,object-extend_project,object-extend,package,JavaScript
 CVE-2021-23718,CWE-918,ssrf-agent_project,ssrf-agent,package,JavaScript
 CVE-2021-23732,CWE-78,quobject,docker-cli-js,package,TypeScript
-CVE-2021-23771,CWE-1321,argencoders-notevil_project,argencoders-notevil,package,JavaScript
+CVE-2021-23771,CWE-1321,notevil_project,notevil,package,JavaScript
 CVE-2021-23797,CWE-22,http-server-node_project,http-server-node,package,JavaScript
 CVE-2021-45811,CWE-89,enhancesoft,osticket,web_application,PHP
 CVE-2021-45899,CWE-502,salesagility,suitecrm,framework,PHP
@@ -1454,6 +1461,7 @@ CVE-2021-20179,CWE-863,dogtagpki,dogtagpki,utility,Java
 CVE-2021-20111,CWE-79,tecnick,tcexam,web_application,PHP
 CVE-2021-20115,CWE-79,tecnick,tcexam,web_application,PHP
 CVE-2021-20188,CWE-863,redhat,openshift_container_platform,package,HCL
+CVE-2021-20191,CWE-532,redhat,google_cloud_platform_ansible_collection,server,Python
 CVE-2021-20194,CWE-787,redhat,openshift_container_platform,package,HCL
 CVE-2021-20176,CWE-369,imagemagick,imagemagick,utility,C
 CVE-2021-32305,CWE-78,websvn,websvn,server,PHP
@@ -1694,7 +1702,7 @@ CVE-2021-3563,CWE-863,redhat,openstack_platform,framework,Ruby
 CVE-2021-3527,CWE-770,qemu,qemu,utility,C
 CVE-2021-3529,CWE-79,redhat,openshift_container_platform,package,HCL
 CVE-2021-3574,CWE-401,imagemagick,imagemagick,utility,C
-CVE-2021-3536,CWE-79,redhat,descision_manager,utility,Java
+CVE-2021-3536,CWE-79,redhat,integration_service_registry,server,Java
 CVE-2021-4222,CWE-79,maxfoundry,wp-paginate,extension,JavaScript
 CVE-2021-4266,CWE-79,hitachi,community_plugin_framework,extension,Java
 CVE-2021-4206,CWE-120,qemu,qemu,utility,C
@@ -1903,6 +1911,7 @@ CVE-2021-3768,CWE-79,bookstackapp,bookstack,web_application,PHP
 CVE-2021-3750,CWE-416,qemu,qemu,utility,C
 CVE-2021-3757,CWE-1321,immer_project,immer,package,JavaScript
 CVE-2021-3762,CWE-22,redhat,quay,server,Jinja
+CVE-2021-3717,CWE-552,redhat,wildfly_core,package,Java
 CVE-2021-3783,CWE-79,yourls,yourls,utility,PHP
 CVE-2021-3712,CWE-125,oracle,mysql_server,server,C++
 CVE-2021-3734,CWE-1021,yourls,yourls,utility,PHP
@@ -1997,18 +2006,20 @@ CVE-2021-4123,CWE-352,livehelperchat,live_helper_chat,framework,PHP
 CVE-2021-4158,CWE-476,qemu,qemu,utility,C
 CVE-2021-4132,CWE-79,livehelperchat,live_helper_chat,framework,PHP
 CVE-2021-4182,CWE-835,wireshark,wireshark,utility,C
-CVE-2021-4104,CWE-502,redhat,openshift_container_platform,package,HCL
+CVE-2021-4104,CWE-502,redhat,jboss_fuse,package,Java
 CVE-2021-4184,CWE-835,wireshark,wireshark,utility,C
 CVE-2021-4177,CWE-209,livehelperchat,live_helper_chat,framework,PHP
 CVE-2021-4139,CWE-79,pimcore,pimcore,web_application,PHP
 CVE-2021-29258,CWE-617,envoyproxy,envoy,server,C++
 CVE-2021-22949,CWE-352,concretecms,concrete_cms,web_application,PHP
+CVE-2021-22960,CWE-444,llhttp,llhttp,package,TypeScript
 CVE-2021-22969,CWE-918,concretecms,concrete_cms,web_application,PHP
 CVE-2021-22951,CWE-639,concretecms,concrete_cms,web_application,PHP
 CVE-2021-22926,CWE-295,oracle,mysql_server,server,C++
 CVE-2021-22903,CWE-601,rubyonrails,rails,framework,Ruby
 CVE-2021-22945,CWE-415,oracle,mysql_server,server,C++
 CVE-2021-22968,CWE-434,concretecms,concrete_cms,web_application,PHP
+CVE-2021-22959,CWE-444,llhttp,llhttp,package,TypeScript
 CVE-2021-22942,CWE-601,rubyonrails,rails,framework,Ruby
 CVE-2021-22946,CWE-319,oracle,mysql_server,server,C++
 CVE-2021-22966,CWE-863,concretecms,concrete_cms,web_application,PHP
@@ -2213,7 +2224,7 @@ CVE-2021-3804,CWE-1333,taro,taro,package,TypeScript
 CVE-2021-24032,CWE-276,facebook,zstandard,framework,C
 CVE-2021-24025,CWE-190,facebook,hhvm,utility,C++
 CVE-2021-24029,CWE-617,facebook,proxygen,framework,C++
-CVE-2021-24036,CWE-190,facebook,folly,framework,C++
+CVE-2021-24036,CWE-190,facebook,hhvm,utility,C++
 CVE-2021-24031,CWE-276,facebook,zstandard,framework,C
 CVE-2021-24028,CWE-763,facebook,thrift,server,C++
 CVE-2021-39608,CWE-434,flatcore,flatcore-cms,web_application,JavaScript
@@ -2238,7 +2249,7 @@ CVE-2021-3692,CWE-1241,yiiframework,yii,utility,PHP
 CVE-2021-3682,CWE-763,qemu,qemu,utility,C
 CVE-2021-3611,CWE-787,qemu,qemu,utility,C
 CVE-2021-3631,CWE-732,redhat,openshift_container_platform,package,HCL
-CVE-2021-3642,CWE-203,redhat,wildfly_elytron,server,Java
+CVE-2021-3642,CWE-203,redhat,jboss_fuse,package,Java
 CVE-2021-3663,CWE-307,firefly-iii,firefly_iii,web_application,PHP
 CVE-2021-3637,CWE-770,redhat,keycloak,package,Java
 CVE-2021-3673,CWE-252,radare,radare2,utility,C
@@ -2455,12 +2466,14 @@ CVE-2021-26906,CWE-404,digium,asterisk,server,C
 CVE-2021-26929,CWE-79,horde,groupware,framework,PHP
 CVE-2021-26927,CWE-476,jasper_project,jasper,utility,C
 CVE-2021-43117,CWE-434,fastadmin,fastadmin,utility,JavaScript
+CVE-2021-43176,CWE-22,goautodial,goautodial_api,package,Ruby
 CVE-2021-43136,CWE-798,formalms,formalms,web_application,PHP
+CVE-2021-43175,CWE-305,goautodial,goautodial_api,package,Ruby
 CVE-2021-22133,CWE-532,elastic,apm_agent,utility,Go
 CVE-2021-22143,CWE-532,elastic,apm_.net_agent,server,C#
 CVE-2021-22173,CWE-401,wireshark,wireshark,utility,C
 CVE-2021-22174,CWE-770,wireshark,wireshark,utility,C
-CVE-2021-22115,CWE-522,cloudfoundry,cf-deployment,server,Go
+CVE-2021-22115,CWE-522,cloudfoundry,capi-release,server,Ruby
 CVE-2021-22138,CWE-295,elastic,logstash,framework,Java
 CVE-2021-36654,CWE-79,cmsuno_project,cmsuno,web_application,PHP
 CVE-2021-36667,CWE-78,druva,insync_client,utility,Shell
@@ -3053,6 +3066,7 @@ CVE-2024-43981,CWE-862,ayecode,geodirectory,extension,PHP
 CVE-2024-43972,CWE-79,pagelayer,pagelayer,extension,PHP
 CVE-2024-43973,CWE-862,ayecode,getpaid,extension,PHP
 CVE-2024-43983,CWE-79,podlove,podlove_podcast_publisher,utility,PHP
+CVE-2024-43949,CWE-79,automattic,ghactivity,extension,PHP
 CVE-2024-43942,CWE-89,wpsoul,greenshift_query_addon,extension,JavaScript
 CVE-2024-43985,CWE-79,mage-people,bus_ticket_booking_with_seat_reservation,extension,PHP
 CVE-2024-43943,CWE-89,wpsoul,greenshift_woocommerce_addon,extension,JavaScript
@@ -3185,7 +3199,7 @@ CVE-2024-2262,CWE-352,themify,woocommerce_product_filter,extension,HTML
 CVE-2024-2298,CWE-862,servit,affiliate-toolkit,extension,PHP
 CVE-2024-7655,CWE-79,peepso,peepso,extension,PHP
 CVE-2024-7627,CWE-362,bitapps,file_manager,extension,JavaScript
-CVE-2024-7634,CWE-22,f5,nginx_instance_manager,utility,HCL
+CVE-2024-7634,CWE-22,f5,nginx_agent,server,Go
 CVE-2024-7618,CWE-79,peepso,peepso,extension,PHP
 CVE-2024-7657,CWE-79,gilacms,gila_cms,web_application,JavaScript
 CVE-2024-11088,CWE-276,simple-membership-plugin,simple_membership,extension,PHP
@@ -3592,7 +3606,7 @@ CVE-2024-6884,CWE-79,kadencewp,gutenberg_blocks_with_ai,extension,JavaScript
 CVE-2024-6894,CWE-79,rdstation,rd_station,extension,PHP
 CVE-2024-45604,CWE-22,contao,contao,web_application,PHP
 CVE-2024-45621,CWE-79,rocket.chat,rocket.chat,utility,TypeScript
-CVE-2024-45692,CWE-835,webmin,webmin,web_application,HTML
+CVE-2024-45692,CWE-835,virtualmin,virtualmin,web_application,HTML
 CVE-2024-33209,CWE-79,flatpress,flatpress,web_application,PHP
 CVE-2024-27300,CWE-79,phpmyfaq,phpmyfaq,framework,PHP
 CVE-2024-7092,CWE-79,wpdeveloper,essential_addons_for_elementor,extension,PHP
@@ -4033,6 +4047,7 @@ CVE-2024-12475,CWE-79,wpexperts,wp_multi_store_locator,extension,PHP
 CVE-2024-12468,CWE-79,androidbubbles,wp_datepicker,extension,JavaScript
 CVE-2024-39830,CWE-203,mattermost,mattermost,server,TypeScript
 CVE-2024-39832,CWE-754,mattermost,mattermost,server,TypeScript
+CVE-2024-39891,CWE-203,twilio,authy,mobile_app,Ruby
 CVE-2024-47604,CWE-79,microsoft,nugetgallery,framework,C#
 CVE-2024-24713,CWE-79,wpautolistings,auto_listings,extension,PHP
 CVE-2024-24796,CWE-502,mage-people,event_manager_and_tickets_selling_for_woocommerce,extension,PHP
@@ -4351,6 +4366,7 @@ CVE-2024-6490,CWE-352,averta,master_slider,extension,PHP
 CVE-2024-6489,CWE-862,motopress,getwid,extension,JavaScript
 CVE-2024-39320,CWE-1021,discourse,discourse,web_application,Ruby
 CVE-2024-39308,CWE-79,rails_admin_project,rails_admin,utility,Ruby
+CVE-2024-39311,CWE-79,publify,publify_core,package,Ruby
 CVE-2024-6289,CWE-601,wpserveur,wps_hide_login,extension,PHP
 CVE-2024-6225,CWE-79,tms-outsource,amelia,extension,PHP
 CVE-2024-6271,CWE-352,community_events_project,community_events,extension,PHP
@@ -4437,9 +4453,9 @@ CVE-2014-4995,CWE-362,vladtheenterprising_project,vladtheenterprising,framework,
 CVE-2014-4932,CWE-79,wordfence,wordfence_security,extension,PHP
 CVE-2014-6604,CWE-79,subscribe2_project,subscribe2,extension,PHP
 CVE-2014-3471,CWE-416,qemu,qemu,utility,C
-CVE-2014-2052,CWE-611,owncloud,owncloud,server,PHP
+CVE-2014-2052,CWE-611,owncloud,owncloud_server,server,PHP
 CVE-2014-2030,CWE-787,imagemagick,imagemagick,utility,C
-CVE-2014-2050,CWE-352,owncloud,owncloud,server,PHP
+CVE-2014-2050,CWE-352,owncloud,owncloud_server,server,PHP
 CVE-2014-3650,CWE-79,redhat,jboss_aerogear,framework,JavaScript
 CVE-2014-3626,CWE-22,grails,resources,framework,Groovy
 CVE-2014-3607,CWE-295,ldaptive,ldaptive,framework,Java
@@ -4482,6 +4498,7 @@ CVE-2014-10075,CWE-77,karo_project,karo,framework,Ruby
 CVE-2014-10065,CWE-79,remarkable_project,remarkable,utility,JavaScript
 CVE-2014-10066,CWE-22,fancy-server_project,fancy-server,package,JavaScript
 CVE-2014-8337,CWE-434,helpdezk,helpdezk,web_application,PHP
+CVE-2014-0241,CWE-522,theforeman,hammer_cli,framework,Ruby
 CVE-2014-0234,CWE-1188,redhat,openshift,package,HCL
 CVE-2014-0243,CWE-59,check_mk_project,check_mk,server,Python
 CVE-2014-9502,CWE-352,open_atrium_project,open_atrium,extension,Makefile
@@ -4730,6 +4747,7 @@ CVE-2023-40010,CWE-89,pluginus,husky_-_products_filter_professional_for_woocomme
 CVE-2023-40033,CWE-918,flarum,flarum,web_application,PHP
 CVE-2023-40019,CWE-770,freeswitch,freeswitch,server,C
 CVE-2023-40009,CWE-352,thimpress,wp_pipes,extension,PHP
+CVE-2023-40014,CWE-116,openzeppelin,openzeppelin_contracts-upgradable,package,JavaScript
 CVE-2023-40003,CWE-862,wedevs,wp_project_manager,extension,Vue
 CVE-2023-40005,CWE-862,awesomemotive,easy_digital_downloads,extension,PHP
 CVE-2023-40013,CWE-79,shubhamjain,svg_loader,package,JavaScript
@@ -4759,7 +4777,7 @@ CVE-2023-1877,CWE-77,microweber,microweber,web_application,HTML
 CVE-2023-1885,CWE-79,phpmyfaq,phpmyfaq,framework,PHP
 CVE-2023-1886,CWE-294,phpmyfaq,phpmyfaq,framework,PHP
 CVE-2023-1878,CWE-79,phpmyfaq,phpmyfaq,framework,PHP
-CVE-2023-1894,CWE-1333,puppet,puppet_enterprise,utility,Ruby
+CVE-2023-1894,CWE-1333,puppet,puppet_server,server,Clojure
 CVE-2023-1881,CWE-79,microweber,microweber,web_application,HTML
 CVE-2023-1861,CWE-79,limit_login_attempts_project,limit_login_attempts,extension,PHP
 CVE-2023-1832,CWE-863,candlepinproject,candlepin,server,Java
@@ -5252,7 +5270,7 @@ CVE-2023-35915,CWE-89,automattic,woopayments,extension,PHP
 CVE-2023-35938,CWE-281,enalean,tuleap,web_application,PHP
 CVE-2023-35914,CWE-639,automattic,woocommerce_subscriptions,extension,PHP
 CVE-2023-35931,CWE-526,shescape_project,shescape,package,JavaScript
-CVE-2023-31421,CWE-295,elastic,apm_server,server,Go
+CVE-2023-31421,CWE-295,elastic,elastic_agent,server,Go
 CVE-2023-39834,CWE-77,pbootcms,pbootcms,web_application,JavaScript
 CVE-2023-3581,CWE-346,mattermost,mattermost_server,server,TypeScript
 CVE-2023-3582,CWE-863,mattermost,mattermost_server,server,TypeScript
@@ -5397,7 +5415,7 @@ CVE-2023-38706,CWE-770,discourse,discourse,web_application,Ruby
 CVE-2023-38708,CWE-22,pimcore,pimcore,web_application,PHP
 CVE-2023-38702,CWE-22,eng,knowage,server,Java
 CVE-2023-38758,CWE-79,wger,workout_manager,mobile_app,Python
-CVE-2023-20881,CWE-295,cloudfoundry,cf-deployment,server,Go
+CVE-2023-20881,CWE-295,cloudfoundry,capi-release,server,Ruby
 CVE-2023-20885,CWE-532,pivotal,cloud_foundry_notifications,server,Go
 CVE-2023-20897,CWE-404,saltstack,salt,framework,Python
 CVE-2023-20859,CWE-532,vmware,spring_cloud_config,server,Java
@@ -5414,7 +5432,7 @@ CVE-2023-22427,CWE-79,ss-proj,shirasagi,web_application,Ruby
 CVE-2023-22461,CWE-80,sanitize-svg_project,sanitize-svg,package,TypeScript
 CVE-2023-22468,CWE-79,discourse,discourse,web_application,Ruby
 CVE-2023-22491,CWE-79,gatsbyjs,gatsby,package,JavaScript
-CVE-2023-33757,CWE-295,splicecom,ipcs,mobile_app,Python
+CVE-2023-33757,CWE-295,splicecom,ipcs2,mobile_app,Python
 CVE-2023-33756,CWE-22,foswiki,foswiki,server,Perl
 CVE-2023-33734,CWE-89,bluecms_project,bluecms,web_application,PHP
 CVE-2023-40350,CWE-79,jenkins,docker_swarm,package,Java
@@ -5456,7 +5474,7 @@ CVE-2023-30518,CWE-862,jenkins,thycotic_secret_server,package,Java
 CVE-2023-30525,CWE-352,jenkins,report_portal,package,Groovy
 CVE-2023-30517,CWE-295,jenkins,neuvector_vulnerability_scanner,package,Java
 CVE-2023-30531,CWE-312,jenkins,consul_kv_builder,package,Java
-CVE-2023-30543,CWE-362,uniswap,web3-react_walletconnect,package,TypeScript
+CVE-2023-30543,CWE-362,uniswap,web3-react_eip1193,package,TypeScript
 CVE-2023-30521,CWE-862,jenkins,assembla_merge_request_builder,package,Groovy
 CVE-2023-30522,CWE-862,jenkins,fogbugz,package,Java
 CVE-2023-27224,CWE-77,jc21,nginx_proxy_manager,server,JavaScript
@@ -5476,7 +5494,7 @@ CVE-2023-1196,CWE-502,advancedcustomfields,advanced_custom_fields,extension,PHP
 CVE-2023-1117,CWE-79,pimcore,pimcore,web_application,PHP
 CVE-2023-1121,CWE-79,ibenic,simple_giveaways,extension,PHP
 CVE-2023-1147,CWE-79,flatpress,flatpress,web_application,PHP
-CVE-2023-1108,CWE-835,redhat,openstack_platform,framework,Ruby
+CVE-2023-1108,CWE-835,redhat,decision_manager,server,Java
 CVE-2023-1148,CWE-79,flatpress,flatpress,web_application,PHP
 CVE-2023-1107,CWE-79,flatpress,flatpress,web_application,PHP
 CVE-2023-1106,CWE-79,flatpress,flatpress,web_application,PHP
@@ -5690,6 +5708,7 @@ CVE-2023-22910,CWE-79,mediawiki,mediawiki,framework,PHP
 CVE-2023-22975,CWE-79,jflyfox,jfinal_cms,web_application,JavaScript
 CVE-2023-22945,CWE-863,mediawiki,mediawiki,framework,PHP
 CVE-2023-22911,CWE-79,mediawiki,mediawiki,framework,PHP
+CVE-2023-25345,CWE-22,swig-templates_project,swig-templates,extension,JavaScript
 CVE-2023-44998,CWE-352,randyhoyt,category_meta,extension,PHP
 CVE-2023-44984,CWE-79,rewweb,bbp_style_pack,extension,PHP
 CVE-2023-44987,CWE-79,gettimely,timely_booking_button,extension,PHP
@@ -5736,7 +5755,7 @@ CVE-2023-47095,CWE-79,virtualmin,virtualmin,web_application,HTML
 CVE-2023-47090,CWE-863,linuxfoundation,nats-server,server,Go
 CVE-2023-47099,CWE-79,virtualmin,virtualmin,web_application,HTML
 CVE-2023-25992,CWE-79,cminds,cm_answers,extension,PHP
-CVE-2023-25989,CWE-352,mekshq,meks_smart_social_widget,extension,PHP
+CVE-2023-25989,CWE-352,mekshq,meks_easy_ads_widget,extension,PHP
 CVE-2023-25990,CWE-89,themeum,tutor_lms,extension,PHP
 CVE-2023-25985,CWE-352,tooltips,wordpress_tooltips,extension,JavaScript
 CVE-2023-25967,CWE-352,peepso,peepso,extension,PHP
@@ -6325,7 +6344,7 @@ CVE-2023-4148,CWE-79,metaphorcreations,ditty,extension,JavaScript
 CVE-2023-49607,CWE-754,mattermost,mattermost_server,server,TypeScript
 CVE-2023-49655,CWE-352,jenkins,matlab,package,Java
 CVE-2023-49656,CWE-611,jenkins,matlab,package,Java
-CVE-2023-49673,CWE-352,jenkins,google_compute_engine,package,Java
+CVE-2023-49673,CWE-352,jenkins,neuvector_vulnerability_scanner,package,Java
 CVE-2023-49654,CWE-862,jenkins,matlab,package,Java
 CVE-2023-49674,CWE-862,jenkins,neuvector_vulnerability_scanner,package,Java
 CVE-2023-49653,CWE-522,jenkins,jira,package,Java
@@ -6404,7 +6423,7 @@ CVE-2023-0789,CWE-77,phpmyfaq,phpmyfaq,framework,PHP
 CVE-2023-0793,CWE-521,phpmyfaq,phpmyfaq,framework,PHP
 CVE-2023-0786,CWE-79,phpmyfaq,phpmyfaq,framework,PHP
 CVE-2023-1578,CWE-89,pimcore,pimcore,web_application,PHP
-CVE-2023-1550,CWE-532,f5,nginx_instance_manager,utility,HCL
+CVE-2023-1550,CWE-532,f5,nginx_agent,server,Go
 CVE-2023-1515,CWE-79,pimcore,pimcore,web_application,PHP
 CVE-2023-1565,CWE-79,feifeicms,feifeicms,web_application,PHP
 CVE-2023-1544,CWE-770,qemu,qemu,utility,C
@@ -7195,7 +7214,7 @@ CVE-2013-4106,CWE-79,cryptocat_project,cryptocat,utility,JavaScript
 CVE-2013-0326,CWE-732,openstack,nova,utility,Python
 CVE-2013-0202,CWE-79,owncloud,owncloud_server,server,PHP
 CVE-2013-0286,CWE-79,pinboard_project,pinboard,extension,PHP
-CVE-2013-0203,CWE-79,owncloud,owncloud,server,PHP
+CVE-2013-0203,CWE-79,owncloud,owncloud_server,server,PHP
 CVE-2013-0803,CWE-434,polarbear_cms_project,polarbear_cms,web_application,PHP
 CVE-2013-2714,CWE-79,podpress_project,podpress,extension,PHP
 CVE-2013-6056,CWE-22,alienvault,open_source_security_information_management,utility,PHP
@@ -7484,7 +7503,7 @@ CVE-2019-12043,CWE-79,remarkable_project,remarkable,utility,JavaScript
 CVE-2019-12095,CWE-79,horde,groupware,framework,PHP
 CVE-2019-12086,CWE-502,fasterxml,jackson-databind,framework,Java
 CVE-2019-12068,CWE-835,qemu,qemu,utility,C
-CVE-2019-12067,CWE-476,redhat,openstack_platform,framework,Ruby
+CVE-2019-12067,CWE-476,qemu,qemu,utility,C
 CVE-2019-12041,CWE-1333,remarkable_project,remarkable,utility,JavaScript
 CVE-2019-12099,CWE-434,php-fusion,php-fusion,web_application,PHP
 CVE-2019-12047,CWE-79,gridea,gridea,framework,TypeScript
@@ -7515,6 +7534,7 @@ CVE-2019-16905,CWE-190,openbsd,openssh,utility,C
 CVE-2019-16996,CWE-89,metinfo,metinfo,web_application,PHP
 CVE-2019-16997,CWE-89,metinfo,metinfo,web_application,PHP
 CVE-2019-16986,CWE-22,fusionpbx,fusionpbx,server,PHP
+CVE-2019-16966,CWE-79,freepbx,contactmanager,server,PHP
 CVE-2019-16993,CWE-352,phpbb,phpbb,web_application,PHP
 CVE-2019-16973,CWE-79,fusionpbx,fusionpbx,server,PHP
 CVE-2019-16943,CWE-502,fasterxml,jackson-databind,framework,Java
@@ -7573,7 +7593,7 @@ CVE-2019-14472,CWE-79,zurmo,zurmo,web_application,D
 CVE-2019-14423,CWE-78,eq-3,cux-daemon,server,C
 CVE-2019-14430,CWE-89,youphptube,youphptube,framework,JavaScript
 CVE-2019-7397,CWE-401,imagemagick,imagemagick,utility,C
-CVE-2019-7317,CWE-416,oracle,mysql,server,C++
+CVE-2019-7317,CWE-416,libpng,libpng,framework,C
 CVE-2019-7396,CWE-401,imagemagick,imagemagick,utility,C
 CVE-2019-7316,CWE-89,css-tricks,chat2,web_application,PHP
 CVE-2019-7398,CWE-401,imagemagick,imagemagick,utility,C
@@ -7589,7 +7609,7 @@ CVE-2019-12562,CWE-79,dnnsoftware,dotnetnuke,web_application,C#
 CVE-2019-12599,CWE-89,salesagility,suitecrm,framework,PHP
 CVE-2019-12567,CWE-787,open_tftp_server_project,open_tftp_server,server,C++
 CVE-2019-12517,CWE-79,slickquiz_project,slickquiz,extension,JavaScript
-CVE-2019-12587,CWE-327,espressif,esp-idf,framework,C
+CVE-2019-12587,CWE-327,espressif,esp8266_nonos_sdk,package,C
 CVE-2019-12516,CWE-89,slickquiz_project,slickquiz,extension,JavaScript
 CVE-2019-12548,CWE-434,bludit,bludit,web_application,JavaScript
 CVE-2019-12507,CWE-79,phprelativepath_project,phprelativepath,framework,PHP
@@ -7866,7 +7886,7 @@ CVE-2019-13144,CWE-1236,mytinytodo,mytinytodo,web_application,PHP
 CVE-2019-13183,CWE-352,flarum,flarum,web_application,PHP
 CVE-2019-13134,CWE-401,imagemagick,imagemagick,utility,C
 CVE-2019-13120,CWE-125,amazon,amazon_web_services_freertos,framework,C
-CVE-2019-13117,CWE-908,xmlsoft,libxslt,framework,XSLT
+CVE-2019-13117,CWE-908,oracle,openjdk,framework,Java
 CVE-2019-13175,CWE-601,readthedocs,read_the_docs,web_application,Python
 CVE-2019-13133,CWE-401,imagemagick,imagemagick,utility,C
 CVE-2019-13122,CWE-79,ozlabs,patchwork,web_application,Python
@@ -8015,6 +8035,8 @@ CVE-2019-9660,CWE-79,yzmcms,yzmcms,web_application,PHP
 CVE-2019-9618,CWE-22,gracemedia_media_player_project,gracemedia_media_player,extension,JavaScript
 CVE-2019-9641,CWE-908,php,php,framework,C
 CVE-2019-9687,CWE-787,podofo_project,podofo,framework,C++
+CVE-2019-6245,CWE-787,antigrain,agg,framework,C++
+CVE-2019-6247,CWE-787,antigrain,agg,framework,C++
 CVE-2019-6266,CWE-295,cordaware,bestinformed,utility,HTML
 CVE-2019-6243,CWE-79,frog_cms_project,frog_cms,web_application,PHP
 CVE-2019-6289,CWE-178,dedecms,dedecms,web_application,PHP
@@ -8071,7 +8093,7 @@ CVE-2019-15683,CWE-787,turbovnc,turbovnc,server,C
 CVE-2019-15659,CWE-89,genetechsolutions,pie_register,extension,PHP
 CVE-2019-15642,CWE-94,webmin,webmin,web_application,HTML
 CVE-2019-15616,CWE-93,nextcloud,nextcloud_server,server,PHP
-CVE-2019-15619,CWE-79,nextcloud,nextcloud_server,server,PHP
+CVE-2019-15619,CWE-79,nextcloud,talk,server,JavaScript
 CVE-2019-15641,CWE-611,webmin,webmin,web_application,HTML
 CVE-2019-15645,CWE-352,zoho,salesiq,extension,PHP
 CVE-2019-15612,CWE-384,nextcloud,nextcloud_server,server,PHP
@@ -8166,10 +8188,12 @@ CVE-2019-12138,CWE-22,macdown_project,macdown,utility,Rich Text Format
 CVE-2019-12136,CWE-79,boostio,boostnote,utility,JavaScript
 CVE-2019-12173,CWE-22,macdown_project,macdown,utility,Rich Text Format
 CVE-2019-12149,CWE-89,silverstripe,registry,package,PHP
+CVE-2019-12139,CWE-79,ez,ezplatform-admin-ui,framework,PHP
 CVE-2019-12101,CWE-476,libnyoci_project,libnyoci,framework,C
 CVE-2019-13070,CWE-79,cyberpowersystems,powerpanel,utility,Shell
 CVE-2019-13071,CWE-352,cyberpowersystems,powerpanel,utility,Shell
 CVE-2019-13051,CWE-78,pi-hole,pi-hole,server,JavaScript
+CVE-2019-13050,CWE-295,sks_keyserver_project,sks_keyserver,server,OCaml
 CVE-2019-13024,CWE-77,centreon,centreon,server,PHP
 CVE-2019-13038,CWE-601,mod_auth_mellon_project,mod_auth_mellon,server,C
 CVE-2019-13086,CWE-89,cszcms,csz_cms,web_application,PHP
@@ -8360,7 +8384,7 @@ CVE-2019-5423,CWE-22,http-live-simulator_project,http-live-simulator,package,Jav
 CVE-2019-5438,CWE-59,harpjs,harp,package,JavaScript
 CVE-2019-5442,CWE-776,pippo,pippo,framework,Java
 CVE-2019-5431,CWE-352,twitter,twitter_kit,mobile_app,Objective-C
-CVE-2019-1003040,CWE-470,redhat,openshift_container_platform,package,HCL
+CVE-2019-1003040,CWE-470,jenkins,script_security,package,Java
 CVE-2019-1003091,CWE-862,jenkins,soasta_cloudtest,package,Java
 CVE-2019-1003046,CWE-352,jenkins,fortify_on_demand_uploader,package,Java
 CVE-2019-1003023,CWE-79,jenkins,warnings_next_generation,package,Java
@@ -8394,24 +8418,24 @@ CVE-2019-1003076,CWE-352,jenkins,audit_to_database,package,Java
 CVE-2019-1003099,CWE-862,jenkins,openid,package,Java
 CVE-2019-1003006,CWE-862,jenkins,groovy,package,Java
 CVE-2019-1003086,CWE-352,jenkins,chef_sinatra,package,Java
-CVE-2019-1003014,CWE-79,redhat,openshift_container_platform,package,HCL
+CVE-2019-1003014,CWE-79,jenkins,config_file_provider,package,Java
 CVE-2019-1003077,CWE-862,jenkins,audit_to_database,package,Java
 CVE-2019-1003007,CWE-352,jenkins,warnings,package,Java
 CVE-2019-1003085,CWE-862,jenkins,zephyr_enterprise_test_management,package,Java
 CVE-2019-1003081,CWE-862,jenkins,openshift_deployer,package,Java
 CVE-2019-1003028,CWE-918,jenkins,jms_messaging,package,Java
-CVE-2019-1003010,CWE-352,redhat,openshift_container_platform,package,HCL
+CVE-2019-1003010,CWE-352,jenkins,git,package,Java
 CVE-2019-1003096,CWE-522,jenkins,testfairy,package,Java
 CVE-2019-1003084,CWE-352,jenkins,zephyr_enterprise_test_management,package,Java
 CVE-2019-1003080,CWE-352,jenkins,openshift_deployer,package,Java
 CVE-2019-1003020,CWE-918,jenkins,kanboard,package,Java
-CVE-2019-1003012,CWE-352,redhat,openshift_container_platform,package,HCL
+CVE-2019-1003012,CWE-352,jenkins,blue_ocean,package,Java
 CVE-2019-1003015,CWE-611,jenkins,job_import,package,Java
 CVE-2019-1003016,CWE-352,jenkins,job_import,package,Java
 CVE-2019-1003079,CWE-862,jenkins,vmware_lab_manager_slaves,package,Java
-CVE-2019-1003013,CWE-79,redhat,openshift_container_platform,package,HCL
+CVE-2019-1003013,CWE-79,jenkins,blue_ocean,package,Java
 CVE-2019-1003035,CWE-862,jenkins,azure_vm_agents,utility,Java
-CVE-2019-1003011,CWE-674,jenkins,token_macro,package,Java
+CVE-2019-1003011,CWE-674,redhat,openshift_container_platform,package,HCL
 CVE-2019-1003058,CWE-352,jenkins,ftp_publisher,package,Java
 CVE-2019-1003045,CWE-522,trustsource,ecs_publisher,package,Java
 CVE-2019-1003078,CWE-352,jenkins,vmware_lab_manager_slaves,package,Java
@@ -8535,6 +8559,7 @@ CVE-2019-5311,CWE-79,yunucms,yunucms,web_application,PHP
 CVE-2019-5310,CWE-79,yunucms,yunucms,web_application,PHP
 CVE-2019-5312,CWE-611,wxjava_project,wxjava,framework,Java
 CVE-2019-3787,CWE-640,pivotal_software,cloud_foundry_uaa-release,server,Java
+CVE-2019-3772,CWE-611,vmware,spring_integration,server,Java
 CVE-2019-3799,CWE-22,vmware,spring_cloud_config,server,Java
 CVE-2019-3773,CWE-611,pivotal_software,spring_web_services,server,Java
 CVE-2019-3782,CWE-522,cloudfoundry,credhub_cli,utility,Go
@@ -8700,23 +8725,23 @@ CVE-2019-11253,CWE-776,redhat,openshift_container_platform,package,HCL
 CVE-2019-11271,CWE-522,cloud_foundry,bosh,server,Ruby
 CVE-2019-11277,CWE-90,cloudfoundry,cf-deployment,server,Go
 CVE-2019-11244,CWE-732,redhat,openshift_container_platform,package,HCL
-CVE-2019-11290,CWE-532,cloudfoundry,cf-deployment,server,Go
+CVE-2019-11290,CWE-532,cloudfoundry,user_account_and_authentication,server,Java
 CVE-2019-11250,CWE-532,redhat,openshift_container_platform,package,HCL
 CVE-2019-11215,CWE-79,combodo,itop,web_application,PHP
 CVE-2019-11270,CWE-732,pivotal_software,cloud_foundry_uaa,server,Java
-CVE-2019-11293,CWE-532,cloudfoundry,cf-deployment,server,Go
+CVE-2019-11293,CWE-532,cloudfoundry,user_account_and_authentication,server,Java
 CVE-2019-11223,CWE-434,supportcandy,supportcandy,extension,PHP
 CVE-2019-11287,CWE-134,redhat,openstack,package,Python
 CVE-2019-11231,CWE-22,get-simple,getsimple_cms,web_application,PHP
 CVE-2019-11268,CWE-116,pivotal_software,cloud_foundry_uaa-release,server,Java
-CVE-2019-11294,CWE-863,cloudfoundry,cf-deployment,server,Go
+CVE-2019-11294,CWE-863,cloudfoundry,capi-release,server,Ruby
 CVE-2019-11249,CWE-22,redhat,openshift_container_platform,package,HCL
 CVE-2019-11217,CWE-77,bonobogitserver,bonobo_git_server,server,C#
 CVE-2019-11247,CWE-863,redhat,openshift_container_platform,package,HCL
 CVE-2019-11269,CWE-601,pivotal_software,spring_security_oauth,framework,Java
 CVE-2019-11291,CWE-79,redhat,openstack,package,Python
 CVE-2019-11274,CWE-79,cloudfoundry,user_account_and_authentication,server,Java
-CVE-2019-11283,CWE-532,cloudfoundry,cf-deployment,server,Go
+CVE-2019-11283,CWE-532,pivotal_software,cloud_foundry_smb_volume,server,Go
 CVE-2019-11281,CWE-79,redhat,openstack,package,Python
 CVE-2019-11284,CWE-522,pivotal,reactor_netty,server,Java
 CVE-2019-9576,CWE-79,adenion,blog2social,extension,PHP
@@ -8758,10 +8783,10 @@ CVE-2019-6961,CWE-862,rdkcentral,rdkb_ccsppandm,framework,C
 CVE-2019-6974,CWE-416,redhat,openshift_container_platform,package,HCL
 CVE-2019-6966,CWE-770,axiosys,bento4,framework,C++
 CVE-2019-6962,CWE-78,rdkcentral,rdkb_ccsppandm,framework,C
-CVE-2019-18213,CWE-611,xml_language_server_project,xml_server_project,server,Java
+CVE-2019-18213,CWE-611,theia_xml_extension_project,theia_xml_extension,extension,TypeScript
 CVE-2019-18244,CWE-532,osisoft,pi_vision,utility,JavaScript
 CVE-2019-18220,CWE-352,sitemagic,sitemagic,web_application,JavaScript
-CVE-2019-18212,CWE-22,xml_language_server_project,xml_server_project,server,Java
+CVE-2019-18212,CWE-22,theia_xml_extension_project,theia_xml_extension,extension,TypeScript
 CVE-2019-18219,CWE-79,sitemagic,sitemagic,web_application,JavaScript
 CVE-2019-18211,CWE-502,orckestra,c1_cms,web_application,C#
 CVE-2019-18209,CWE-79,etherpad,etherpad,web_application,TypeScript
@@ -8857,7 +8882,7 @@ CVE-2019-9911,CWE-79,nextscripts,social_networks_auto_poster,extension,PHP
 CVE-2019-9909,CWE-79,givewp,givewp,extension,PHP
 CVE-2019-9926,CWE-352,labkey,labkey_server,server,Java
 CVE-2019-9901,CWE-706,envoyproxy,envoy,server,C++
-CVE-2019-9978,CWE-79,warfareplugins,social_warfare,extension,PHP
+CVE-2019-9978,CWE-79,warfareplugins,social_warfare_pro,extension,JavaScript
 CVE-2019-9912,CWE-79,codecabin,wp_go_maps,extension,JavaScript
 CVE-2019-9908,CWE-79,hivewebstudios,font_organizer,extension,PHP
 CVE-2019-9914,CWE-79,yop-poll,yop-poll,extension,PHP
@@ -8881,7 +8906,7 @@ CVE-2019-11325,CWE-116,sensiolabs,symfony,framework,PHP
 CVE-2019-11376,CWE-94,brassica,soy_cms,web_application,PHP
 CVE-2019-11344,CWE-434,pluck-cms,pluck,web_application,PHP
 CVE-2019-11318,CWE-79,synacor,zimbra_collaboration_server,server,Perl
-CVE-2019-11358,CWE-1321,jquery,jquery,package,Perl
+CVE-2019-11358,CWE-1321,backdropcms,backdrop,web_application,PHP
 CVE-2019-11328,CWE-732,sylabs,singularity,server,Go
 CVE-2019-11392,CWE-611,dotnetblogengine,blogengine.net,framework,C#
 CVE-2019-11377,CWE-434,wcms,wcms,web_application,PHP
@@ -9006,12 +9031,12 @@ CVE-2019-3889,CWE-79,redhat,openshift_container_platform,package,HCL
 CVE-2019-3867,CWE-613,redhat,quay,server,Jinja
 CVE-2019-3875,CWE-295,redhat,keycloak,package,Java
 CVE-2019-3877,CWE-601,mod_auth_mellon_project,mod_auth_mellon,server,C
-CVE-2019-3800,CWE-522,pivotal,cloud_foundry_deployment,server,Go
+CVE-2019-3800,CWE-522,newrelic,dotnet_extension_buildpack,extension,Go
 CVE-2019-3876,CWE-352,redhat,openshift_container_platform,package,HCL
 CVE-2019-3829,CWE-415,gnu,gnutls,framework,C
 CVE-2019-3899,CWE-306,redhat,openshift_container_platform,package,HCL
 CVE-2019-3824,CWE-125,samba,samba,server,C
-CVE-2019-3801,CWE-319,cloudfoundry,cf-deployment,server,Go
+CVE-2019-3801,CWE-319,cloudfoundry,uaa_release,server,Ruby
 CVE-2019-3878,CWE-305,mod_auth_mellon_project,mod_auth_mellon,server,C
 CVE-2019-3830,CWE-532,redhat,openstack,package,Python
 CVE-2019-3836,CWE-824,gnu,gnutls,framework,C
@@ -9220,7 +9245,7 @@ CVE-2019-10198,CWE-306,theforeman,foreman-tasks,framework,Ruby
 CVE-2019-10161,CWE-22,redhat,libvirt,utility,C
 CVE-2019-10131,CWE-193,imagemagick,imagemagick,utility,C
 CVE-2019-10139,CWE-522,ovirt,cockpit-ovirt,framework,JavaScript
-CVE-2019-10102,CWE-319,jetbrains,ktor,framework,Kotlin
+CVE-2019-10102,CWE-319,jetbrains,kotlin,framework,Kotlin
 CVE-2019-10193,CWE-787,redhat,openstack,package,Python
 CVE-2019-10101,CWE-319,jetbrains,kotlin,framework,Kotlin
 CVE-2019-10194,CWE-532,ovirt,ovirt,server,Java
@@ -9229,6 +9254,7 @@ CVE-2019-10132,CWE-732,redhat,libvirt,utility,C
 CVE-2019-10167,CWE-22,redhat,libvirt,utility,C
 CVE-2019-10141,CWE-89,redhat,openstack,package,Python
 CVE-2019-10195,CWE-532,freeipa,freeipa,server,Python
+CVE-2019-10172,CWE-611,redhat,jboss_fuse,package,Java
 CVE-2019-10135,CWE-502,osbs-client_project,osbs-client,utility,Python
 CVE-2019-10199,CWE-352,redhat,keycloak,package,Java
 CVE-2019-10165,CWE-532,redhat,openshift_container_platform,package,HCL
@@ -9260,7 +9286,7 @@ CVE-2019-14867,CWE-94,freeipa,freeipa,server,Python
 CVE-2019-14841,CWE-281,redhat,decision_manager,server,Java
 CVE-2019-14859,CWE-347,redhat,openstack,package,Python
 CVE-2019-14832,CWE-863,redhat,keycloak,package,Java
-CVE-2019-14892,CWE-502,redhat,openshift_container_platform,package,HCL
+CVE-2019-14892,CWE-502,redhat,jboss_fuse,package,Java
 CVE-2019-14833,CWE-521,samba,samba,server,C
 CVE-2019-14845,CWE-494,redhat,openshift,package,HCL
 CVE-2019-14886,CWE-312,redhat,decision_manager,server,Java
@@ -9318,7 +9344,7 @@ CVE-2019-10297,CWE-522,jenkins,sametime,package,Java
 CVE-2019-10244,CWE-611,eclipse,kura,framework,Java
 CVE-2019-10283,CWE-522,jenkins,mabl,package,Java
 CVE-2019-10298,CWE-522,jenkins,koji,package,Java
-CVE-2019-10225,CWE-522,redhat,openshift_container_platform,package,HCL
+CVE-2019-10225,CWE-522,redhat,openshift,package,HCL
 CVE-2019-10270,CWE-640,ultimatemember,ultimate_member,extension,PHP
 CVE-2019-10288,CWE-522,jenkins,jabber_server,package,Java
 CVE-2019-10242,CWE-22,eclipse,kura,framework,Java
@@ -9340,10 +9366,11 @@ CVE-2019-10294,CWE-522,jenkins,kmap,package,Java
 CVE-2019-10296,CWE-522,jenkins,serena_sra_deploy,package,Java
 CVE-2019-10281,CWE-522,jenkins,relution_enterprise_appstore_publisher,package,Java
 CVE-2019-10255,CWE-601,jupyter,notebook,web_application,Jupyter Notebook
-CVE-2019-10219,CWE-79,oracle,vm_virtualbox,utility,C
+CVE-2019-10219,CWE-79,oracle,mysql_server,server,C++
 CVE-2019-10214,CWE-522,redhat,openshift_container_platform,package,HCL
 CVE-2019-10278,CWE-352,jenkins,jenkins-reviewbot,package,Java
 CVE-2019-10285,CWE-522,jenkins,minio_storage,package,Java
+CVE-2019-10212,CWE-532,redhat,jboss_fuse,package,Java
 CVE-2019-10262,CWE-89,bluecms_project,bluecms,web_application,PHP
 CVE-2019-10287,CWE-522,jenkins,youtrack-plugin,package,Java
 CVE-2019-10277,CWE-522,jenkins,starteam,package,Java
@@ -9400,6 +9427,7 @@ CVE-2019-9015,CWE-22,mopcms,mopcms,web_application,PHP
 CVE-2019-9078,CWE-79,zzcms,zzcms,web_application,PHP
 CVE-2019-9051,CWE-352,pluck-cms,pluck,web_application,PHP
 CVE-2019-9042,CWE-434,sitemagic,sitemagic_cms,web_application,JavaScript
+CVE-2019-9082,CWE-94,opensourcebms,open_source_background_management_system,web_application,PHP
 CVE-2019-9052,CWE-352,pluck-cms,pluck,web_application,PHP
 CVE-2019-9050,CWE-434,pluck-cms,pluck,web_application,PHP
 CVE-2019-9025,CWE-125,php,php,framework,C
@@ -9587,7 +9615,7 @@ CVE-2019-10348,CWE-312,jenkins,gogs,package,Java
 CVE-2019-10337,CWE-611,jenkins,token_macro,package,Java
 CVE-2019-10331,CWE-352,jenkins,electricflow,package,Java
 CVE-2019-10370,CWE-532,jenkins,mask_passwords,package,Java
-CVE-2019-10355,CWE-704,redhat,openshift_container_platform,package,HCL
+CVE-2019-10355,CWE-704,jenkins,script_security,package,Java
 CVE-2019-10350,CWE-312,jenkins,port_allocator,package,Java
 CVE-2019-10308,CWE-862,jenkins,static_analysis_utilities,package,Java
 CVE-2019-10366,CWE-522,jenkins,skytap_cloud_ci,package,Java
@@ -9841,15 +9869,17 @@ CVE-2020-11878,CWE-798,jitsi,meet,utility,TypeScript
 CVE-2020-11887,CWE-79,svg2png_project,svg2png,framework,JavaScript
 CVE-2020-11872,CWE-327,bluetrace,opentrace,utility,TypeScript
 CVE-2020-11868,CWE-346,ntp,ntp,utility,C
+CVE-2020-11883,CWE-209,divante,storefront-api,web_application,TypeScript
 CVE-2020-11895,CWE-125,libming,libming,framework,C
 CVE-2020-11807,CWE-434,sourcefabric,newscoop,web_application,PHP
 CVE-2020-8549,CWE-79,wpchill,strong_testimonials,extension,PHP
+CVE-2020-8567,CWE-22,google,secret_manager_provider_for_secret_store_csi_driver,utility,Go
 CVE-2020-8596,CWE-89,xnau,participants_database,utility,PHP
 CVE-2020-8518,CWE-94,horde,groupware,framework,PHP
 CVE-2020-19697,CWE-79,ipandao,editor.md,framework,JavaScript
 CVE-2020-19698,CWE-79,ipandao,editor.md,framework,JavaScript
 CVE-2020-19692,CWE-120,nginx,njs,framework,C
-CVE-2020-19678,CWE-22,pfsense,pfsense,server,PHP
+CVE-2020-19678,CWE-22,pfsense,suricata_package,package,PHP
 CVE-2020-19660,CWE-79,ipandao,editor.md,framework,JavaScript
 CVE-2020-19626,CWE-79,craftcms,craft_cms,web_application,PHP
 CVE-2020-19695,CWE-120,nginx,njs,framework,C
@@ -9879,6 +9909,7 @@ CVE-2020-21813,CWE-787,gnu,libredwg,framework,C
 CVE-2020-21827,CWE-787,gnu,libredwg,framework,C
 CVE-2020-21839,CWE-401,gnu,libredwg,framework,C
 CVE-2020-21832,CWE-787,gnu,libredwg,framework,C
+CVE-2020-27197,CWE-918,eclecticiq,opentaxii,framework,Python
 CVE-2020-27196,CWE-787,lightbend,play_framework,framework,Scala
 CVE-2020-27174,CWE-401,amazon,firecracker,utility,Rust
 CVE-2020-15999,CWE-787,freetype,freetype,framework,C
@@ -9974,6 +10005,7 @@ CVE-2020-10643,CWE-79,osisoft,pi_vision,utility,JavaScript
 CVE-2020-10614,CWE-79,osisoft,pi_vision,utility,JavaScript
 CVE-2020-10650,CWE-502,fasterxml,jackson-databind,framework,Java
 CVE-2020-10684,CWE-862,redhat,openstack,package,Python
+CVE-2020-10626,CWE-427,fazecast,jserialcomm,framework,C
 CVE-2020-10696,CWE-22,redhat,openshift_container_platform,package,HCL
 CVE-2020-10660,CWE-276,hashicorp,vault,server,Go
 CVE-2020-10685,CWE-459,redhat,openstack,package,Python
@@ -10111,7 +10143,7 @@ CVE-2020-22198,CWE-89,dedecms,dedecms,web_application,PHP
 CVE-2020-22148,CWE-79,piwigo,piwigo,web_application,PHP
 CVE-2020-22153,CWE-434,thedaylightstudio,fuel_cms,web_application,PHP
 CVE-2020-22150,CWE-79,piwigo,piwigo,web_application,PHP
-CVE-2020-36721,CWE-862,machothemes,medzone_lite,extension,PHP
+CVE-2020-36721,CWE-862,colorlib,newspaper_x,extension,PHP
 CVE-2020-36755,CWE-352,presscustomizr,customizr,extension,PHP
 CVE-2020-36703,CWE-79,elementor,website_builder,extension,PHP
 CVE-2020-36722,CWE-79,visualcomposer,visual_composer_website_builder,extension,PHP
@@ -10122,7 +10154,7 @@ CVE-2020-36729,CWE-862,2joomla,2j_slideshow,extension,PHP
 CVE-2020-36758,CWE-352,themeisle,rss_aggregator_by_feedzy,extension,PHP
 CVE-2020-36714,CWE-863,brizy,brizy,extension,JavaScript
 CVE-2020-36753,CWE-352,presscustomizr,hueman,extension,JavaScript
-CVE-2020-36708,CWE-94,machothemes,medzone_lite,extension,PHP
+CVE-2020-36708,CWE-94,colorlib,newspaper_x,extension,PHP
 CVE-2020-36710,CWE-863,wpserveur,wps_hide_login,extension,PHP
 CVE-2020-36740,CWE-352,radio_buttons_for_taxonomies_project,radio_buttons_for_taxonomies,extension,PHP
 CVE-2020-19118,CWE-79,yzmcms,yzmcms,web_application,PHP
@@ -10227,8 +10259,8 @@ CVE-2020-19902,CWE-22,wcms,wcms,web_application,PHP
 CVE-2020-19960,CWE-89,zzcms,zzcms,web_application,PHP
 CVE-2020-19951,CWE-352,yzmcms,yzmcms,web_application,PHP
 CVE-2020-19915,CWE-79,wuzhicms,wuzhicms,web_application,JavaScript
-CVE-2020-35936,CWE-79,pickplugins,team_showcase,extension,JavaScript
-CVE-2020-35939,CWE-502,pickplugins,team_showcase,extension,JavaScript
+CVE-2020-35936,CWE-79,pickplugins,post_grid,extension,JavaScript
+CVE-2020-35939,CWE-502,pickplugins,post_grid,extension,JavaScript
 CVE-2020-35950,CWE-352,xcloner,xcloner,extension,PHP
 CVE-2020-35945,CWE-434,elegant_themes,divi,extension,PHP
 CVE-2020-35912,CWE-362,lock_api_project,lock_api,package,Rust
@@ -10240,12 +10272,12 @@ CVE-2020-35946,CWE-79,semperplugins,all_in_one_seo_pack,extension,PHP
 CVE-2020-35948,CWE-863,xcloner,xcloner,extension,PHP
 CVE-2020-35971,CWE-79,yzmcms,yzmcms,web_application,PHP
 CVE-2020-35930,CWE-79,seopanel,seo_panel,utility,PHP
-CVE-2020-35937,CWE-79,pickplugins,team_showcase,extension,JavaScript
+CVE-2020-35937,CWE-79,pickplugins,post_grid,extension,JavaScript
 CVE-2020-35911,CWE-362,lock_api_project,lock_api,package,Rust
 CVE-2020-35973,CWE-79,zzcms,zzcms,web_application,PHP
 CVE-2020-35947,CWE-79,pagelayer,pagelayer,extension,PHP
 CVE-2020-35914,CWE-362,lock_api_project,lock_api,package,Rust
-CVE-2020-35938,CWE-502,pickplugins,team_showcase,extension,JavaScript
+CVE-2020-35938,CWE-502,pickplugins,post_grid,extension,JavaScript
 CVE-2020-35944,CWE-79,pagelayer,pagelayer,extension,PHP
 CVE-2020-35913,CWE-362,lock_api_project,lock_api,package,Rust
 CVE-2020-35972,CWE-352,yzmcms,yzmcms,web_application,PHP
@@ -10326,7 +10358,7 @@ CVE-2020-11724,CWE-444,openresty,openresty,web_application,C
 CVE-2020-15599,CWE-79,victor_cms_project,victor_cms,web_application,JavaScript
 CVE-2020-15586,CWE-362,cloudfoundry,cf-deployment,server,Go
 CVE-2020-15597,CWE-79,soplanning,soplanning,web_application,PHP
-CVE-2020-15509,CWE-319,nordicsemi,android_ble_library,package,Java
+CVE-2020-15509,CWE-319,nordicsemi,dfu_library,package,Java
 CVE-2020-15517,CWE-79,faceted_search_project,faceted_search,extension,PHP
 CVE-2020-15514,CWE-79,jh_captcha_project,jh_captcha,extension,PHP
 CVE-2020-15516,CWE-79,mm_forum_project,mm_forum,extension,PHP
@@ -10385,6 +10417,7 @@ CVE-2020-26133,CWE-732,dual_dhcp_dns_server_project,dual_dhcp_dns_server,server,
 CVE-2020-26129,CWE-444,jetbrains,ktor,framework,Kotlin
 CVE-2020-26158,CWE-79,leanote,leanote,utility,JavaScript
 CVE-2020-26153,CWE-79,eventespresso,event_espresso,extension,PHP
+CVE-2020-26149,CWE-522,linuxfoundation,nats.js,package,TypeScript
 CVE-2020-26120,CWE-79,mediawiki,mediawiki,framework,PHP
 CVE-2020-26121,CWE-863,mediawiki,mediawiki,framework,PHP
 CVE-2020-26157,CWE-79,leanote,leanote,utility,JavaScript
@@ -10545,7 +10578,7 @@ CVE-2020-10776,CWE-79,redhat,keycloak,package,Java
 CVE-2020-10734,CWE-352,redhat,keycloak,package,Java
 CVE-2020-10753,CWE-113,redhat,openstack,package,Python
 CVE-2020-10703,CWE-476,redhat,libvirt,utility,C
-CVE-2020-10714,CWE-384,redhat,wildfly_elytron,server,Java
+CVE-2020-10714,CWE-384,redhat,jboss_fuse,package,Java
 CVE-2020-10786,CWE-863,vestacp,vesta_control_panel,utility,PHP
 CVE-2020-10735,CWE-704,redhat,quay,server,Jinja
 CVE-2020-10730,CWE-416,samba,samba,server,C
@@ -10807,7 +10840,7 @@ CVE-2020-24791,CWE-89,thedaylightstudio,fuel_cms,web_application,PHP
 CVE-2020-24715,CWE-295,scalyr,scalyr_agent,server,Python
 CVE-2020-1917,CWE-787,facebook,hhvm,utility,C++
 CVE-2020-1967,CWE-476,oracle,mysql,server,C++
-CVE-2020-1971,CWE-476,oracle,mysql,server,C++
+CVE-2020-1971,CWE-476,oracle,mysql_server,server,C++
 CVE-2020-1916,CWE-787,facebook,hhvm,utility,C++
 CVE-2020-1918,CWE-125,facebook,hhvm,utility,C++
 CVE-2020-1919,CWE-125,facebook,hhvm,utility,C++
@@ -10914,17 +10947,20 @@ CVE-2020-25675,CWE-190,imagemagick,imagemagick,utility,C
 CVE-2020-25674,CWE-122,imagemagick,imagemagick,utility,C
 CVE-2020-25658,CWE-385,redhat,openstack_platform,framework,Ruby
 CVE-2020-25625,CWE-835,qemu,qemu,utility,C
+CVE-2020-25689,CWE-401,redhat,jboss_fuse,package,Java
 CVE-2020-25648,CWE-770,mozilla,network_security_services,framework,C
 CVE-2020-25667,CWE-122,imagemagick,imagemagick,utility,C
 CVE-2020-25637,CWE-415,redhat,libvirt,utility,C
 CVE-2020-25663,CWE-416,imagemagick,imagemagick,utility,C
 CVE-2020-25649,CWE-611,fasterxml,jackson-databind,framework,Java
 CVE-2020-25660,CWE-294,redhat,openshift_container_platform,package,HCL
+CVE-2020-25638,CWE-89,hibernate,hibernate_orm,framework,Java
 CVE-2020-25665,CWE-125,imagemagick,imagemagick,utility,C
 CVE-2020-25692,CWE-476,openldap,openldap,server,C
 CVE-2020-25664,CWE-122,imagemagick,imagemagick,utility,C
 CVE-2020-25613,CWE-444,ruby-lang,ruby,framework,Ruby
 CVE-2020-25639,CWE-476,redhat,openshift_container_platform,package,HCL
+CVE-2020-25644,CWE-401,redhat,jboss_fuse,package,Java
 CVE-2020-25624,CWE-125,qemu,qemu,utility,C
 CVE-2020-25666,CWE-190,imagemagick,imagemagick,utility,C
 CVE-2020-16845,CWE-835,golang,go,framework,Go
@@ -11123,7 +11159,7 @@ CVE-2020-23448,CWE-306,newbee-mall_project,newbee-mall,web_application,Java
 CVE-2020-4053,CWE-22,helm,helm,utility,Go
 CVE-2020-4075,CWE-552,electronjs,electron,utility,C++
 CVE-2020-4050,CWE-288,wordpress,wordpress,web_application,PHP
-CVE-2020-4038,CWE-79,prisma,graphql-playground-html,package,TypeScript
+CVE-2020-4038,CWE-79,prisma,graphql-playground-middleware-lambda,package,TypeScript
 CVE-2020-4052,CWE-79,requarks,wiki.js,framework,Vue
 CVE-2020-4059,CWE-77,mversion_project,mversion,framework,JavaScript
 CVE-2020-4047,CWE-80,wordpress,wordpress,web_application,PHP
@@ -11531,6 +11567,7 @@ CVE-2020-14700,CWE-125,oracle,vm_virtualbox,utility,C
 CVE-2020-14704,CWE-908,oracle,vm_virtualbox,utility,C
 CVE-2020-21400,CWE-89,phpmywind,phpmywind,web_application,PHP
 CVE-2020-21495,CWE-79,xiuno,xiunobbs,web_application,PHP
+CVE-2020-21487,CWE-79,netgate,pfsense_acme_package,package,PHP
 CVE-2020-21483,CWE-434,jizhicms,jizhicms,web_application,PHP
 CVE-2020-21494,CWE-79,xiuno,xiunobbs,web_application,PHP
 CVE-2020-21496,CWE-79,xiuno,xiunobbs,web_application,PHP
@@ -11566,9 +11603,9 @@ CVE-2020-24138,CWE-79,wcms,wcms,web_application,PHP
 CVE-2020-24146,CWE-22,cminds,cm_download_manager,extension,PHP
 CVE-2020-24140,CWE-918,wcms,wcms,web_application,PHP
 CVE-2020-24135,CWE-79,wcms,wcms,web_application,PHP
-CVE-2020-5400,CWE-532,cloudfoundry,cf-deployment,server,Go
+CVE-2020-5400,CWE-532,cloudfoundry,capi-release,server,Ruby
 CVE-2020-5411,CWE-502,pivotal_software,spring_batch,server,Java
-CVE-2020-5418,CWE-863,cloudfoundry,cf-deployment,server,Go
+CVE-2020-5418,CWE-863,cloudfoundry,capi-release,server,Ruby
 CVE-2020-5416,CWE-404,cloudfoundry,cf-deployment,server,Go
 CVE-2020-5496,CWE-787,fontforge,fontforge,utility,C
 CVE-2020-5415,CWE-290,pivotal_software,concourse,utility,Go
@@ -11576,13 +11613,14 @@ CVE-2020-5497,CWE-79,mitreid,connect,framework,Java
 CVE-2020-5409,CWE-601,pivotal_software,concourse,utility,Go
 CVE-2020-5404,CWE-522,pivotal,reactor_netty,server,Java
 CVE-2020-5407,CWE-347,pivotal_software,spring_security,framework,Java
+CVE-2020-5413,CWE-502,vmware,spring_integration,server,Java
 CVE-2020-5405,CWE-22,vmware,spring_cloud_config,server,Java
 CVE-2020-5428,CWE-89,vmware,spring_cloud_task,server,Java
 CVE-2020-5412,CWE-441,vmware,spring_cloud_netflix,server,Java
 CVE-2020-5410,CWE-22,vmware,spring_cloud_config,server,Java
 CVE-2020-5420,CWE-754,cloudfoundry,cf-deployment,server,Go
-CVE-2020-5402,CWE-352,cloudfoundry,cf-deployment,server,Go
-CVE-2020-5417,CWE-732,cloudfoundry,cf-deployment,server,Go
+CVE-2020-5402,CWE-352,cloudfoundry,user_account_and_authentication,server,Java
+CVE-2020-5417,CWE-732,cloudfoundry,capi-release,server,Ruby
 CVE-2020-5422,CWE-214,cloud_foundry,bosh_system_metrics_server,server,Go
 CVE-2020-5408,CWE-329,pivotal_software,spring_security,framework,Java
 CVE-2020-28874,CWE-404,projectsend,projectsend,web_application,PHP
@@ -11690,7 +11728,7 @@ CVE-2020-1740,CWE-377,redhat,openstack,package,Python
 CVE-2020-1725,CWE-863,redhat,keycloak,package,Java
 CVE-2020-1733,CWE-362,redhat,openstack,package,Python
 CVE-2020-1712,CWE-416,redhat,openshift_container_platform,package,HCL
-CVE-2020-1759,CWE-323,redhat,openshift,package,HCL
+CVE-2020-1759,CWE-323,redhat,openstack,package,Python
 CVE-2020-1720,CWE-862,redhat,decision_manager,server,Java
 CVE-2020-1736,CWE-732,redhat,openstack,package,Python
 CVE-2020-1721,CWE-79,dogtagpki,dogtagpki,utility,Java
@@ -11721,7 +11759,7 @@ CVE-2020-18657,CWE-79,get-simple,getsimplecms,web_application,PHP
 CVE-2020-18654,CWE-79,wuzhicms,wuzhicms,web_application,JavaScript
 CVE-2020-14393,CWE-787,perl,database_interface,framework,Perl
 CVE-2020-14389,CWE-916,redhat,keycloak,package,Java
-CVE-2020-14394,CWE-835,redhat,openstack_platform,framework,Ruby
+CVE-2020-14394,CWE-835,qemu,qemu,utility,C
 CVE-2020-14355,CWE-120,redhat,openstack,package,Python
 CVE-2020-14366,CWE-22,redhat,keycloak,package,Java
 CVE-2020-14302,CWE-294,redhat,keycloak,package,Java
@@ -11734,6 +11772,7 @@ CVE-2020-14339,CWE-772,redhat,libvirt,utility,C
 CVE-2020-14370,CWE-212,redhat,openshift_container_platform,package,HCL
 CVE-2020-14318,CWE-266,samba,samba,server,C
 CVE-2020-14368,CWE-352,eclipse,che,server,TypeScript
+CVE-2020-14307,CWE-404,redhat,jboss_fuse,package,Java
 CVE-2020-14333,CWE-79,ovirt,ovirt-engine,server,Java
 CVE-2020-14392,CWE-822,perl,database_interface,framework,Perl
 CVE-2020-14336,CWE-770,redhat,openshift_container_platform,package,HCL
@@ -11951,6 +11990,7 @@ CVE-2020-7795,CWE-77,get-npm-package-version_project,get-npm-package-version,pac
 CVE-2020-7784,CWE-78,ts-process-promises_project,ts-process-promises,package,TypeScript
 CVE-2020-7781,CWE-78,connection-tester_project,connection-tester,package,JavaScript
 CVE-2020-7718,CWE-1321,gammautils_project,gammautils,package,JavaScript
+CVE-2020-7708,CWE-1321,irrelon,irrelon-path,package,TypeScript
 CVE-2020-7736,CWE-1321,bmoor_project,bmoor,package,JavaScript
 CVE-2020-7709,CWE-1321,manuelstofer,json-pointer,package,JavaScript
 CVE-2020-7714,CWE-1321,realseriousgames,confucious,package,JavaScript
@@ -11979,6 +12019,7 @@ CVE-2020-7766,CWE-1321,json-ptr_project,json-ptr,framework,TypeScript
 CVE-2020-7719,CWE-1321,locutus,locutus,package,JavaScript
 CVE-2020-7722,CWE-1321,nodee-utils_project,nodee-utils,package,JavaScript
 CVE-2020-7741,CWE-79,hello.js_project,hello.js,package,JavaScript
+CVE-2020-7712,CWE-78,joyent,json,package,JavaScript
 CVE-2020-7789,CWE-78,node-notifier_project,node-notifier,package,JavaScript
 CVE-2020-7775,CWE-78,freediskspace_project,freediskproject,package,JavaScript
 CVE-2020-19049,CWE-79,mybb,mybb,web_application,PHP
@@ -12080,7 +12121,7 @@ CVE-2020-26895,CWE-354,lightning_network_daemon_project,lightning_network_daemon
 CVE-2020-26883,CWE-674,lightbend,play_framework,framework,Scala
 CVE-2020-26896,CWE-354,lightning_network_daemon_project,lightning_network_daemon,server,Go
 CVE-2020-12666,CWE-601,go-macaron,macaron,framework,Go
-CVE-2020-12638,CWE-319,espressif,esp-idf,framework,C
+CVE-2020-12638,CWE-319,espressif,esp8266_rtos_sdk,package,C
 CVE-2020-12604,CWE-401,envoyproxy,envoy,server,C++
 CVE-2020-12649,CWE-22,gurbalib_project,gurbalib,framework,C
 CVE-2020-12620,CWE-78,pi-hole,pi-hole,server,JavaScript
@@ -12106,6 +12147,7 @@ CVE-2020-14144,CWE-78,gitea,gitea,web_application,Go
 CVE-2020-10808,CWE-78,vestacp,vesta_control_panel,utility,PHP
 CVE-2020-10804,CWE-89,phpmyadmin,phpmyadmin,web_application,PHP
 CVE-2020-10817,CWE-89,custom_searchable_data_entry_system_project,custom_searchable_data_entry_system,extension,PHP
+CVE-2020-10806,CWE-434,ez,ez_publish-kernel,web_application,PHP
 CVE-2020-10803,CWE-79,phpmyadmin,phpmyadmin,web_application,PHP
 CVE-2020-10807,CWE-290,mitre,caldera,utility,Python
 CVE-2020-10802,CWE-89,phpmyadmin,phpmyadmin,web_application,PHP
@@ -12313,6 +12355,7 @@ CVE-2017-2652,CWE-862,jenkins,distributed_fork,package,Java
 CVE-2017-2638,CWE-306,infinispan,infinispan,framework,Java
 CVE-2017-2639,CWE-295,redhat,cloudforms,utility,Ruby
 CVE-2017-2646,CWE-835,redhat,keycloak,package,Java
+CVE-2017-2667,CWE-295,theforeman,hammer_cli,framework,Ruby
 CVE-2017-2630,CWE-121,qemu,qemu,utility,C
 CVE-2017-2673,CWE-863,redhat,openstack,package,Python
 CVE-2017-12790,CWE-352,metinfo,metinfo,web_application,PHP
@@ -12412,6 +12455,7 @@ CVE-2017-16069,CWE-506,nodeffmpeg_project,nodeffmpeg,utility,JavaScript
 CVE-2017-16057,CWE-506,nodemssql_project,nodemssql,utility,JavaScript
 CVE-2017-16085,CWE-22,tinyserver2_project,tinyserver2,utility,JavaScript
 CVE-2017-16037,CWE-22,gomeplus-h5-proxy_project,gomeplus-h5-proxy,utility,JavaScript
+CVE-2017-16024,CWE-377,sync-exec_project,sync-exec,package,CoffeeScript
 CVE-2017-16051,CWE-506,sqliter_project,sqliter,utility,JavaScript
 CVE-2017-16019,CWE-79,gitbook,gitbook,utility,TypeScript
 CVE-2017-16068,CWE-506,ffmepg_project,ffmepg,package,JavaScript
@@ -12550,6 +12594,7 @@ CVE-2017-12130,CWE-476,tinysvcmdns_project,tinysvcmdns,utility,C
 CVE-2017-12109,CWE-190,libxls_project,libxls,framework,C
 CVE-2017-12195,CWE-295,redhat,openshift_container_platform,package,HCL
 CVE-2017-12161,CWE-640,keycloak,keycloak,utility,Java
+CVE-2017-12196,CWE-863,redhat,jboss_fuse,package,Java
 CVE-2017-17742,CWE-113,ruby-lang,ruby,framework,Ruby
 CVE-2017-17703,CWE-79,synacor,zimbra_collaboration_suite,server,Perl
 CVE-2017-18905,CWE-613,mattermost,mattermost_server,server,TypeScript
@@ -12896,6 +12941,7 @@ CVE-2018-10430,CWE-79,dilicms,dilicms,web_application,PHP
 CVE-2018-10405,CWE-295,google,santa,utility,Objective-C++
 CVE-2018-10406,CWE-295,yelp,osxcollector,utility,Python
 CVE-2018-10422,CWE-79,hongcms_project,hongcms,web_application,PHP
+CVE-2018-10404,CWE-295,objective-see,knockknock,utility,Objective-C
 CVE-2018-10469,CWE-434,b3log,symphony,framework,Java
 CVE-2018-18326,CWE-331,dnnsoftware,dotnetnuke,web_application,C#
 CVE-2018-18374,CWE-79,metinfo,metinfo,web_application,PHP
@@ -13114,7 +13160,7 @@ CVE-2018-10268,CWE-79,fastadmin,fastadmin,utility,JavaScript
 CVE-2018-10205,CWE-772,hyper,hyperstart,framework,C
 CVE-2018-10295,CWE-352,chemcms_project,chemcms,web_application,PHP
 CVE-2018-10228,CWE-79,limesurvey,limesurvey,web_application,JavaScript
-CVE-2018-10237,CWE-770,redhat,openshift_container_platform,package,HCL
+CVE-2018-10237,CWE-770,redhat,openstack,package,Python
 CVE-2018-10248,CWE-352,wuzhicms,wuzhicms,web_application,JavaScript
 CVE-2018-1000401,CWE-522,jenkins,aws_codepipeline,package,Java
 CVE-2018-1000413,CWE-79,jenkins,config_file_provider,package,Java
@@ -13158,7 +13204,7 @@ CVE-2018-10931,CWE-749,cobbler_project,cobbler,server,Python
 CVE-2018-10937,CWE-79,redhat,openshift_container_platform,package,HCL
 CVE-2018-10914,CWE-476,gluster,glusterfs,utility,C
 CVE-2018-10913,CWE-209,gluster,glusterfs,utility,C
-CVE-2018-10939,CWE-79,synacor,zimbra_collaboration_suite,server,Perl
+CVE-2018-10939,CWE-79,zimbra,zimbra_collaboration_suite,server,Perl
 CVE-2018-10994,CWE-79,signal,signal-desktop,utility,TypeScript
 CVE-2018-10904,CWE-426,gluster,glusterfs,utility,C
 CVE-2018-21022,CWE-89,centreon,centreon_web,server,PHP
@@ -13248,8 +13294,9 @@ CVE-2018-11098,CWE-434,frog_cms_project,frog_cms,web_application,PHP
 CVE-2018-11018,CWE-352,pbootcms,pbootcms,web_application,JavaScript
 CVE-2018-11047,CWE-863,pivotal_software,cloud_foundry_uaa,server,Java
 CVE-2018-11097,CWE-772,cstring_project,cstring,framework,C
+CVE-2018-11082,CWE-307,pivotal_software,cloudfoundry_uaa,server,Java
 CVE-2018-11087,CWE-295,pivotal_software,spring_advanced_message_queuing_protocol,framework,Java
-CVE-2018-11041,CWE-601,pivotal_software,cloud_foundry_uaa,server,Java
+CVE-2018-11041,CWE-601,pivotal_software,cloud_foundry_uaa-release,server,Java
 CVE-2018-11092,CWE-352,admin_notes_project,admin_notes,framework,PHP
 CVE-2018-11003,CWE-352,yxcms,yxcms,web_application,PHP
 CVE-2018-11011,CWE-79,halo,halo,server,Java
@@ -13287,6 +13334,7 @@ CVE-2018-16598,CWE-441,amazon,amazon_web_services_freertos,framework,C
 CVE-2018-16522,CWE-824,amazon,amazon_web_services_freertos,framework,C
 CVE-2018-16548,CWE-772,zziplib_project,zziplib,framework,Perl
 CVE-2018-16540,CWE-416,redhat,openshift_container_platform,package,HCL
+CVE-2018-16521,CWE-611,openmrs,html_form_entry,framework,Java
 CVE-2018-16551,CWE-79,lavalite,lavalite,framework,PHP
 CVE-2018-16523,CWE-369,amazon,amazon_web_services_freertos,framework,C
 CVE-2018-16514,CWE-79,mantisbt,mantisbt,web_application,PHP
@@ -13561,7 +13609,7 @@ CVE-2018-13011,CWE-125,gopro,gpmf-parser,utility,C
 CVE-2018-0775,CWE-787,microsoft,chakracore,framework,JavaScript
 CVE-2018-0770,CWE-787,microsoft,chakracore,framework,JavaScript
 CVE-2018-0786,CWE-295,microsoft,powershell_core,utility,C#
-CVE-2018-0735,CWE-327,oracle,mysql,server,C++
+CVE-2018-0735,CWE-327,oracle,vm_virtualbox,utility,C
 CVE-2018-0776,CWE-787,microsoft,chakracore,framework,JavaScript
 CVE-2018-0774,CWE-787,microsoft,chakracore,framework,JavaScript
 CVE-2018-0780,CWE-125,microsoft,chakracore,framework,JavaScript
@@ -13594,13 +13642,13 @@ CVE-2018-8814,CWE-352,wolfcms,wolf_cms,web_application,PHP
 CVE-2018-8809,CWE-125,radare,radare2,utility,C
 CVE-2018-8806,CWE-416,libming,libming,framework,C
 CVE-2018-8811,CWE-352,alkacon,opencms,web_application,Java
-CVE-2018-8823,CWE-94,prestashop,prestashop,web_application,PHP
+CVE-2018-8823,CWE-94,responsive_mega_menu_pro_project,responsive_mega_menu_pro,extension,PHP
 CVE-2018-8807,CWE-416,libming,libming,framework,C
 CVE-2018-8893,CWE-352,zblogcn,z-blogphp,web_application,PHP
 CVE-2018-8805,CWE-79,yxcms,yxcms,web_application,PHP
 CVE-2018-8815,CWE-79,alkacon,opencms,web_application,Java
 CVE-2018-8810,CWE-125,radare,radare2,utility,C
-CVE-2018-8824,CWE-89,prestashop,prestashop,web_application,PHP
+CVE-2018-8824,CWE-89,responsive_mega_menu_pro_project,responsive_mega_menu_pro,extension,PHP
 CVE-2018-8804,CWE-415,imagemagick,imagemagick,utility,C
 CVE-2018-13558,CWE-190,rhovit_project,rhovit,utility,CSS
 CVE-2018-13535,CWE-190,paccoin,paccoin,utility,C++
@@ -13655,7 +13703,7 @@ CVE-2018-6333,CWE-79,facebook,nuclide,framework,JavaScript
 CVE-2018-6331,CWE-502,facebook,buck,framework,Java
 CVE-2018-6315,CWE-125,libming,libming,framework,C
 CVE-2018-6357,CWE-79,acurax,social_media_widget,extension,PHP
-CVE-2018-6337,CWE-212,facebook,folly,framework,C++
+CVE-2018-6337,CWE-212,facebook,hhvm,utility,C++
 CVE-2018-6330,CWE-89,laravel,framework,framework,PHP
 CVE-2018-6358,CWE-787,libming,libming,framework,C
 CVE-2018-6313,CWE-79,wbce,wbce_cms,web_application,PHP
@@ -13722,6 +13770,7 @@ CVE-2018-20678,CWE-89,librenms,librenms,framework,PHP
 CVE-2018-20611,CWE-79,txjia,imcat,web_application,PHP
 CVE-2018-20698,CWE-601,search-guard,search_guard,framework,JavaScript
 CVE-2018-20610,CWE-22,txjia,imcat,web_application,PHP
+CVE-2018-20663,CWE-79,haulmont,cuba_platform,framework,Java
 CVE-2018-20616,CWE-787,ok-file-formats_project,ok-file-formats,framework,C
 CVE-2018-20617,CWE-787,ok-file-formats_project,ok-file-formats,framework,C
 CVE-2018-20618,CWE-125,ok-file-formats_project,ok-file-formats,framework,C
@@ -13854,6 +13903,7 @@ CVE-2018-1000109,CWE-863,jenkins,google-play-android-publisher,package,Java
 CVE-2018-1000174,CWE-601,jenkins,google_login,package,Java
 CVE-2018-1000160,CWE-79,risingstack,protect,framework,JavaScript
 CVE-2018-1000151,CWE-295,jenkins,vsphere,package,Java
+CVE-2018-1000180,CWE-327,bouncycastle,fips_java_api,package,Java
 CVE-2018-1000131,CWE-89,wpsupportplus,wp_support_plus_responsive_ticket_system,extension,PHP
 CVE-2018-1000110,CWE-863,jenkins,git,package,Java
 CVE-2018-1000173,CWE-384,jenkins,google_login,package,Java
@@ -13928,7 +13978,7 @@ CVE-2018-1259,CWE-611,pivotal_software,spring_data_commons,framework,Java
 CVE-2018-1230,CWE-352,pivotal_software,spring_batch_admin,framework,Java
 CVE-2018-1229,CWE-79,pivotal_software,spring_batch_admin,framework,Java
 CVE-2018-1274,CWE-770,pivotal_software,spring_data_commons,framework,Java
-CVE-2018-1265,CWE-434,cloudfoundry,cf-deployment,server,Go
+CVE-2018-1265,CWE-434,pivotal_software,cloud_foundry_diego,server,HTML
 CVE-2018-1231,CWE-732,pivotal_software,bosh_cli,utility,Go
 CVE-2018-1223,CWE-532,pivotal,cloud_foundry_container_runtime,server,Ruby
 CVE-2018-1258,CWE-863,pivotal_software,spring_security,framework,Java
@@ -14172,11 +14222,11 @@ CVE-2018-15535,CWE-22,tecrail,responsive_filemanager,framework,PHP
 CVE-2018-15559,CWE-79,xiuno,xiunobbs,web_application,PHP
 CVE-2018-15539,CWE-352,agentejo,cockpit,framework,JavaScript
 CVE-2018-15569,CWE-352,mylittleforum,my_little_forum,framework,PHP
-CVE-2018-15505,CWE-476,embedthis,goahead,server,C
+CVE-2018-15505,CWE-476,embedthis,appweb,server,C
 CVE-2018-15566,CWE-79,tp5cms_project,tp5cms,web_application,PHP
 CVE-2018-15536,CWE-22,tecrail,responsive_filemanager,framework,PHP
 CVE-2018-15583,CWE-79,sir,gnuboard,web_application,PHP
-CVE-2018-15504,CWE-476,embedthis,goahead,server,C
+CVE-2018-15504,CWE-476,embedthis,appweb,server,C
 CVE-2018-15570,CWE-79,bijiadao,waimai_super_cms,web_application,PHP
 CVE-2018-15567,CWE-79,cmsuno_project,cmsuno,web_application,PHP
 CVE-2018-15596,CWE-79,mybb,mybb,web_application,PHP
@@ -14239,7 +14289,7 @@ CVE-2018-1121,CWE-362,procps_project,procps,utility,C
 CVE-2018-1104,CWE-94,redhat,cloudforms,utility,Ruby
 CVE-2018-1139,CWE-522,samba,samba,server,C
 CVE-2018-1131,CWE-502,infinispan,infinispan,framework,Java
-CVE-2018-1195,CWE-613,cloudfoundry,cf-deployment,server,Go
+CVE-2018-1195,CWE-613,cloudfoundry,capi-release,server,Ruby
 CVE-2018-1116,CWE-862,polkit_project,polkit,utility,JavaScript
 CVE-2018-1191,CWE-215,cloudfoundry,cf-deployment,server,Go
 CVE-2018-6926,CWE-78,misp,misp,web_application,PHP
@@ -14379,6 +14429,7 @@ CVE-2018-9273,CWE-772,wireshark,wireshark,utility,C
 CVE-2018-9283,CWE-79,cremecrm,cremecrm,web_application,Python
 CVE-2018-9252,CWE-617,jasper_project,jasper,utility,C
 CVE-2018-9282,CWE-79,subsonic,subsonic,web_application,Java
+CVE-2018-9246,CWE-116,pgobject-util-dbadmin_project,pgobject-util-dbadmin,framework,Perl
 CVE-2018-17256,CWE-79,umbraco,umbraco_cms,web_application,C#
 CVE-2018-17231,CWE-617,telegram,telegram_desktop,framework,C++
 CVE-2018-17292,CWE-125,webassembly_virtual_machine_project,webassembly_virtual_machine,utility,C++
@@ -14468,8 +14519,9 @@ CVE-2018-7322,CWE-835,wireshark,wireshark,utility,C
 CVE-2018-14629,CWE-835,samba,samba,server,C
 CVE-2018-14690,CWE-79,subsonic,subsonic,web_application,Java
 CVE-2018-14661,CWE-134,gluster,glusterfs,utility,C
-CVE-2018-14645,CWE-125,redhat,openshift_container_platform,package,HCL
+CVE-2018-14645,CWE-125,redhat,openshift,package,HCL
 CVE-2018-14658,CWE-601,redhat,keycloak,package,Java
+CVE-2018-14649,CWE-77,redhat,ceph-iscsi-cli,framework,Python
 CVE-2018-14667,CWE-94,redhat,richfaces,package,Java
 CVE-2018-14688,CWE-79,subsonic,subsonic,web_application,Java
 CVE-2018-14686,CWE-79,xycms_project,xycms,web_application,CSS
@@ -14579,10 +14631,11 @@ CVE-2018-10832,CWE-611,modbuspal_project,modbuspal,utility,Java
 CVE-2018-10846,CWE-385,gnu,gnutls,framework,C
 CVE-2018-10844,CWE-385,gnu,gnutls,framework,C
 CVE-2018-10813,CWE-798,aprendecondedos,dedos-web,web_application,CSS
+CVE-2018-10862,CWE-22,redhat,wildfly_core,package,Java
 CVE-2018-10831,CWE-327,zclassic,z-nomp,utility,JavaScript
 CVE-2018-10804,CWE-772,imagemagick,imagemagick,utility,C
 CVE-2018-10845,CWE-385,gnu,gnutls,framework,C
-CVE-2018-10875,CWE-426,redhat,openshift,package,HCL
+CVE-2018-10875,CWE-426,redhat,openstack,package,Python
 CVE-2018-16980,CWE-79,dotcms,dotcms,web_application,Java
 CVE-2018-16985,CWE-125,lizard_project,lizard,utility,C
 CVE-2018-16981,CWE-787,nothings,stb_image.h,framework,C
@@ -14710,7 +14763,7 @@ CVE-2018-16463,CWE-384,nextcloud,nextcloud_server,server,PHP
 CVE-2018-16410,CWE-89,vanillaforums,vanilla,web_application,PHP
 CVE-2018-6560,CWE-436,flatpak,flatpak,utility,C
 CVE-2018-6517,CWE-295,puppet,chloride,framework,Ruby
-CVE-2018-6512,CWE-94,puppet,puppet_enterprise,utility,Ruby
+CVE-2018-6512,CWE-94,puppet,razor-server,server,Ruby
 CVE-2018-6518,CWE-79,compo,composr_cms,web_application,PHP
 CVE-2018-6511,CWE-79,puppet,puppet_enterprise,utility,Ruby
 CVE-2018-6594,CWE-326,dlitz,pycrypto,utility,Python
@@ -14720,6 +14773,7 @@ CVE-2018-6550,CWE-79,monstra,monstra,web_application,PHP
 CVE-2018-6513,CWE-426,puppet,puppet_enterprise,utility,Ruby
 CVE-2018-6574,CWE-94,golang,go,framework,Go
 CVE-2018-13250,CWE-476,libming,libming,framework,C
+CVE-2018-3824,CWE-79,elastic,elasticsearch_x-pack,framework,PHP
 CVE-2018-3882,CWE-89,erpnext,erpnext,web_application,Python
 CVE-2018-3835,CWE-787,disneyanimation,ptex,framework,C
 CVE-2018-3817,CWE-532,elastic,logstash,framework,Java
@@ -14734,6 +14788,7 @@ CVE-2018-3830,CWE-79,redhat,openshift_container_platform,package,HCL
 CVE-2018-3839,CWE-787,libsdl,sdl_image,framework,C
 CVE-2018-3837,CWE-125,libsdl,sdl_image,framework,C
 CVE-2018-3838,CWE-125,libsdl,sdl_image,framework,C
+CVE-2018-3823,CWE-79,elastic,elasticsearch_x-pack,framework,PHP
 CVE-2018-6195,CWE-1321,splashing_images_project,splashing_images,web_application,PHP
 CVE-2018-6184,CWE-22,zeit,next.js,utility,JavaScript
 CVE-2018-6182,CWE-79,mahara,mahara,web_application,PHP
@@ -14926,6 +14981,7 @@ CVE-2015-10001,CWE-352,wp-stats_project,wp-stats,extension,PHP
 CVE-2015-8313,CWE-203,gnu,gnutls,framework,C
 CVE-2015-3173,CWE-94,custom_content_type_manager_project,custom_content_type_manager,extension,PHP
 CVE-2015-4461,CWE-22,efrontlearning,efront,web_application,PHP
+CVE-2015-7559,CWE-306,redhat,jboss_fuse,package,Java
 CVE-2015-5741,CWE-444,redhat,openstack,package,Python
 CVE-2015-5725,CWE-89,codeigniter,codeigniter,framework,PHP
 CVE-2015-5745,CWE-120,qemu,qemu,utility,C
@@ -14933,7 +14989,7 @@ CVE-2015-3406,CWE-681,module-signature_project,module-signature,package,Perl
 CVE-2015-20019,CWE-79,content_text_slider_on_post_project,content_text_slider_on_post,extension,PHP
 CVE-2015-20067,CWE-862,wp_attachment_export_project,wp_attachment_export,extension,PHP
 CVE-2015-7609,CWE-79,synacor,zimbra_collaboration_suite,server,Perl
-CVE-2015-7610,CWE-352,synacor,zimbra_collaboration_suite,server,Perl
+CVE-2015-7610,CWE-352,zimbra,zimbra_collaboration_suite,server,Perl
 CVE-2015-2326,CWE-125,php,php,framework,C
 CVE-2015-2318,CWE-295,mono-project,mono,framework,C#
 CVE-2015-2319,CWE-295,mono-project,mono,framework,C#
@@ -14948,7 +15004,7 @@ CVE-2015-6000,CWE-434,vtiger,vtiger_crm,web_application,PHP
 CVE-2015-5334,CWE-787,openbsd,libressl,framework,C
 CVE-2015-5316,CWE-476,w1.fi,wpa_supplicant,framework,C
 CVE-2015-2796,CWE-79,projectpier,projectpier,web_application,PHP
-CVE-2015-4715,CWE-552,owncloud,owncloud,server,PHP
+CVE-2015-4715,CWE-552,owncloud,owncloud_server,server,PHP
 CVE-2015-5239,CWE-835,qemu,qemu,utility,C
 CVE-2015-5278,CWE-835,qemu,qemu,utility,C
 CVE-2015-5297,CWE-190,pixman,pixman,framework,C
@@ -15570,6 +15626,7 @@ CVE-2022-4732,CWE-434,microweber,microweber,web_application,HTML
 CVE-2022-4727,CWE-79,openmrs,appointment_scheduling_module,package,JavaScript
 CVE-2022-42189,CWE-434,emlog,emlog,utility,PHP
 CVE-2022-42188,CWE-22,lavalite,lavalite,framework,PHP
+CVE-2022-42150,CWE-276,tinylab,cloud_lab,server,Shell
 CVE-2022-24066,CWE-88,simple-git_project,simple-git,package,TypeScript
 CVE-2022-38845,CWE-79,espocrm,espocrm,framework,PHP
 CVE-2022-38844,CWE-1236,espocrm,espocrm,framework,PHP
@@ -15611,7 +15668,7 @@ CVE-2022-23048,CWE-434,exponentcms,exponent_cms,web_application,PHP
 CVE-2022-23058,CWE-79,frappe,erpnext,web_application,Python
 CVE-2022-23057,CWE-79,frappe,erpnext,web_application,Python
 CVE-2022-37431,CWE-79,dotcms,dotcms,web_application,Java
-CVE-2022-37454,CWE-190,php,php,framework,C
+CVE-2022-37454,CWE-190,extended_keccak_code_package_project,extended_keccak_code_package,package,C
 CVE-2022-37421,CWE-79,silverstripe,silverstripe,web_application,PHP
 CVE-2022-23852,CWE-190,libexpat_project,libexpat,framework,C
 CVE-2022-23887,CWE-352,yzmcms,yzmcms,web_application,PHP
@@ -16082,7 +16139,7 @@ CVE-2022-0952,CWE-862,sitemap_project,sitemap,extension,PHP
 CVE-2022-0906,CWE-79,microweber,microweber,web_application,HTML
 CVE-2022-0914,CWE-352,atlasgondal,export_all_urls,extension,PHP
 CVE-2022-0961,CWE-190,microweber,microweber,web_application,HTML
-CVE-2022-40700,CWE-918,millionclues,admin_css_mu,extension,JavaScript
+CVE-2022-40700,CWE-918,frumph,phpfreechat,extension,PHP
 CVE-2022-40702,CWE-862,zorem,advanced_local_pickup_for_woocommerce,extension,PHP
 CVE-2022-40737,CWE-125,axiosys,bento4,framework,C++
 CVE-2022-40774,CWE-476,axiosys,bento4,framework,C++
@@ -16151,7 +16208,7 @@ CVE-2022-41429,CWE-787,axiosys,bento4,framework,C++
 CVE-2022-41435,CWE-79,openwrt,luci,web_application,JavaScript
 CVE-2022-35942,CWE-89,linuxfoundation,loopback-connector-postgresql,package,JavaScript
 CVE-2022-35923,CWE-1333,v8n_project,v8n,package,JavaScript
-CVE-2022-35915,CWE-770,openzeppelin,contracts,package,Solidity
+CVE-2022-35915,CWE-770,openzeppelin,openzeppelin-eth,package,Solidity
 CVE-2022-35920,CWE-22,sanic_project,sanic,utility,Python
 CVE-2022-35919,CWE-22,minio,minio,server,Go
 CVE-2022-35954,CWE-77,github,toolkit,package,TypeScript
@@ -16531,7 +16588,7 @@ CVE-2022-36261,CWE-22,taogogo,taocms,web_application,PHP
 CVE-2022-36224,CWE-352,xunruicms,xunruicms,web_application,PHP
 CVE-2022-22943,CWE-427,vmware,tools,utility,C
 CVE-2022-22914,CWE-22,ovidentia,ovidentia,web_application,PHP
-CVE-2022-22984,CWE-78,snyk,snyk_cli,utility,TypeScript
+CVE-2022-22984,CWE-78,snyk,snyk_maven_cli,utility,TypeScript
 CVE-2022-22912,CWE-1321,plist_project,plist,package,JavaScript
 CVE-2022-22967,CWE-863,saltstack,salt,framework,Python
 CVE-2022-22979,CWE-770,vmware,spring_cloud_function,server,Java
@@ -16812,6 +16869,7 @@ CVE-2022-32074,CWE-79,osticket,osticket,web_application,PHP
 CVE-2022-44071,CWE-79,tribalsystems,zenario,web_application,PHP
 CVE-2022-44009,CWE-862,stackstorm,stackstorm,server,Python
 CVE-2022-44069,CWE-79,tribalsystems,zenario,web_application,PHP
+CVE-2022-44020,CWE-281,opendev,sushy-tools,utility,Python
 CVE-2022-44070,CWE-79,tribalsystems,zenario,web_application,PHP
 CVE-2022-44019,CWE-78,totaljs,total.js,package,JavaScript
 CVE-2022-44036,CWE-434,b2evolution,b2evolution_cms,web_application,PHP
@@ -16868,9 +16926,12 @@ CVE-2022-23380,CWE-89,taogogo,taocms,web_application,PHP
 CVE-2022-23384,CWE-352,yzmcms,yzmcms,web_application,PHP
 CVE-2022-23358,CWE-89,easycms,easycms,web_application,PHP
 CVE-2022-23335,CWE-89,metinfo,metinfo,web_application,PHP
+CVE-2022-23307,CWE-502,oracle,e-business_suite_cloud_manager_and_cloud_backup_module,package,HCL
 CVE-2022-23390,CWE-434,diyhi,bbs_forum,web_application,Java
 CVE-2022-23395,CWE-1321,jquery.cookie_project,jquery.cookie,package,JavaScript
+CVE-2022-23302,CWE-502,oracle,e-business_suite_cloud_manager_and_cloud_backup_module,package,HCL
 CVE-2022-23337,CWE-89,dedecms,dedecms,web_application,PHP
+CVE-2022-23305,CWE-89,oracle,e-business_suite_cloud_manager_and_cloud_backup_module,package,HCL
 CVE-2022-24111,CWE-306,mahara,mahara,web_application,PHP
 CVE-2022-24181,CWE-79,public_knowledge_project,open_journal_systems,web_application,PHP
 CVE-2022-1809,CWE-824,radare,radare2,utility,C
@@ -16905,6 +16966,7 @@ CVE-2022-0394,CWE-79,livehelperchat,live_helper_chat,framework,PHP
 CVE-2022-0375,CWE-79,livehelperchat,live_helper_chat,framework,PHP
 CVE-2022-35249,CWE-862,rocket.chat,rocket.chat,utility,TypeScript
 CVE-2022-35251,CWE-79,rocket.chat,rocket.chat,utility,TypeScript
+CVE-2022-35256,CWE-444,llhttp,llhttp,package,TypeScript
 CVE-2022-35250,CWE-732,rocket.chat,rocket.chat,utility,TypeScript
 CVE-2022-35247,CWE-862,rocket.chat,rocket.chat,utility,TypeScript
 CVE-2022-35277,CWE-352,getresponse,getresponse,extension,PHP
@@ -17058,7 +17120,7 @@ CVE-2022-24407,CWE-89,cyrusimap,cyrus-sasl,framework,C
 CVE-2022-24437,CWE-88,git-pull-or-clone_project,git-pull-or-clone,package,JavaScript
 CVE-2022-24450,CWE-862,nats,nats_server,server,Go
 CVE-2022-24444,CWE-384,silverstripe,silverstripe,web_application,PHP
-CVE-2022-24441,CWE-78,snyk,snyk_language_server,server,Go
+CVE-2022-24441,CWE-78,snyk,snyk_cli,utility,TypeScript
 CVE-2022-42724,CWE-863,misp-project,malware_information_sharing_platform,web_application,PHP
 CVE-2022-46020,CWE-434,wbce,wbce_cms,web_application,PHP
 CVE-2022-39170,CWE-415,libdwarf_project,libdwarf,framework,C
@@ -17297,6 +17359,7 @@ CVE-2022-31475,CWE-22,givewp,givewp,extension,PHP
 CVE-2022-31402,CWE-79,combodo,itop,web_application,PHP
 CVE-2022-31403,CWE-79,combodo,itop,web_application,PHP
 CVE-2022-31498,CWE-79,librehealth,librehealth_ehr,web_application,PHP
+CVE-2022-1278,CWE-1188,redhat,integration_service_registry,server,Java
 CVE-2022-1235,CWE-916,livehelperchat,live_helper_chat,framework,PHP
 CVE-2022-1284,CWE-416,radare,radare2,utility,C
 CVE-2022-1219,CWE-89,pimcore,pimcore,web_application,PHP
@@ -17362,6 +17425,7 @@ CVE-2022-40833,CWE-89,codeigniter,codeigniter,framework,PHP
 CVE-2022-4943,CWE-862,miniorange,google_authenticator,extension,PHP
 CVE-2022-4942,CWE-79,eslint-detailed-reporter_project,eslint-detailed-reporter,package,HTML
 CVE-2022-4937,CWE-862,wclovers,frontend_manager_for_woocommerce_along_with_bookings_subscription_listings_compatible,extension,PHP
+CVE-2022-4950,CWE-862,coolplugins,cool_timeline,extension,JavaScript
 CVE-2022-4900,CWE-787,php,php,framework,C
 CVE-2022-4973,CWE-79,wordpress,wordpress,web_application,PHP
 CVE-2022-4972,CWE-862,wpchill,download_monitor,extension,PHP
@@ -17548,7 +17612,7 @@ CVE-2022-48006,CWE-434,taogogo,taocms,web_application,PHP
 CVE-2022-48010,CWE-79,limesurvey,limesurvey,web_application,JavaScript
 CVE-2022-48007,CWE-79,piwigo,piwigo,web_application,PHP
 CVE-2022-34025,CWE-79,vestacp,vesta_control_panel,utility,PHP
-CVE-2022-31733,CWE-295,cloudfoundry,cf-deployment,server,Go
+CVE-2022-31733,CWE-295,cloudfoundry,diego,server,HTML
 CVE-2022-31735,CWE-601,osstech,openam,server,Java
 CVE-2022-3245,CWE-79,microweber,microweber,web_application,HTML
 CVE-2022-3261,CWE-319,redhat,openstack_platform,framework,Ruby
@@ -17643,6 +17707,8 @@ CVE-2022-40444,CWE-22,zzcms,zzcms,web_application,PHP
 CVE-2022-40489,CWE-352,thinkcmf,thinkcmf,framework,JavaScript
 CVE-2022-40439,CWE-401,axiosys,bento4,framework,C++
 CVE-2022-40446,CWE-89,zzcms,zzcms,web_application,PHP
+CVE-2022-32214,CWE-444,llhttp,llhttp,package,TypeScript
+CVE-2022-32215,CWE-444,llhttp,llhttp,package,TypeScript
 CVE-2022-32211,CWE-89,rocket.chat,rocket.chat,utility,TypeScript
 CVE-2022-32218,CWE-203,rocket.chat,rocket.chat,utility,TypeScript
 CVE-2022-32227,CWE-319,rocket.chat,rocket.chat,utility,TypeScript
@@ -17650,6 +17716,7 @@ CVE-2022-32220,CWE-862,rocket.chat,rocket.chat,utility,TypeScript
 CVE-2022-32280,CWE-79,xakuro,xo_slider,extension,PHP
 CVE-2022-32200,CWE-125,libdwarf_project,libdwarf,framework,C
 CVE-2022-32297,CWE-89,piwigo,piwigo,web_application,PHP
+CVE-2022-32213,CWE-444,llhttp,llhttp,package,TypeScript
 CVE-2022-32217,CWE-532,rocket.chat,rocket.chat,utility,TypeScript
 CVE-2022-32289,CWE-352,sygnoos,popup_builder,extension,PHP
 CVE-2022-47442,CWE-1236,ayecode,userswp,extension,PHP
@@ -17944,7 +18011,7 @@ CVE-2025-24018,CWE-79,yeswiki,yeswiki,web_application,PHP
 CVE-2012-4381,CWE-798,mediawiki,mediawiki,framework,PHP
 CVE-2012-4383,CWE-89,contao,contao,web_application,PHP
 CVE-2012-20001,CWE-79,prestashop,prestashop,web_application,PHP
-CVE-2012-6685,CWE-776,redhat,openshift,package,HCL
+CVE-2012-6685,CWE-776,redhat,openstack,package,Python
 CVE-2012-6649,CWE-434,devfarm,wp_gpx_maps,extension,PHP
 CVE-2012-5193,CWE-79,bitweaver,bitweaver,web_application,PHP
 CVE-2012-2666,CWE-377,golang,go,framework,Go
