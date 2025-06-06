@@ -2,3 +2,5 @@ nvdutils>=3.3.2
 pandas>=2.2.3
 packageurl-python>=0.16.0
 github_lib>=0.8.1
+plotly>=6.1.2
+kaleido>=0.2.1
