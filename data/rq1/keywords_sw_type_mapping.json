@@ -1,0 +1,26 @@
+{
+    "extension": [
+      "plugin", "plugin", "extension", "extensions", "theme", "themes", "widget", "widgets", "addon", "addons", "add-on",
+      "add-ons", "template", "templates", "wp", "wordpress", "drupal", "component"
+    ],
+    "library": [
+      "library", "libraries", "lib", "sdk", "core", "module", "library", "development_kit", "api", "middleware"
+    ],
+    "framework": [
+      "framework"
+    ],
+    "utility": [
+      "utility", "utilities", "tool", "tools", "cli", "commandline", "commandline-line-interface", "script", "scripts",
+      "manager", "suite", "browser"
+    ],
+    "server": [
+      "daemon", "service", "monitor", "agent", "server", "webserver", "webserver", "client", "webservice", "webservices",
+      "database", "gateway", "cloud", "endpoint"
+    ],
+    "web_app": [
+      "cms", "crm", "portal", "platform", "forum", "blog", "groupware"
+    ],
+    "mobile_app": [
+      "mobile", "android", "iphone", "sms"
+    ]
+}

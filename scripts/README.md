@@ -69,11 +69,15 @@ This directory contains scripts used for data collection and processing as part 
 **Purpose**: This script categorizes software products into different types (e.g., extension, package, mobile_app, framework, utility, server, web_application) based on CPE data and a research dataset.
 
 **Algorithm**:
-1. Define mappings and keywords for different software types
+1. Load mapping files for software type categorization:
+   - domain_sw_type_mapping.json: Maps domain names to software types
+   - keywords_sw_type_mapping.json: Maps keywords to software types
+   - target_sw_type_mapping.json: Maps target software to software types
 2. Extract software type information from two sources:
    - The official CPE dictionary from NVD
    - A research dataset from a published paper
 3. Label software products based on:
+   - References in CPE data (using domain mappings)
    - Target software information in CPE data
    - Product name analysis using predefined keywords
 4. Resolve conflicts when the two sources disagree on software type
@@ -84,10 +88,39 @@ This directory contains scripts used for data collection and processing as part 
 - cpelib
 - pathlib
 - collections (Counter)
+- pydantic
 
 **Requirements**:
 - Access to the official CPE dictionary XML file
 - Access to the Software-Type-Dataset (referenced in the script)
+- Mapping files in data/rq1 directory:
+  - domain_sw_type_mapping.json
+  - keywords_sw_type_mapping.json
+  - target_sw_type_mapping.json
+
+### 4. plots_rq1.py
+
+**Purpose**: This script generates a Sankey diagram showing the relationship between software types, programming languages, and CWEs from the collected vulnerability data.
+
+**Algorithm**:
+1. Load CVE data from the cve_ids_in_apps_with_cwe.csv file
+2. Create data for the Sankey diagram by:
+   - Grouping by software_type, language, and cwe_id
+   - Filtering to include only relationships with significant counts
+   - Creating unique lists of nodes for each category
+3. Apply a military HUD-style theme to the diagram
+4. Generate link colors based on the source node's layer
+5. Create and configure the Sankey diagram using Plotly
+6. Add grid lines and other visual elements
+7. Save the diagram as a PNG image in the results/rq1 directory
+
+**Dependencies**:
+- pandas
+- plotly
+- os
+
+**Output**:
+- A Sankey diagram saved as `sankey_software_language_cwe.png` in the results/rq1 directory
 
 ## Usage
 
@@ -95,9 +128,13 @@ The scripts are designed to be run in sequence:
 
 1. First run `get_cve_ids_in_apps_with_cwe.py` to extract CVE data for applications with CWEs
 2. Then run `get_products_language.py` to map the products from the CVE data to their programming languages
-3. Finally run `get_software_type.py` to categorize the software products into different types
+3. Run `get_software_type.py` to categorize the software products into different types
+4. Finally run `plots_rq1.py` to generate visualizations of the relationships between software types, languages, and CWEs
 
-The output files are saved in the `data/rq1` directory:
-- `cve_ids_in_apps_with_cwe.csv`: Contains CVE IDs, CWE IDs, vendors, and products
-- `products_language.csv`: Contains product information mapped to programming languages
-- `software_type.csv`: Contains product information mapped to software types
+The output files are saved in the following directories:
+- `data/rq1`:
+  - `cve_ids_in_apps_with_cwe.csv`: Contains CVE IDs, CWE IDs, vendors, and products
+  - `products_language.csv`: Contains product information mapped to programming languages
+  - `software_type.csv`: Contains product information mapped to software types
+- `results/rq1`:
+  - `sankey_software_language_cwe.png`: Sankey diagram showing relationships between software types, languages, and CWEs

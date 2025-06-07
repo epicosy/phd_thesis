@@ -1,0 +1,14 @@
+{
+    "extension": [
+      "wordpress", "drupal", "typo3", "prestashop", "joomla\\!", "pimcore", "atlassian", "shopify", "dnn", "magento",
+      "woocommerce", "craft_cms", "mediawiki", "zencart", "visual_studio", "visual_studio_code", "nextcloud", "xwiki",
+      "freepbx", "confluence", "jira", "chrome"
+    ],
+    "library": [
+      "silverstripe", "jenkins", "laravel", "fastify", "node.js", "django", "gnu_emacs", "minecraft", "mongodb",
+      "pivotal_cloud_foundry"
+    ],
+    "mobile_app": [
+      "iphone_os", "android"
+    ]
+}

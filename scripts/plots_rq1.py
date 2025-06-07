@@ -188,15 +188,16 @@ def plot_sankey_diagram(df):
         )
 
     # Save the figure
-    output_path = os.path.join(RESULTS_DIR, 'sankey_software_language_cwe.html')
-    fig.write_html(output_path)
+    #output_path = os.path.join(RESULTS_DIR, 'sankey_software_language_cwe.html')
+    #fig.write_html(output_path)
     
     # Also save as image
     image_path = os.path.join(RESULTS_DIR, 'sankey_software_language_cwe.png')
     fig.write_image(image_path)
     
-    print(f"Sankey diagram saved to {output_path} and {image_path}")
-    
+    #print(f"Sankey diagram saved to {output_path} and {image_path}")
+    print(f"Sankey diagram saved to {image_path}")
+
     return fig
 
 def main():

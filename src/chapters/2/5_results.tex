@@ -4,13 +4,13 @@ Our analysis of the National Vulnerability Database (NVD) yielded a comprehensiv
 
 \subsection{Software Type Distribution}
 
-The software type categorization process identified 32,666 vulnerable software products across seven major categories. Figure~\ref{fig:software-type-dist} illustrates this distribution:
+The software type categorization process identified 33,536 vulnerable software products across seven major categories. Figure~\ref{fig:software-type-dist} illustrates this distribution:
 
 \begin{itemize}
-    \item Extensions represent the largest category (20.4\%, 6,664 samples), indicating the significant security challenges in browser and application extensions.
-    \item Servers (18.8\%, 6,151 samples) and utilities (18.1\%, 5,919 samples) follow closely, highlighting the prevalence of vulnerabilities in these critical infrastructure components.
-    \item Packages (14.2\%, 4,623 samples), frameworks (10.6\%, 3,469 samples), and web applications (10.5\%, 3,443 samples) form the middle tier of vulnerability distribution.
-    \item Mobile applications (7.3\%, 2,382 samples) represent the smallest major category, possibly reflecting their more recent emergence compared to other software types.
+    \item Extensions represent the largest category (20.8\%, 6,990 samples), indicating the significant security challenges in browser and application extensions.
+    \item Servers (18.1\%, 6,057 samples) and utilities (16.7\%, 5,601 samples) follow closely, highlighting the prevalence of vulnerabilities in these critical infrastructure components.
+    \item Libraries (16.4\%, 5,515 samples), web applications (10.6\%, 3,548 samples), and frameworks (9.8\%, 3,280 samples) form the middle tier of vulnerability distribution.
+    \item Mobile applications (7.6\%, 2,535 samples) represent the smallest major category, possibly reflecting their more recent emergence compared to other software types.
 \end{itemize}
 
 This distribution reveals that extensions, which often have privileged access to user data and system resources, are particularly susceptible to security vulnerabilities. The high representation of servers and utilities underscores the security challenges in infrastructure software that often serves as the backbone of digital systems.
@@ -30,13 +30,13 @@ The predominance of PHP and JavaScript vulnerabilities aligns with their extensi
 
 \subsection{Common Weakness Enumeration (CWE) Analysis}
 
-Our analysis extracted 18,057 CVE entries with associated CWE identifiers, revealing the most common vulnerability types:
+Our analysis extracted 18,566 CVE entries with associated CWE identifiers, revealing the most common vulnerability types:
 
 \begin{itemize}
-    \item Cross-Site Scripting (CWE-79) dominates with 32.7\% (5,910 samples) of all vulnerabilities, highlighting the persistent challenge of securing user input in web applications.
-    \item Cross-Site Request Forgery (CWE-352, 7.9\%, 1,422 samples) and SQL Injection (CWE-89, 7.3\%, 1,310 samples) represent the next tier of common web vulnerabilities.
-    \item Path Traversal (CWE-22, 4.8\%, 870 samples) and Authorization Issues (CWE-862, 4.0\%, 723 samples) round out the top five.
-    \item Memory corruption vulnerabilities like Out-of-bounds Write (CWE-787, 3.5\%, 641 samples) and Out-of-bounds Read (CWE-125, 2.3\%, 411 samples) appear less frequently but often represent higher severity issues.
+    \item Cross-Site Scripting (CWE-79) dominates with 32.3\% (6,000 samples) of all vulnerabilities, highlighting the persistent challenge of securing user input in web applications.
+    \item Cross-Site Request Forgery (CWE-352, 7.7\%, 1,434 samples) and SQL Injection (CWE-89, 7.1\%, 1,316 samples) represent the next tier of common web vulnerabilities.
+    \item Path Traversal (CWE-22, 4.8\%, 899 samples) and Authorization Issues (CWE-862, 3.9\%, 727 samples) round out the top five.
+    \item Memory corruption vulnerabilities like Out-of-bounds Write (CWE-787, 3.6\%, 661 samples) and Out-of-bounds Read (CWE-125, 2.3\%, 422 samples) appear less frequently but often represent higher severity issues.
 \end{itemize}
 
 The prevalence of web-related vulnerabilities (CWE-79, CWE-352, CWE-89) reflects the extensive attack surface of web applications and the challenges in properly validating and sanitizing user input. Memory corruption vulnerabilities, while less common, remain a persistent threat, particularly in systems programming contexts.
@@ -46,11 +46,11 @@ The prevalence of web-related vulnerabilities (CWE-79, CWE-352, CWE-89) reflects
 The consolidated dataset reveals important patterns across software types, programming languages, and vulnerability classes:
 
 \begin{itemize}
-    \item PHP-based extensions and web applications are particularly susceptible to Cross-Site Scripting (CWE-79), with 2,125 and 1,433 instances respectively, representing the most common vulnerability profiles.
-    \item Cross-Site Request Forgery (CWE-352) is also prevalent in PHP extensions (588 instances) and web applications (317 instances).
-    \item SQL Injection (CWE-89) affects PHP web applications (437 instances) and extensions (382 instances) most frequently.
-    \item JavaScript applications show significant vulnerability to Cross-Site Scripting (CWE-79, 239 instances), while Java packages exhibit both XSS (219 instances) and CSRF (190 instances) vulnerabilities.
-    \item Memory corruption vulnerabilities cluster in C-based frameworks (CWE-125, 142 instances) and utilities (CWE-125, 156 instances; CWE-787, 136 instances).
+    \item PHP-based extensions and web applications are particularly susceptible to Cross-Site Scripting (CWE-79), with 2,170 and 1,432 instances respectively, representing the most common vulnerability profiles.
+    \item Cross-Site Request Forgery (CWE-352) is also prevalent in PHP extensions (599 instances) and web applications (319 instances).
+    \item SQL Injection (CWE-89) affects PHP web applications (431 instances) and extensions (391 instances) most frequently.
+    \item JavaScript applications show significant vulnerability to Cross-Site Scripting (CWE-79, 254 instances), while Java libraries exhibit both XSS (218 instances) and CSRF (190 instances) vulnerabilities.
+    \item Memory corruption vulnerabilities cluster in C-based frameworks (CWE-125, 142 instances; CWE-787, 156 instances) and utilities (CWE-125, 156 instances; CWE-787, 136 instances).
 \end{itemize}
 
 These patterns reveal distinct vulnerability profiles across the software ecosystem:
@@ -58,7 +58,7 @@ These patterns reveal distinct vulnerability profiles across the software ecosys
 \begin{enumerate}
     \item \textbf{Web Application Profile:} Dominated by input validation vulnerabilities (XSS, CSRF, SQLi) in PHP and JavaScript applications, particularly in extensions and web applications.
     \item \textbf{Systems Software Profile:} Characterized by memory corruption issues (buffer overflows, use-after-free) in C and C++ utilities and frameworks.
-    \item \textbf{Enterprise Application Profile:} Represented by a mix of web vulnerabilities and authorization issues in Java packages and frameworks.
+    \item \textbf{Enterprise Application Profile:} Represented by a mix of web vulnerabilities and authorization issues in Java libraries and frameworks.
 \end{enumerate}
 
 \subsection{Addressing the Research Question}
@@ -82,7 +82,7 @@ These findings demonstrate that vulnerability profiles are not uniform across th
 While our analysis provides valuable insights, several limitations should be acknowledged:
 
 \begin{itemize}
-    \item The language mapping process successfully identified languages for only 13,081 of the 32,666 software products, potentially introducing selection bias.
+    \item The language mapping process successfully identified languages for only 13,081 of the 33,536 software products, potentially introducing selection bias.
     \item The consolidated dataset represents only the most frequent combinations, not the complete cross-product of all dimensions.
     \item The reliance on NVD data means our analysis is limited to reported and publicly disclosed vulnerabilities, which may not represent the complete vulnerability landscape.
 \end{itemize}

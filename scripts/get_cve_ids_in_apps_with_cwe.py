@@ -48,9 +48,9 @@ SOFTWARE_TYPE_SCORE = {
     "utility": 1,
     "framework": 1,
     "server": 1,
-    "web_application": 2,
+    "web_app": 2,
     "mobile_app": 2,
-    "package": 3,
+    "library": 3,
     "extension": 3,
 }
 

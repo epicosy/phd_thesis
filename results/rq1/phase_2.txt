@@ -1,11 +1,12 @@
-Software Type Categorization (get_software_type.py) (Total Samples: 32 666):
- - extension: 6664
- - server: 6151
- - utility: 5919
- - package: 4623
- - framework: 3469
- - web_application: 3443
- - mobile_app: 2382
+Software Type Categorization (get_software_type.py) (Total Samples: 33 536):
+ - extension: 6990
+ - server: 6057
+ - utility: 5601
+ - library: 5515
+ - web_app: 3548
+ - framework: 3280
+ - mobile_app: 2535
+
 
 Product Language Mapping (get_products_language.py) (Total Samples: 13 081):
  - PHP: 4236
@@ -30,58 +31,59 @@ Product Language Mapping (get_products_language.py) (Total Samples: 13 081):
  - Elixir: 22
  - Others: 356
 
-CVE Data Extraction (get_cve_ids_in_apps_with_cwe.py) (Total Samples: 18057):
- - CWE-79: 5910
- - CWE-352: 1422
- - CWE-89: 1310
- - CWE-22: 870
- - CWE-862: 723
- - CWE-787: 641
- - CWE-434: 517
- - CWE-125: 411
- - CWE-94: 311
- - CWE-502: 303
- - CWE-78: 288
- - CWE-863: 281
- - CWE-476: 270
- - CWE-918: 230
- - CWE-601: 209
- - CWE-522: 206
- - CWE-770: 180
- - CWE-416: 176
- - CWE-1321: 166
- - CWE-190: 154
- - CWE-611: 153
- - CWE-295: 140
- - CWE-732: 127
- - CWE-639: 114
- - CWE-835: 108
+CVE Data Extraction (get_cve_ids_in_apps_with_cwe.py) (Total Samples: 18566):
+ - CWE-79: 6000
+ - CWE-352: 1434
+ - CWE-89: 1316
+ - CWE-22: 899
+ - CWE-862: 727
+ - CWE-787: 661
+ - CWE-434: 520
+ - CWE-125: 422
+ - CWE-94: 319
+ - CWE-502: 311
+ - CWE-78: 297
+ - CWE-863: 287
+ - CWE-476: 278
+ - CWE-918: 243
+ - CWE-601: 212
+ - CWE-522: 207
+ - CWE-416: 203
+ - CWE-770: 188
+ - CWE-1321: 171
+ - CWE-611: 159
+ - CWE-190: 158
+ - CWE-295: 145
+ - CWE-732: 128
+ - CWE-639: 123
+ - CWE-835: 113
+
 
 Dataset consolidation:
 
-software_type    language    cwe_id
-extension        PHP         CWE-79      2125
-web_application  PHP         CWE-79      1433
-extension        PHP         CWE-352      588
-web_application  PHP         CWE-89       437
-extension        PHP         CWE-89       382
-framework        PHP         CWE-79       345
-web_application  PHP         CWE-352      317
-extension        PHP         CWE-862      317
-                 JavaScript  CWE-79       239
-package          Java        CWE-79       219
-web_application  PHP         CWE-434      212
-package          Java        CWE-352      190
-                             CWE-862      187
-web_application  PHP         CWE-22       178
-                 JavaScript  CWE-79       174
-framework        JavaScript  CWE-787      164
-utility          C           CWE-125      156
-framework        C           CWE-787      156
-                             CWE-125      142
-utility          C           CWE-787      136
-package          Java        CWE-522      132
-server           PHP         CWE-79       120
-utility          PHP         CWE-79       119
-web_application  JavaScript  CWE-89       115
-package          JavaScript  CWE-1321     107
+software_type  language    cwe_id
+extension      PHP         CWE-79      2170
+web_app        PHP         CWE-79      1432
+extension      PHP         CWE-352      599
+web_app        PHP         CWE-89       431
+extension      PHP         CWE-89       391
+framework      PHP         CWE-79       340
+extension      PHP         CWE-862      322
+web_app        PHP         CWE-352      319
+extension      JavaScript  CWE-79       254
+library        Java        CWE-79       218
+web_app        PHP         CWE-434      214
+library        Java        CWE-352      190
+                           CWE-862      186
+web_app        PHP         CWE-22       179
+               JavaScript  CWE-79       175
+library        JavaScript  CWE-787      164
+                           CWE-22       157
+utility        C           CWE-125      156
+framework      C           CWE-787      156
+                           CWE-125      142
+utility        C           CWE-787      136
+library        Java        CWE-522      132
+server         PHP         CWE-79       120
+library        JavaScript  CWE-1321     117
+web_app        JavaScript  CWE-89       113
