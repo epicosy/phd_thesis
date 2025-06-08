@@ -14,26 +14,18 @@ This directory contains scripts used for data collection and processing as part 
    - Only include CVEs that affect applications (not operating systems or hardware)
    - Only include CVEs with primary weakness types (CWEs)
 2. Load CVE data from the NVD JSON data feeds using the nvdutils library
-3. Load product language data from get_products_language.py output
-4. Load software type data from get_software_type.py output
-5. Load CWE properties data including vulnerability mapping and abstraction
-6. Filter the CVEs based on the defined criteria
-7. For each matching CVE:
+3. Load CWE properties data including vulnerability mapping and abstraction
+4. Filter the CVEs based on the defined criteria
+5. For each matching CVE:
    - Extract the CWE IDs associated with the CVE
    - Select the most appropriate CWE ID based on:
      - Vulnerability mapping (skipping DISCOURAGED mappings)
      - Abstraction level (preferring more specific abstractions like Variant over more general ones like Class)
      - Weakness type (preferring Primary weaknesses)
-   - Extract the vulnerable products that are applications
-   - Select the most appropriate vulnerable product based on:
-     - Software type (using a scoring system that prioritizes certain types)
-     - Package type (giving preference to GitHub repositories)
-   - Create a record with CVE ID, CWE ID, vendor, and product information
-8. Save the results to a CSV file in the data/rq1 directory
+6. Save the results (CVE ID and CWE ID) to a CSV file in the data/rq1 directory
 
 **Dependencies**:
 - pandas
-- tqdm
 - nvdutils
 - cpelib
 
@@ -98,12 +90,36 @@ This directory contains scripts used for data collection and processing as part 
   - keywords_sw_type_mapping.json
   - target_sw_type_mapping.json
 
-### 4. plots_rq1.py
+### 4. create_dataset.py
+
+**Purpose**: This script creates a consolidated dataset by combining CVE-CWE data with product details, including software type and programming language information.
+
+**Algorithm**:
+1. Load product language data from get_products_language.py output
+2. Load software type data from get_software_type.py output
+3. Merge the product language and software type data to create a product details dictionary
+4. Load CVE-CWE data from get_cve_ids_in_apps_with_cwe.py output
+5. For each CVE-CWE pair:
+   - Load the full CVE data from the NVD JSON data feeds
+   - Extract the vulnerable products that are applications
+   - Select the most appropriate vulnerable product based on:
+     - Software type (using a scoring system that prioritizes certain types)
+     - Package type (giving preference to GitHub repositories)
+   - Create a record with CVE ID, CWE ID, vendor, product, software type, and language information
+6. Save the consolidated dataset to a CSV file in the data/rq1 directory
+
+**Dependencies**:
+- pandas
+- tqdm
+- nvdutils
+- cpelib
+
+### 5. plots_rq1.py
 
 **Purpose**: This script generates a Sankey diagram showing the relationship between software types, programming languages, and CWEs from the collected vulnerability data.
 
 **Algorithm**:
-1. Load CVE data from the cve_ids_in_apps_with_cwe.csv file
+1. Load consolidated data from the dataset.csv file
 2. Create data for the Sankey diagram by:
    - Grouping by software_type, language, and cwe_id
    - Filtering to include only relationships with significant counts
@@ -129,12 +145,14 @@ The scripts are designed to be run in sequence:
 1. First run `get_cve_ids_in_apps_with_cwe.py` to extract CVE data for applications with CWEs
 2. Then run `get_products_language.py` to map the products from the CVE data to their programming languages
 3. Run `get_software_type.py` to categorize the software products into different types
-4. Finally run `plots_rq1.py` to generate visualizations of the relationships between software types, languages, and CWEs
+4. Run `create_dataset.py` to create a consolidated dataset combining CVE-CWE data with product details
+5. Finally run `plots_rq1.py` to generate visualizations of the relationships between software types, languages, and CWEs
 
 The output files are saved in the following directories:
 - `data/rq1`:
-  - `cve_ids_in_apps_with_cwe.csv`: Contains CVE IDs, CWE IDs, vendors, and products
+  - `cve_ids_in_apps_with_cwe.csv`: Contains CVE IDs and CWE IDs
   - `products_language.csv`: Contains product information mapped to programming languages
   - `software_type.csv`: Contains product information mapped to software types
+  - `dataset.csv`: Contains consolidated data with CVE IDs, CWE IDs, vendors, products, software types, and languages
 - `results/rq1`:
   - `sankey_software_language_cwe.png`: Sankey diagram showing relationships between software types, languages, and CWEs

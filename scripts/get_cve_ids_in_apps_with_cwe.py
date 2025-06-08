@@ -1,6 +1,5 @@
 import pandas as pd
 
-from tqdm import tqdm
 from pathlib import Path
 from typing import Optional
 from dataclasses import dataclass, field
@@ -10,9 +9,7 @@ from cpelib.types.definitions import CPEPart
 from nvdutils.common.enums.weaknesses import WeaknessType
 from nvdutils.loaders.json.default import JSONDefaultLoader
 
-from nvdutils.models.cve import CVE
 from nvdutils.models.weaknesses import Weaknesses
-from nvdutils.models.configurations import Configurations
 
 from nvdutils.data.criteria.cve import CVECriteria
 from nvdutils.data.profiles.base import BaseProfile
@@ -44,16 +41,6 @@ CWE_ABSTRACTION_SCORE = {
     "Variant": 4,
 }
 
-SOFTWARE_TYPE_SCORE = {
-    "utility": 1,
-    "framework": 1,
-    "server": 1,
-    "web_app": 2,
-    "mobile_app": 2,
-    "library": 3,
-    "extension": 3,
-}
-
 
 @dataclass
 class CVEInAppWithCWEProfile(BaseProfile):
@@ -65,138 +52,61 @@ class CVEInAppWithCWEProfile(BaseProfile):
     weakness_criteria: WeaknessesCriteria = field(default_factory=lambda: weakness_criteria)
 
 
-@dataclass
-class ProductDetails:
-    package_type: str
-    vendor: str
-    product: str
-    software_type: str
-    language: str
+def select_cwe_id(weaknesses: Weaknesses, cwe_properties: dict) -> Optional[int]:
+    best_cwe = (None, -1)
 
-    def __post_init__(self):
-        self.id = f"{self.vendor}_{self.product}"
-
-    def to_dict(self):
-        return {
-            "vendor": self.vendor,
-            "product": self.product,
-            "software_type": self.software_type,
-            "language": self.language
-        }
-
-
-@dataclass
-class CWEProperties:
-    id: int
-    vulnerability_mapping: str
-    abstraction: str
-
-
-class DetailedCVELoader(JSONDefaultLoader):
-    def __init__(
-            self, product_lang_df_path: Path, product_sw_type_df_path: Path, cwe_properties_df_path: Path, **kwargs
-    ):
-        super().__init__(profile=CVEInAppWithCWEProfile, verbose=True, **kwargs)
-        product_lang_df = pd.read_csv(product_lang_df_path)
-        product_sw_type_df = pd.read_csv(product_sw_type_df_path)
-        cwe_properties_df = pd.read_csv(cwe_properties_df_path)
-        self.cwe_properties = {}
-
-        for _, row in cwe_properties_df.iterrows():
-            self.cwe_properties[row['cwe_id']] = CWEProperties(
-                id=row['cwe_id'],
-                vulnerability_mapping=row['vulnerability_mapping'],
-                abstraction=row['abstraction']
-            )
-        print(f"Loaded {len(self.cwe_properties)} CWE properties")
-
-        merged_df = pd.merge(product_lang_df, product_sw_type_df, on=["vendor", "product"], how="inner")
-        merged_df.rename(columns={"type": "package_type"}, inplace=True)
-        merged_df.dropna(subset=["language", "software_type"], inplace=True)
-        print(f"Found {len(merged_df)} products with language and software type")
-        self.products = {}
-
-        for _, row in tqdm(merged_df.iterrows(), total=len(merged_df), desc="Loading products details."):
-            row_dict = row[['vendor', 'product', 'package_type', 'software_type', 'language']].to_dict()
-            product = ProductDetails(**row_dict)
-            self.products[product.id] = product
-
-    def __call__(self, *args, **kwargs):
-        rows = []
-
-        for entry in super().__call__(*args, **kwargs):
-            row = {'cve_id': entry.id}
-            cwe_id = self.select_cwe_id(weaknesses=entry.weaknesses)
-
-            if not cwe_id:
+    for weakness in weaknesses:
+        for cwe_id in weakness.ids:
+            if cwe_id not in cwe_properties:
                 continue
 
-            row['cwe_id'] = f"CWE-{cwe_id}"
+            cwe_score = CWE_ABSTRACTION_SCORE[cwe_properties[cwe_id]['abstraction']]
+            cwe_score += 1 if weakness.type == WeaknessType.Primary else 0
 
-            vulnerable_product = self.select_vulnerable_product(configurations=entry.configurations)
+            if cwe_score > best_cwe[1]:
+                best_cwe = (cwe_id, cwe_score)
 
-            if not vulnerable_product:
-                continue
+    return best_cwe[0]
 
-            row.update(vulnerable_product.to_dict())
-            rows.append(row)
 
-        df = pd.DataFrame(rows)
-        print(f"Found {len(df)} CVEs with CWEs")
-        df.to_csv(output_file_path, index=False)
+def get_cwe_ids_in_apps_with_cwe_df(nvd_data_path: Path, cwe_properties_path: Path) -> pd.DataFrame:
+    rows = []
+    loader = JSONDefaultLoader(profile=CVEInAppWithCWEProfile, verbose=True)
+    cwe_properties_df = pd.read_csv(cwe_properties_path)
+    allowed_cwe_df = cwe_properties_df[cwe_properties_df["vulnerability_mapping"] != 'DISCOURAGED']
 
-    def select_cwe_id(self, weaknesses: Weaknesses) -> Optional[int]:
-        best_cwe = (None, -1)
+    cwe_properties_dict = {row["cwe_id"]: row.to_dict() for _, row in allowed_cwe_df.iterrows()}
 
-        for weakness in weaknesses:
-            for cwe_id in weakness.ids:
-                if cwe_id not in self.cwe_properties:
-                    continue
+    for entry in loader(data_path=nvd_data_path, include_subdirectories=True):
+        cwe_id = select_cwe_id(weaknesses=entry.weaknesses, cwe_properties=cwe_properties_dict)
 
-                cwe_properties = self.cwe_properties[cwe_id]
+        if not cwe_id:
+            continue
 
-                if cwe_properties.vulnerability_mapping == 'DISCOURAGED':
-                    continue
+        rows.append({
+            'cve_id': entry.id,
+            'cwe_id': f"CWE-{cwe_id}"
+        })
 
-                cwe_score = CWE_ABSTRACTION_SCORE[cwe_properties.abstraction]
-                cwe_score += 1 if weakness.type == WeaknessType.Primary else 0
+    _df = pd.DataFrame(rows)
+    print(f"Found {len(_df)} CVEs with CWEs")
 
-                if cwe_score > best_cwe[1]:
-                    best_cwe = (cwe_id, cwe_score)
+    return _df
 
-        return best_cwe[0]
-
-    def select_vulnerable_product(self, configurations: Configurations) -> Optional[ProductDetails]:
-        best_product = (None, -1)
-
-        for vuln_prod in configurations.vulnerable_products:
-            if vuln_prod.part != CPEPart.Application:
-                continue
-
-            product_id = f"{vuln_prod.vendor}_{vuln_prod.name}"
-
-            if product_id not in self.products:
-                continue
-
-            product = self.products[product_id]
-            product_score = SOFTWARE_TYPE_SCORE[product.software_type]
-            product_score += 1 if product.package_type == 'github' else 0
-
-            if product_score > best_product[1]:
-                best_product = (product, product_score)
-
-        return best_product[0]
 
 if output_file_path.exists():
     df = pd.read_csv(output_file_path)
-    print(df[["cwe_id"]].value_counts().head(25))
-    print(df[["software_type", "language", "cwe_id"]].value_counts().head(25))
 else:
-    loader = DetailedCVELoader(
-        product_lang_df_path=data_path / "rq1" / "products_language.csv",
-        product_sw_type_df_path=data_path / "rq1" / "software_type.csv",
-        cwe_properties_df_path=data_path / "rq1" / "cwe_properties.csv"
+    df = get_cwe_ids_in_apps_with_cwe_df(
+        nvd_data_path=Path("~/.nvdutils/nvd-json-data-feeds"),
+        cwe_properties_path=data_path / "rq1" / "cwe_properties.csv"
     )
 
-    cve_dict = loader(data_path=Path("~/.nvdutils/nvd-json-data-feeds"), include_subdirectories=True)
-    #print(f"Loaded {len(cve_dict)} CVEs")
+    df.to_csv(output_file_path, index=False)
+
+print(f"Unique CWE-IDs: {len(df['cwe_id'].unique())}")
+counts = df['cwe_id'].value_counts()
+top_25 = counts.head(25)
+
+print(f"Top 25 CWEs: {top_25}")
+print(f"Top 25 Percentage: {top_25.sum() / counts.sum()}")

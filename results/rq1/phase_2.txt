@@ -31,35 +31,39 @@ Product Language Mapping (get_products_language.py) (Total Samples: 13 081):
  - Elixir: 22
  - Others: 356
 
-CVE Data Extraction (get_cve_ids_in_apps_with_cwe.py) (Total Samples: 18566):
- - CWE-79: 6000
- - CWE-352: 1434
- - CWE-89: 1316
- - CWE-22: 899
- - CWE-862: 727
- - CWE-787: 661
- - CWE-434: 520
- - CWE-125: 422
- - CWE-94: 319
- - CWE-502: 311
- - CWE-78: 297
- - CWE-863: 287
- - CWE-476: 278
- - CWE-918: 243
- - CWE-601: 212
- - CWE-522: 207
- - CWE-416: 203
- - CWE-770: 188
- - CWE-1321: 171
- - CWE-611: 159
- - CWE-190: 158
- - CWE-295: 145
- - CWE-732: 128
- - CWE-639: 123
- - CWE-835: 113
+CVE Selection (get_cve_ids_in_apps_with_cwe.py) (Total Samples: 81353):
+Unique CWE-IDs: 405
+Top 25 CWEs:
+CWE-79     20840
+CWE-89      8414
+CWE-787     4902
+CWE-352     3931
+CWE-22      3507
+CWE-125     2675
+CWE-434     2170
+CWE-862     2157
+CWE-416     1897
+CWE-78      1499
+CWE-190     1318
+CWE-476     1315
+CWE-502     1201
+CWE-863     1150
+CWE-918     1055
+CWE-94      1054
+CWE-611      822
+CWE-601      801
+CWE-120      780
+CWE-732      756
+CWE-306      670
+CWE-522      664
+CWE-295      659
+CWE-770      616
+CWE-276      582
+
+Top 25 Percentage: 0.8043341978783819
 
 
-Dataset consolidation:
+Dataset consolidation (create_dataset.py) (Total Samples: )
 
 software_type  language    cwe_id
 extension      PHP         CWE-79      2170

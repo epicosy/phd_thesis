@@ -19,7 +19,7 @@ os.makedirs(RESULTS_DIR, exist_ok=True)
 
 def load_data():
     """Load and preprocess the CVE data."""
-    csv_path = os.path.join(DATA_DIR, 'cve_ids_in_apps_with_cwe.csv')
+    csv_path = os.path.join(DATA_DIR, 'dataset.csv')
     df = pd.read_csv(csv_path)
     
     # Extract CWE ID number from the CWE-XXX format
