@@ -57,7 +57,13 @@ This phase yields a consolidated schema of security fault attributes that will g
         \item Product name analysis using predefined keywords
     \end{itemize}
     
-    \item \textbf{Dataset consolidation:} We merge all gathered information into a unified table. Each row corresponds to one vulnerability and includes attributes such as CVE ID, CWE ID, vendor, product, programming language, and software type.
+    \item \textbf{Dataset consolidation:} We merge all gathered information into a unified table. Each row corresponds to one vulnerability and includes attributes such as CVE ID, CWE ID, vendor, product, programming language, and software type. To have more accurate information on the programming language, we employ a text analysis approach to extract language information from CVE descriptions by:
+    \begin{itemize}
+        \item Identifying file names with known extensions mentioned in vulnerability descriptions
+        \item Mapping these file extensions to their corresponding programming languages
+        \item Determining the most likely language based on the frequency of file extensions
+    \end{itemize}
+
 \end{itemize}
 
 

@@ -105,6 +105,12 @@ This directory contains scripts used for data collection and processing as part 
    - Select the most appropriate vulnerable product based on:
      - Software type (using a scoring system that prioritizes certain types)
      - Package type (giving preference to GitHub repositories)
+   - Extract programming language information:
+     - Attempt to extract language from CVE description by:
+       - Identifying file names with known extensions in the description
+       - Mapping file extensions to programming languages
+       - Determining the most likely language based on frequency
+     - If not available, fallback to use the language from product details
    - Create a record with CVE ID, CWE ID, vendor, product, software type, and language information
 6. Save the consolidated dataset to a CSV file in the data/rq1 directory
 

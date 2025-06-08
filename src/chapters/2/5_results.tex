@@ -43,14 +43,14 @@ The prevalence of web-related vulnerabilities (CWE-79, CWE-352, CWE-89) reflects
 
 \subsection{Multi-dimensional Vulnerability Profiling}
 
-The consolidated dataset reveals important patterns across software types, programming languages, and vulnerability classes:
+The consolidated dataset (18,566 samples total, including 7,868 products with both language and software type identified) reveals important patterns across software types, programming languages, and vulnerability classes:
 
 \begin{itemize}
-    \item PHP-based extensions and web applications are particularly susceptible to Cross-Site Scripting (CWE-79), with 2,170 and 1,432 instances respectively, representing the most common vulnerability profiles.
-    \item Cross-Site Request Forgery (CWE-352) is also prevalent in PHP extensions (599 instances) and web applications (319 instances).
-    \item SQL Injection (CWE-89) affects PHP web applications (431 instances) and extensions (391 instances) most frequently.
-    \item JavaScript applications show significant vulnerability to Cross-Site Scripting (CWE-79, 254 instances), while Java libraries exhibit both XSS (218 instances) and CSRF (190 instances) vulnerabilities.
-    \item Memory corruption vulnerabilities cluster in C-based frameworks (CWE-125, 142 instances; CWE-787, 156 instances) and utilities (CWE-125, 156 instances; CWE-787, 136 instances).
+    \item PHP-based extensions and web applications are particularly susceptible to Cross-Site Scripting (CWE-79), with 2,175 and 1,450 instances respectively, representing the most common vulnerability profiles.
+    \item Cross-Site Request Forgery (CWE-352) is also prevalent in PHP extensions (607 instances) and web applications (334 instances).
+    \item SQL Injection (CWE-89) affects PHP web applications (477 instances) and extensions (399 instances) most frequently.
+    \item JavaScript applications show significant vulnerability to Cross-Site Scripting (CWE-79, 245 instances), while Java libraries exhibit both XSS (221 instances) and CSRF (188 instances) vulnerabilities.
+    \item Memory corruption vulnerabilities cluster in C-based frameworks (CWE-787, 158 instances; CWE-125, 147 instances) and utilities (CWE-125, 154 instances; CWE-787, 138 instances).
 \end{itemize}
 
 These patterns reveal distinct vulnerability profiles across the software ecosystem:
@@ -82,7 +82,7 @@ These findings demonstrate that vulnerability profiles are not uniform across th
 While our analysis provides valuable insights, several limitations should be acknowledged:
 
 \begin{itemize}
-    \item The language mapping process successfully identified languages for only 13,081 of the 33,536 software products, potentially introducing selection bias.
+    \item The language mapping process successfully identified languages for only 13,081 of the 33,536 software products, though we supplemented this with an additional 4,578 CVEs where language was determined from vulnerability descriptions, reducing but not eliminating potential selection bias.
     \item The consolidated dataset represents only the most frequent combinations, not the complete cross-product of all dimensions.
     \item The reliance on NVD data means our analysis is limited to reported and publicly disclosed vulnerabilities, which may not represent the complete vulnerability landscape.
 \end{itemize}

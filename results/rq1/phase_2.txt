@@ -63,31 +63,34 @@ CWE-276      582
 Top 25 Percentage: 0.8043341978783819
 
 
-Dataset consolidation (create_dataset.py) (Total Samples: )
+Dataset consolidation (create_dataset.py) (Total Samples: 18 566)
+Found 7868 products with language and software type
+Found 4578 CVEs with language determined from description
 
+Top 25 Relationship Counts:
 software_type  language    cwe_id
-extension      PHP         CWE-79      2170
-web_app        PHP         CWE-79      1432
-extension      PHP         CWE-352      599
-web_app        PHP         CWE-89       431
-extension      PHP         CWE-89       391
-framework      PHP         CWE-79       340
+extension      PHP         CWE-79      2175
+web_app        PHP         CWE-79      1450
+extension      PHP         CWE-352      607
+web_app        PHP         CWE-89       477
+extension      PHP         CWE-89       399
+framework      PHP         CWE-79       336
+web_app        PHP         CWE-352      334
 extension      PHP         CWE-862      322
-web_app        PHP         CWE-352      319
-extension      JavaScript  CWE-79       254
-library        Java        CWE-79       218
-web_app        PHP         CWE-434      214
-library        Java        CWE-352      190
+               JavaScript  CWE-79       245
+web_app        PHP         CWE-434      226
+library        Java        CWE-79       221
+web_app        PHP         CWE-22       196
+library        Java        CWE-352      188
                            CWE-862      186
-web_app        PHP         CWE-22       179
-               JavaScript  CWE-79       175
-library        JavaScript  CWE-787      164
-                           CWE-22       157
-utility        C           CWE-125      156
-framework      C           CWE-787      156
-                           CWE-125      142
-utility        C           CWE-787      136
-library        Java        CWE-522      132
-server         PHP         CWE-79       120
-library        JavaScript  CWE-1321     117
-web_app        JavaScript  CWE-89       113
+               JavaScript  CWE-787      165
+                           CWE-22       161
+framework      C           CWE-787      158
+utility        C           CWE-125      154
+framework      C           CWE-125      147
+utility        C           CWE-787      138
+web_app        JavaScript  CWE-79       127
+server         PHP         CWE-79       123
+web_app        HTML        CWE-79       122
+library        JavaScript  CWE-1321     119
+web_app        PHP         CWE-94       108
