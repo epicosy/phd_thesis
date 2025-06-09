@@ -15,6 +15,7 @@
 \usepackage{amsthm} % For theoremstyle
 \usepackage{acronym} % For \ac
 \usepackage{listings} % For lstlisting
+\usepackage{colortbl} % To add color to table cells and header rows.
 \usepackage[many]{tcolorbox} % For COLORED BOXES (tikz and xcolor included)
 \usetikzlibrary{positioning}
 
@@ -25,13 +26,13 @@
 %% option  degree/programme
 %% -----------------------------
 %% meec    Master's degree in Electrical and Computer Engineering
-%% meic    Master's degree in Informatics Engineering and Computation   
+%% meic    Master's degree in Informatics Engineering and Computation
 %% mem     Master's degree in Mechanical Engineering
 %% mesw    Master's degree in Software Engineering
 %% mci     Master's degree in Information Science
 
 %% In general, the dissertation goes through several stages
-%% 
+%%
 %% option       stage
 %%  -----------------------------
 %% (no option)  text is in the preparation stage
@@ -39,10 +40,10 @@
 %% final        version for final submission (after accpetance)
 
 %% Generic format (for other degrees, including Ph.D. programmes)
-\usepackage[ieeerefs]{feupteses} 
+\usepackage[ieeerefs]{feupteses}
 %% If you don't use a degree option, you must define the degree below
 
-%% Additional options for feupteses.sty: 
+%% Additional options for feupteses.sty:
 %% - portugues: titles, etc in portuguese
 %% - onpaper: links are not shown (for paper versions)
 %% - backrefs: include back references from bibliography to citation place
@@ -61,7 +62,11 @@
 \addbibresource{bibliography.bib}
 
 %% Commands
-\colorlet{tablerowcolor}{gray!10} % Table row separator colour = 10% gray
+\definecolor{lavender}{HTML}{EAEAF2}
+\definecolor{quartz}{HTML}{D2D2D9}
+
+\colorlet{tableheadcolor}{quartz} % Table header colour = 20% gray
+\colorlet{tablerowcolor}{lavender} % Table row separator colour = 10% gray
 \newcommand{\headcol}{\rowcolor{tableheadcolor}}
 \newcommand{\rowcol}{\rowcolor{tablerowcolor}}
 
@@ -75,6 +80,20 @@
 
 
 \newcommand{\eduard}[1]{\colorbox{teal}{{\scriptsize\bfseries\color{white}Eduard:}} {\color{teal}#1} \colorbox{teal}{\scriptsize\color{white}END}}
+
+\tcbset{
+    sharp corners,
+    before skip = 0.25cm,    % add extra space before the box
+    after skip = 0.25cm      % add extra space after the box
+}                           % setting global options for tcolorbox
+
+\newtcolorbox{boxC}{
+    colback = tablerowcolor, % background color
+    colframe = quartz,
+    boxrule = 0pt,  % no borders
+    toprule = 3pt
+}
+
 
 %%========================================
 %% Start of document
@@ -146,8 +165,8 @@
 %%----------------------------------------
 \StartBody
 
-\include{chapters/1/0_main}
-\include{chapters/2/0_main}
+\include{src/chapters/1/0_main}
+\include{src/chapters/2/0_main}
 
 %%----------------------------------------
 %% Final materials

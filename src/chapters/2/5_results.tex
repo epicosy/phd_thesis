@@ -2,18 +2,34 @@
 
 Our analysis of the National Vulnerability Database (NVD) yielded a comprehensive dataset that allows us to profile security faults across multiple dimensions. Following the methodology outlined in Phase II, we present the results of our data collection and analysis, addressing the research question of how software security faults profile regarding software type, technology, causes, and programming language.
 
-\subsection{Software Type Distribution}
+\subsection{How do vulnerability patterns differ across software types?}
 
-The software type categorization process identified 33,536 vulnerable software products across seven major categories. Figure~\ref{fig:software-type-dist} illustrates this distribution:
+To understand how vulnerability patterns vary by software type, we analyzed the 100\%‐stacked distribution of the top CWEs across seven categories of software products (extension, framework, library, mobile\_app, server, utility, web\_application). This analysis builds on the consolidated dataset of 55,657 CVEs for which software type was determined, after mapping products to types and programming languages as described in the methodology.
+
+Figure~\ref{fig:sw_typ_cwe} (100\%‐stacked bar chart) shows the relative frequency of four prominent CWEs (CWE-352: Cross-Site Request Forgery; CWE-787: Out-of-Bounds Write; CWE-79: Cross-Site Scripting; CWE-89: SQL Injection) along with “Others” (all remaining CWEs) for each software type. The key observations are as follows:
+
+\begin{figure}[!h]
+	\centering
+    \includegraphics[width=0.95\textwidth]{figures/chapter_2/stacked_bar_software_cwe.png}
+	\caption{100\%‐stacked bar chart of CWE Distribution by Software Type}
+	\label{fig:sw_typ_cwe}
+\end{figure}
 
 \begin{itemize}
-    \item Extensions represent the largest category (20.8\%, 6,990 samples), indicating the significant security challenges in browser and application extensions.
-    \item Servers (18.1\%, 6,057 samples) and utilities (16.7\%, 5,601 samples) follow closely, highlighting the prevalence of vulnerabilities in these critical infrastructure components.
-    \item Libraries (16.4\%, 5,515 samples), web applications (10.6\%, 3,548 samples), and frameworks (9.8\%, 3,280 samples) form the middle tier of vulnerability distribution.
-    \item Mobile applications (7.6\%, 2,535 samples) represent the smallest major category, possibly reflecting their more recent emergence compared to other software types.
+    \item \textbf{Extensions}: Nearly half of the vulnerabilities in extensions are XSS (CWE-79: 49.6\%), followed by CSRF (CWE-352: 13.9\%) and SQL Injection (CWE-89: 10.2\%), with a substantial residual portion (25.8\%) in “Others.” This suggests that browser or plugin-like components are predominantly exposed to web-based injection and script injection flaws, likely due to their frequent interaction with untrusted web content or APIs.
+    \item \textbf{Web Applications}: Web applications similarly exhibit a high proportion of XSS (40.1\%) and SQL Injection (13.3\%), with CSRF accounting for 6.7\% and “Others” comprising 37.9\%. This aligns with expectations for web-facing services, where input validation and session/state management issues are primary concerns.
+    \item \textbf{Servers}: Server software shows a moderate share of XSS (21.5\%) and lower SQL Injection (4.7\%) and CSRF (2.9\%), with “Others” at 67.4\%. The lower injection percentages may reflect that many server-side components rely on different interfaces (e.g., APIs, network protocols) where other types of weaknesses (captured in “Others”) predominate.
+    \item \textbf{Frameworks}: Frameworks stand out with a notable portion of memory-related issues (CWE-787: 13.3\%), alongside XSS (12.8\%) and a large “Others” category (69.1\%). This indicates that underlying libraries or platforms (e.g., web frameworks, application frameworks) face both input-handling flaws and lower-level implementation bugs, including memory safety vulnerabilities.
+    \item \textbf{Libraries}: Libraries have a smaller fraction of XSS (14.0\%) and Out-of-Bounds Write (5.4\%), with most vulnerabilities falling into “Others” (73.3\%). This diffuse distribution suggests libraries span a wide range of functionality, so specific weakness patterns vary greatly depending on the domain (e.g., cryptography, data processing, image handling).
+    \item \textbf{Utilities}: Utility software shows a moderate XSS share (15.6\%) and a higher proportion of Out-of-Bounds Write (12.5\%), with “Others” at 67.9\%. Utilities (e.g., command-line tools, system utilities) often involve file or memory operations, which may explain the relative prominence of memory-related flaws alongside occasional script or injection issues when utilities process complex inputs.
+    \item \textbf{Mobile Applications}: Mobile apps exhibit a small fraction of XSS (8.1\%) but a notable Out-of-Bounds Write share (12.2\%), with “Others” dominating (77.0\%). This pattern reflects that while mobile apps may embed webviews (leading to some XSS), many vulnerabilities arise from platform-specific memory handling or misuse of APIs.
 \end{itemize}
 
-This distribution reveals that extensions, which often have privileged access to user data and system resources, are particularly susceptible to security vulnerabilities. The high representation of servers and utilities underscores the security challenges in infrastructure software that often serves as the backbone of digital systems.
+Overall, software types with strong web-facing components (extensions, web applications) show high proportions of injection and scripting weaknesses, whereas types closer to system-level or framework-level code (frameworks, utilities, mobile apps) surface more memory-related issues. Libraries cover a broad spectrum, resulting in a large “Others” bucket. Servers lie in between, with diverse vulnerabilities but fewer classical web injection flaws.
+
+\begin{boxC}
+\textit{\textbf{Finding 1.} Vulnerability patterns vary significantly by software type: web-facing contexts (extensions, web applications) are dominated by script- and injection-related weaknesses (e.g., XSS, SQL Injection), while frameworks, utilities, and mobile applications exhibit higher rates of memory safety issues (e.g., out-of-bounds writes). Libraries show diffuse patterns across many weakness types. This implies that security mitigations should be tailored to software type, emphasizing input validation and sanitization for web components, and memory safety practices for frameworks and system-oriented software.}
+\end{boxC}
 
 \subsection{Programming Language Analysis}
 
@@ -75,16 +91,4 @@ Returning to our research question—\textit{How do software security faults pro
     \item \textbf{Programming Language:} Strong correlations exist between languages and vulnerability types: PHP and JavaScript with web vulnerabilities, C and C++ with memory corruption, and Java with a mix of web and authorization issues.
 \end{itemize}
 
-These findings demonstrate that vulnerability profiles are not uniform across the software ecosystem but rather cluster into distinct patterns based on software type, implementation language, and application domain. This multi-dimensional profiling provides a more nuanced understanding of security fault distribution than previous single-dimension analyses.
-
-\subsection{Limitations}
-
-While our analysis provides valuable insights, several limitations should be acknowledged:
-
-\begin{itemize}
-    \item The language mapping process successfully identified languages for only 13,081 of the 33,536 software products, though we supplemented this with an additional 4,578 CVEs where language was determined from vulnerability descriptions, reducing but not eliminating potential selection bias.
-    \item The consolidated dataset represents only the most frequent combinations, not the complete cross-product of all dimensions.
-    \item The reliance on NVD data means our analysis is limited to reported and publicly disclosed vulnerabilities, which may not represent the complete vulnerability landscape.
-\end{itemize}
-
-Despite these limitations, the large sample sizes and clear patterns observed provide confidence in the overall trends identified in our analysis.
+These findings demonstrate that vulnerability profiles are not uniform across the software ecosystem but rather cluster into distinct patterns based on software type, implementation language, and application domain. This multi-dimensional profiling provides a more nuanced understanding of security fault distribution than previous single-dimensional analyses.

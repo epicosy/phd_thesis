@@ -1,2 +1,51 @@
 \section{Threats to Validity}
-\eduard{TODO}
+
+In this section, we discuss potential threats to the validity of our study, categorized into four main types: internal validity, external validity, construct validity, and conclusion validity.
+
+\subsection{Internal Validity}
+
+Internal validity concerns the extent to which our methodology allows for accurate causal inferences.
+
+\begin{itemize}
+    \item \textbf{Data extraction accuracy:} The automated data extraction process may introduce errors or inconsistencies. While we implemented validation checks, the complexity of parsing and merging data from multiple sources could lead to inaccuracies in the final dataset.
+
+    \item \textbf{Selection bias in CWE mapping:} Our algorithm for selecting the "most appropriate" CWE ID for each vulnerability involves prioritization based on vulnerability mapping, abstraction level, and weakness type. This selection process may introduce bias by favoring certain types of weaknesses over others.
+
+    \item \textbf{Temporal effects:} The NVD database is continuously updated, with both new vulnerabilities being added and existing entries being modified. Our analysis represents a snapshot at a specific point in time, which may affect the stability of our findings.
+\end{itemize}
+
+\subsection{External Validity}
+
+External validity concerns the generalizability of our findings to other contexts.
+
+\begin{itemize}
+    \item \textbf{Representativeness of the sample:} While the NVD is a comprehensive database, it may over-represent certain types of software or vulnerabilities. For example, open-source projects may be more likely to have their vulnerabilities reported and documented compared to proprietary software.
+
+    \item \textbf{Technological evolution:} The rapid evolution of technology means that the patterns and distributions of vulnerabilities observed in our study may not generalize to future software systems or emerging technologies.
+\end{itemize}
+
+\subsection{Construct Validity}
+
+Construct validity concerns whether we are measuring what we intend to measure.
+
+\begin{itemize}
+    \item \textbf{Language classification:} Our classification of programming languages into primary (general-purpose) and secondary (domain-specific) categories may not capture the full complexity of language ecosystems. Some languages may span multiple categories or evolve over time.
+
+    \item \textbf{Software type categorization:} The categorization of software into different types based on predefined mappings and keyword analysis may not always accurately reflect the true nature or purpose of the software.
+
+    \item \textbf{CWE abstraction levels:} The CWE hierarchy includes different levels of abstraction (e.g., Class, Base, Variant). Our preference for more specific abstractions may not always align with how vulnerabilities are conceptualized in practice.
+\end{itemize}
+
+\subsection{Conclusion Validity}
+
+Conclusion validity concerns the reliability of our conclusions based on the data and analysis.
+
+\begin{itemize}
+    \item \textbf{Pattern identification:} The identification of patterns in the exploratory analysis phase relies on visual inspection and statistical methods. There is a risk of identifying spurious patterns or missing significant but subtle relationships.
+
+    \item \textbf{Classification hierarchy design:} The design of our three-level classification hierarchy (Dimension → Subclass → Example CWE) involves subjective decisions about how to organize and categorize vulnerabilities. Different researchers might arrive at different classification schemes given the same data.
+
+    \item \textbf{Interpretation of results:} The interpretation of the relationships between software types, programming languages, and CWEs may be influenced by preconceptions or biases in how we understand and categorize security vulnerabilities.
+\end{itemize}
+
+To mitigate these threats, we have implemented several measures, including validation checks in our data extraction pipeline, cross-referencing multiple data sources, and using established taxonomies as a foundation for our classification scheme. We also acknowledge that our findings should be interpreted within the context of these limitations and that further research is needed to validate and extend our results.

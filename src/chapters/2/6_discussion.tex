@@ -1,2 +1,23 @@
 \section{Discussion}
-\eduard{TODO}
+
+Our multi-dimensional analysis of security faults provides a comprehensive framework for understanding vulnerability patterns across different programming languages, software types, and architectural layers. The hierarchical classification scheme developed through our methodology offers a structured approach to categorizing and analyzing security vulnerabilities, which can inform both research and practice in software security.
+
+\subsection{Limitations}
+
+While our analysis provides valuable insights, several limitations should be acknowledged:
+
+\begin{itemize}
+    \item \textbf{Data source limitations:} The reliance on NVD data means our analysis is limited to reported and publicly disclosed vulnerabilities, which may not represent the complete vulnerability landscape. Vulnerabilities that are discovered but not reported, or those that remain undiscovered, are not captured in our dataset.
+
+    \item \textbf{Language mapping challenges:} The process of mapping software products to programming languages relies on heuristics and predefined mappings. For repositories with multiple languages, our priority-based selection may not always capture the language most relevant to the vulnerability.
+
+    \item \textbf{Software type categorization:} The categorization of software into different types (e.g., extension, package, framework) is based on predefined mappings and keyword analysis, which may not always accurately reflect the true nature of the software.
+
+    \item \textbf{CWE selection:} Our methodology selects the "most appropriate" CWE ID based on vulnerability mapping, abstraction level, and weakness type. This selection process may not always capture the full complexity of vulnerabilities that span multiple weakness types.
+
+    \item \textbf{Temporal limitations:} Our analysis represents a snapshot of the vulnerability landscape at the time of data collection. The distribution and patterns of vulnerabilities may change over time as new technologies emerge and security practices evolve.
+
+    \item \textbf{Abstraction trade-offs:} The hierarchical classification scheme, while providing a structured approach to categorizing vulnerabilities, necessarily involves some level of abstraction that may obscure nuanced differences between similar vulnerability types.
+\end{itemize}
+
+Despite these limitations, the large sample sizes and clear patterns observed provide confidence in the overall trends identified in our analysis. The multi-dimensional approach allows for a more comprehensive understanding of security faults than would be possible with a single-dimensional analysis.

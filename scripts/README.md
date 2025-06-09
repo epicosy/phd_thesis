@@ -31,18 +31,27 @@ This directory contains scripts used for data collection and processing as part 
 
 ### 2. get_products_language.py
 
-**Purpose**: This script maps software products to their programming languages using package URL (purl) to CPE mappings and GitHub repository information.
+**Purpose**: This script maps software products to their programming languages using package URL (purl) to CPE mappings and GitHub repository information. It categorizes programming languages into primary (general-purpose) and secondary (domain-specific) languages based on the classification defined in language_extension_mapping.json.
 
 **Algorithm**:
 1. Load purl-to-CPE mappings from a SQLite database
-2. Create a DataFrame with vendor-product-purl mappings
-3. Map packages to programming languages using:
+2. Load language classification from language_extension_mapping.json, which defines:
+   - Primary languages: General-purpose, Turing-complete languages (e.g., PHP, C, Java, Python)
+   - Secondary languages: Domain-specific, executable languages (e.g., SQL, MATLAB, R)
+3. Create a DataFrame with vendor-product-purl mappings
+4. Map packages to programming languages using:
    - A predefined mapping of package types to languages (e.g., maven → Java, pypi → Python)
-   - For GitHub repositories, query the GitHub API to get the primary language
-4. Filter the mappings to include only products that appear in the CVE dataset
-5. For products without language information from the package type mapping:
-   - If they have GitHub repository information, query the GitHub API to get the language
-6. Save the results to a CSV file in the data/rq1 directory
+   - For GitHub repositories, query the GitHub API to get repository languages
+5. For GitHub repositories, select the appropriate language based on priority rules:
+   - First, check if the main language is in the primary languages list
+   - If not, check if the second most common language is in the primary languages list
+   - If still not found, check if the main language is in the secondary languages list
+   - If still not found, check if the second language is in the secondary languages list
+   - If no suitable language is found, mark as 'N/A'
+6. Filter the mappings to include only products that appear in the CVE dataset
+7. For products without language information from the package type mapping:
+   - If they have GitHub repository information, query the GitHub API to get the language using the priority rules
+8. Save the results to a CSV file in the data/rq1 directory
 
 **Dependencies**:
 - pandas
@@ -51,10 +60,12 @@ This directory contains scripts used for data collection and processing as part 
 - cpeparser
 - packageurl
 - sqlite3
+- json
 
 **Requirements**:
 - GitHub API token (set as GITHUB_TOKEN environment variable)
 - Access to a purl2cpe.db SQLite database
+- language_extension_mapping.json file in data/rq1 directory
 
 ### 3. get_software_type.py
 
@@ -143,6 +154,64 @@ This directory contains scripts used for data collection and processing as part 
 
 **Output**:
 - A Sankey diagram saved as `sankey_software_language_cwe.png` in the results/rq1 directory
+
+## Programming Language Classification
+
+The script `get_products_language.py` uses a classification system for programming languages defined in `language_extension_mapping.json`. This classification is used to prioritize which language to associate with a software product when multiple languages are detected. The languages are categorized as follows:
+
+### Primary Languages (General-Purpose)
+
+These are languages designed to build a broad range of software systems, not limited to a particular domain or task. They are Turing-complete and expressive enough to write systems software, web servers, tools, games, and more.
+
+Examples include:
+- PHP, C, Java, Python, JavaScript
+- C++, C#, Ruby, Go, Rust
+- Kotlin, Swift, TypeScript, Perl
+- Scala, Haskell, Clojure, Erlang
+- Visual Basic, COBOL, Fortran, Ada
+
+### Secondary Languages (Domain-Specific)
+
+These are languages that are Turing-complete or executable, but tailored for a specific problem domain, like smart contracts, scientific modeling, query extensions, or visual computing.
+
+Examples include:
+- SQL, TSQL, PLpgSQL (database query languages)
+- R, MATLAB, Mathematica (scientific/statistical computing)
+- Shell, PowerShell (system scripting)
+- Solidity (smart contracts)
+- TeX (document typesetting)
+
+> Special Notes:
+> - Starlark: Technically Turing-complete, but execution is managed by the Bazel build tool 
+> - TeX: Technically executable within a TeX engine that processes markup and generates formatted output
+> - Hack: A PHP dialect mainly used by Facebook
+> - R: Primarily used for statistical computing
+> - MATLAB: Primarily used for numerical computing
+> - Mathematica: Powered by the Wolfram Language, used mainly in mathematics and scientific computation
+
+### Non-Executable Languages (Not Included in Classification)
+
+These are syntaxes or languages that do not support general-purpose execution — typically declarative, stylistic, or templating languages that cannot express control flow or computation fully (i.e., not Turing-complete).
+
+Examples include:
+- HTML, CSS, SCSS, Less, Stylus, Roff (markup and styling)
+- YAML, JSON, TOML, CSV (data formats)
+- Markdown, MDX (document formats)
+- Jinja, Mustache, Twig, Blade, EJS (templating)
+- HCL, Puppet, Nix (configuration)
+> **Nix** is used to define package builds and system configurations, but the actual execution of these definitions is handled by the Nix package manager and build system.
+
+
+### Not Languages (Not Included in Classification)
+
+These entries are not programming languages in a strict sense. They may be frameworks, build systems, configuration files, markup or packaging formats, UI frameworks, or meta-languages.
+
+Examples include:
+- Dockerfile, Batchfile, Makefile, CMake, BitBake, RPM Spec, Inno Setup (build/setup systems/scripts)
+- Jupyter Notebook, Rich Text Format, Gettext Catalog, (data/document formats)
+- Vue, Svelte, ASP.NET, ASP, Classic ASP, JetBrains MPS, Astro, CUDA, Lex, LLVM, ASL, LabVIEW (infra, tools, frameworks/platforms)
+
+> **CUDA** is not a language itself but rather a parallel computing platform and API.
 
 ## Usage
 

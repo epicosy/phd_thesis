@@ -2,10 +2,11 @@ import sqlite3
 import pandas as pd
 import logging
 import sys
+import json
 
 from tqdm import tqdm
 from os import environ
-from typing import List, Dict, Set, Optional, Tuple
+from typing import List, Set, Optional, Tuple
 from pathlib import Path
 
 from gitlib import GitClient
@@ -20,6 +21,15 @@ logging.basicConfig(
     handlers=[logging.StreamHandler(sys.stdout)]
 )
 logger = logging.getLogger(__name__)
+
+# TODO: this should be loaded somewhere else
+mapping_path = Path(__file__).parent.parent / "data" / "rq1" / "language_extension_mapping.json"
+
+with open(mapping_path, 'r') as f:
+    language_mapping = json.load(f)
+
+PRIMARY_LANGUAGES = set(language_mapping.get("primary", {}).keys())
+SECONDARY_LANGUAGE = set(language_mapping.get("secondary", {}).keys())
 
 # Constants
 PURL_TYPE_LANGUAGE_MAPPING = {
@@ -243,13 +253,9 @@ def get_products_language_df(purl_db_path: Path, output_path: Path, cpe_parser: 
     return product_lang_df
 
 
-def query_github_repository_language(
-    git_client: GitClient, 
-    namespace: str, 
-    name: str
-) -> Optional[str]:
+def get_repository_languages(git_client: GitClient, namespace: str, name: str) -> Optional[List[Tuple[str, int]]]:
     """
-    Query GitHub API for repository language information.
+    Get sorted languages from a GitHub repository.
 
     Args:
         git_client: Initialized Git client
@@ -257,28 +263,111 @@ def query_github_repository_language(
         name: Repository name
 
     Returns:
-        Repository language or None if not available
+        List of (language, byte_count) tuples sorted by byte count (descending) or None if error
     """
     try:
         repo = git_client.get_repo(owner=namespace, project=name, raise_err=True)
-        language = repo.language
-        logger.debug(f"Retrieved language for {namespace}/{name}: {language}")
-        return language if language else 'N/A'
+        languages_dict = repo.repo.get_languages()
+
+        if not languages_dict:
+            logger.debug(f"No languages found for {namespace}/{name}")
+            return None
+
+        # Sort languages by byte count (descending)
+        return sorted(languages_dict.items(), key=lambda x: x[1], reverse=True)
     except GitLibException as gle:
         if 'limit exhausted' in str(gle):
             logger.warning("GitHub API rate limit exhausted. Stopping queries.")
             raise
         else:
             logger.warning(f"Error querying GitHub repository: {namespace}/{name}, Error: {gle}")
+            return None
+    except Exception as e:
+        logger.error(f"Unexpected error querying repository {namespace}/{name}: {e}")
+        return None
+
+
+def select_language_by_priority(sorted_languages: List[Tuple[str, int]], namespace: str, name: str) -> str:
+    """
+    Select the appropriate language based on priority rules.
+
+    Priority order:
+    1. Main language in PRIMARY_LANGUAGES
+    2. Second language in PRIMARY_LANGUAGES
+    3. Main language in SECONDARY_LANGUAGE
+    4. Second language in SECONDARY_LANGUAGE
+
+    Args:
+        sorted_languages: List of (language, byte_count) tuples sorted by byte count
+        namespace: Repository owner/namespace for logging
+        name: Repository name for logging
+
+    Returns:
+        Selected language or 'N/A' if no suitable language found
+    """
+    # Check main language against primary languages
+    main_language = sorted_languages[0][0]
+    second_language = sorted_languages[1][0] if len(sorted_languages) > 1 else 'N/A'
+
+    if main_language in PRIMARY_LANGUAGES:
+        logger.debug(f"Main language for {namespace}/{name} is {main_language} (in Primary languages)")
+        return main_language
+
+    # Check second language against primary languages (if available)
+    if second_language in PRIMARY_LANGUAGES:
+        logger.debug(f"Second language for {namespace}/{name} is {main_language} (in Primary languages)")
+        return second_language
+
+    # Check the main language against secondary languages
+    if main_language in SECONDARY_LANGUAGE:
+        logger.debug(f"Main language for {namespace}/{name} is {main_language} (in Secondary languages)")
+        return main_language
+
+    # Check second language against secondary languages (if available)
+    if second_language in SECONDARY_LANGUAGE:
+        logger.debug(f"Second language for {namespace}/{name} is {main_language} (in Secondary languages)")
+        return second_language
+
+    # If language could not be verified, return 'N/A'
+    logger.debug(f"Could not verify language for {namespace}/{name}")
+    return 'N/A'
+
+
+def query_github_repository_language(git_client: GitClient, namespace: str, name: str) -> Optional[str]:
+    """
+    Query GitHub API for repository language information.
+
+    Checks the main repo language against primary languages in language_extension_mapping.json.
+    If not found, check if the second most common language is in primary languages.
+    If still not found, perform the same checks against secondary languages.
+    If language still can't be verified, set it to 'N/A'.
+
+    Args:
+        git_client: Initialized Git client
+        namespace: Repository owner/namespace
+        name: Repository name
+
+    Returns:
+        Repository language or 'N/A' if not available
+    """
+    try:
+        sorted_languages = get_repository_languages(git_client, namespace, name)
+
+        if not sorted_languages:
             return 'N/A'
 
+        return select_language_by_priority(sorted_languages, namespace, name)
+    except GitLibException as gle:
+        if 'limit exhausted' in str(gle):
+            # Re-raise rate limit exceptions to be handled by the caller
+            raise
+        return 'N/A'
+    except Exception as e:
+        logger.error(f"Unexpected error querying repository {namespace}/{name}: {e}")
+        return 'N/A'
 
-def update_language_for_row(
-    prod_lang_df: pd.DataFrame, 
-    index: int, 
-    row: pd.Series, 
-    git_client: GitClient
-) -> bool:
+
+def update_language_for_row(prod_lang_df: pd.DataFrame, index: int, row: pd.Series, git_client: GitClient) -> bool:
     """
     Update language information for a single row in the DataFrame.
 
@@ -308,9 +397,7 @@ def update_language_for_row(
 
 
 def get_products_language_from_repository(
-    prod_lang_df: pd.DataFrame, 
-    output_path: Path, 
-    git_client: GitClient
+        prod_lang_df: pd.DataFrame, output_path: Path, git_client: GitClient
 ) -> pd.DataFrame:
     """
     Update language information for products by querying GitHub repositories.
@@ -366,10 +453,7 @@ def load_existing_data(output_path: Path) -> pd.DataFrame:
     return pd.read_csv(output_path)
 
 
-def find_new_products(
-    product_purl_df: pd.DataFrame, 
-    existing_pairs: Set[Tuple[str, str]]
-) -> List[dict]:
+def find_new_products(product_purl_df: pd.DataFrame, existing_pairs: Set[Tuple[str, str]]) -> List[dict]:
     """
     Find products in the database that are not in the existing data.
 
@@ -393,10 +477,7 @@ def find_new_products(
     return new_products
 
 
-def process_new_products(
-    new_products: List[dict], 
-    existing_df: pd.DataFrame
-) -> pd.DataFrame:
+def process_new_products(new_products: List[dict], existing_df: pd.DataFrame) -> pd.DataFrame:
     """
     Process new products and merge them with existing data.
 
@@ -423,11 +504,7 @@ def process_new_products(
     return product_language_df
 
 
-def process_existing_data(
-    output_path: Path, 
-    purl_db_path: Path, 
-    cpe_parser: CpeParser
-) -> pd.DataFrame:
+def process_existing_data(output_path: Path, purl_db_path: Path, cpe_parser: CpeParser) -> pd.DataFrame:
     """
     Process existing data and update it with new products from the database.
 
@@ -457,6 +534,69 @@ def process_existing_data(
     return process_new_products(new_products, existing_df)
 
 
+def count_github_languages(github_repos: pd.DataFrame) -> pd.Series:
+    """
+    Count languages for GitHub repositories based on unique repositories.
+
+    Args:
+        github_repos: DataFrame with GitHub repository entries
+
+    Returns:
+        Series with language counts for GitHub repositories
+    """
+    if github_repos.empty:
+        return pd.Series(dtype='int64')
+
+    github_repos['repo_id'] = github_repos['namespace'] + '/' + github_repos['name']
+    # Drop duplicates to count each repository only once
+    unique_repos = github_repos.drop_duplicates(subset=['repo_id'])
+    logger.info(f"Found {len(unique_repos)} unique repositories in GitHub entries")
+    return unique_repos['language'].value_counts()
+
+
+def count_non_github_languages(non_github: pd.DataFrame) -> pd.Series:
+    """
+    Count languages for non-GitHub entries.
+
+    Args:
+        non_github: DataFrame with non-GitHub entries
+
+    Returns:
+        Series with language counts for non-GitHub entries
+    """
+    if non_github.empty:
+        return pd.Series(dtype='int64')
+
+    logger.info(f"Found {len(non_github)} non-GitHub entries")
+    return non_github['language'].value_counts()
+
+
+def create_top_languages_summary(combined_counts: pd.Series, top_n: int = 20) -> pd.Series:
+    """
+    Create a summary of top N languages, grouping the rest under "Others".
+
+    Args:
+        combined_counts: Series with language counts
+        top_n: Number of top languages to keep (default: 20)
+
+    Returns:
+        Series with top N languages and "Others" category
+    """
+    if len(combined_counts) <= top_n:
+        return combined_counts
+
+    top_languages = combined_counts.nlargest(top_n)
+    # Get the sum of all languages that are not in the top N
+    others_count = combined_counts.sum() - top_languages.sum()
+
+    # Create a new Series with top N + Others
+    result_counts = top_languages.copy()
+    if others_count > 0:
+        result_counts['Others'] = others_count
+
+    return result_counts
+
+
 def count_and_log_languages(product_language_df: pd.DataFrame) -> pd.Series:
     """
     Count languages based on unique repositories for GitHub entries and product for non-GitHub entries.
@@ -472,38 +612,15 @@ def count_and_log_languages(product_language_df: pd.DataFrame) -> pd.Series:
     github_repos = product_language_df[product_language_df['type'] == 'github'].copy()
     non_github = product_language_df[product_language_df['type'] != 'github'].copy()
 
-    # Count languages for GitHub repositories based on unique repositories
-    if not github_repos.empty:
-        github_repos['repo_id'] = github_repos['namespace'] + '/' + github_repos['name']
-        # Drop duplicates to count each repository only once
-        unique_repos = github_repos.drop_duplicates(subset=['repo_id'])
-        logger.info(f"Found {len(unique_repos)} unique repositories in GitHub entries")
-        github_lang_counts = unique_repos['language'].value_counts()
-    else:
-        github_lang_counts = pd.Series(dtype='int64')
-
-    # Count languages for non-GitHub entries
-    if not non_github.empty:
-        logger.info(f"Found {len(non_github)} non-GitHub entries")
-        non_github_lang_counts = non_github['language'].value_counts()
-    else:
-        non_github_lang_counts = pd.Series(dtype='int64')
+    # Count languages for each category
+    github_lang_counts = count_github_languages(github_repos)
+    non_github_lang_counts = count_non_github_languages(non_github)
 
     # Combine the counts
     combined_counts = github_lang_counts.add(non_github_lang_counts, fill_value=0).astype(int)
 
-    # Keep only the top 20 languages and group the rest under "Others"
-    if len(combined_counts) > 20:
-        top_20_languages = combined_counts.nlargest(20)
-        # Get the sum of all languages that are not in the top 20
-        others_count = combined_counts.sum() - top_20_languages.sum()
-
-        # Create a new Series with top 20 + Others
-        result_counts = top_20_languages.copy()
-        if others_count > 0:
-            result_counts['Others'] = others_count
-    else:
-        result_counts = combined_counts
+    # Create summary with top 20 languages
+    result_counts = create_top_languages_summary(combined_counts)
 
     logger.info(f"Final language distribution (top 20 + Others, counting unique repositories):\n{result_counts}")
 

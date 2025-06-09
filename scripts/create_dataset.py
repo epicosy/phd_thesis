@@ -1,4 +1,5 @@
 import re
+import json
 import pandas as pd
 
 from tqdm import tqdm
@@ -8,13 +9,14 @@ from typing import Optional
 
 from cpelib.types.definitions import CPEPart
 
-from nvdutils.loaders.json.default import JSONDefaultLoader
 from nvdutils.models.configurations import Configurations
+from nvdutils.loaders.json.default import JSONDefaultLoader
 
 
 root_path = Path(__file__).parent.parent
 data_path = root_path / "data" / "rq1"
 output_file_path = data_path / "dataset.csv"
+language_extension_mapping_file_path = data_path / "language_extension_mapping.json"
 
 
 SOFTWARE_TYPE_SCORE = {
@@ -29,53 +31,16 @@ SOFTWARE_TYPE_SCORE = {
 
 
 # Mapping of file extensions to programming languages
-FILE_EXTENSION_TO_LANGUAGE = {
-    # Web/Scripting
-    "js": "JavaScript",
-    "ts": "TypeScript",
-    "jsx": "JavaScript",
-    "tsx": "TypeScript",
-    "php": "PHP",
-    "py": "Python",
-    "rb": "Ruby",
-    "pl": "Perl",
-    "sh": "Shell",
-    "bash": "Shell",
-    "zsh": "Shell",
-    "html": "HTML",
-    "htm": "HTML",
-    "css": "CSS",
-    "scss": "CSS",
-    "less": "CSS",
+LANGUAGE_EXTENSION_MAPPING = json.load(open(language_extension_mapping_file_path))
+LANGUAGE_FILE_EXTENSIONS = list(set([_ext[1:].lower() for _langs in LANGUAGE_EXTENSION_MAPPING.values() for _exts in _langs.values() for _ext in _exts]))
 
-    # Compiled languages
-    "c": "C",
-    "h": "C",
-    "cpp": "C++",
-    "cc": "C++",
-    "cxx": "C++",
-    "hpp": "C++",
-    "hxx": "C++",
-    "java": "Java",
-    "cs": "C#",
-    "go": "Go",
-    "rs": "Rust",
-    "swift": "Swift",
-    "kt": "Kotlin",
-    "scala": "Scala",
+# Match file-like strings, with at least one letter before the dot
+# and a known file extension (to reduce false positives)
+# Join extensions into a regex group
+EXT_GROUP = '|'.join(LANGUAGE_FILE_EXTENSIONS)
 
-    # Data/Config
-    "json": "JSON",
-    "xml": "XML",
-    "yaml": "YAML",
-    "yml": "YAML",
-    "toml": "TOML",
-    "sql": "SQL",
-
-    # Other
-    "md": "Markdown",
-    "rst": "reStructuredText"
-}
+# Regex: match strings like `index.php`, not `1.2.3`
+FILE_NAME_PATTERN = rf'\b[a-zA-Z0-9_\-/]+\.({EXT_GROUP})\b'
 
 
 def get_product_details_df(product_lang_df_path: Path, product_sw_type_df_path: Path) -> dict:
@@ -83,9 +48,11 @@ def get_product_details_df(product_lang_df_path: Path, product_sw_type_df_path: 
     product_sw_type_df = pd.read_csv(product_sw_type_df_path)
     product_details = {}
 
-    merged_df = pd.merge(product_lang_df, product_sw_type_df, on=["vendor", "product"], how="inner")
+    merged_df = pd.merge(product_lang_df, product_sw_type_df, on=["vendor", "product"], how="outer")
     merged_df.rename(columns={"type": "package_type"}, inplace=True)
-    merged_df.dropna(subset=["language", "software_type"], inplace=True)
+    merged_df = merged_df.applymap(lambda x: None if pd.isna(x) else x)
+
+    # merged_df.dropna(subset=["language", "software_type"], inplace=True)
     print(f"Found {len(merged_df)} products with language and software type")
 
     for _, row in tqdm(merged_df.iterrows(), total=len(merged_df), desc="Loading products details."):
@@ -108,7 +75,11 @@ def select_vulnerable_product(configurations: Configurations, products_details: 
             continue
 
         product_dict = products_details[product_id]
-        product_score = SOFTWARE_TYPE_SCORE[product_dict['software_type']]
+        product_score = 0
+
+        if product_dict['software_type']:
+            product_score = SOFTWARE_TYPE_SCORE[product_dict['software_type']]
+
         product_score += 1 if product_dict['package_type'] == 'github' else 0
 
         if product_score > best_product[1]:
@@ -127,23 +98,13 @@ def extract_file_names(description: str) -> List[str]:
     Returns:
         A list of potential file names found in the description
     """
-    # Match file-like strings, with at least one letter before the dot
-    # and a known file extension (to reduce false positives)
-    file_extensions = list(FILE_EXTENSION_TO_LANGUAGE.keys())
-
-    # Join extensions into a regex group
-    ext_group = '|'.join(file_extensions)
-
-    # Regex: match strings like `index.php`, not `1.2.3`
-    file_name_pattern = rf'\b[a-zA-Z0-9_\-/]+\.({ext_group})\b'
-
     # Find all matches
-    file_names = re.findall(file_name_pattern, description)
+    file_names = re.findall(FILE_NAME_PATTERN, description)
 
     return file_names
 
 
-def determine_language_from_file_paths(file_paths: List[str]) -> Optional[str]:
+def determine_language_from_file_names(file_paths: List[str]) -> Optional[str]:
     """
     Determine the most likely programming language based on file extensions.
 
@@ -164,9 +125,11 @@ def determine_language_from_file_paths(file_paths: List[str]) -> Optional[str]:
         extension = path.split('.')[-1].lower()
 
         # Check if extension is in our mapping
-        if extension in FILE_EXTENSION_TO_LANGUAGE:
-            language = FILE_EXTENSION_TO_LANGUAGE[extension]
-            language_counts[language] = language_counts.get(language, 0) + 1
+        for category, languages in LANGUAGE_EXTENSION_MAPPING.items():
+            for language, extensions in languages.items():
+                if f".{extension}" in extensions:
+                    language_counts[language] = language_counts.get(language, 0) + 1
+                    break
 
     # Return the most common language if any were found
     if language_counts:
@@ -197,7 +160,7 @@ def create_dataset_df(nvd_data_path: Path, cve_cwe_df: pd.DataFrame, product_det
 
         # Try to extract language from description if available
         file_names = extract_file_names(cve.descriptions.get_eng_description().value)
-        language_from_description = determine_language_from_file_paths(file_names)
+        language_from_description = determine_language_from_file_names(file_names)
 
         # Update language if found in description
         if language_from_description:
