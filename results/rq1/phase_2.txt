@@ -67,33 +67,32 @@ Top 25 Percentage: 0.8043341978783819
 
 Dataset consolidation (create_dataset.py) (Total Samples: 62 883)
 Found 40 222 products with language or software type
-Found 12 067 CVEs with language determined from description
+Found 11 924 CVEs with language determined from description
 
 Top 25 Relationship Counts:
 software_type  language    cwe_id
-extension      PHP         CWE-79     2374
-web_app        PHP         CWE-79     2122
-                           CWE-89      956
+extension      PHP         CWE-79     2373
+web_app        PHP         CWE-79     2126
+                           CWE-89      959
 extension      PHP         CWE-352     646
 web_app        PHP         CWE-352     494
 extension      PHP         CWE-89      493
-framework      C           CWE-787     392
+framework      C           CWE-787     393
                PHP         CWE-79      374
+               C           CWE-125     351
 extension      PHP         CWE-862     337
-framework      C           CWE-125     331
-web_app        PHP         CWE-434     302
-utility        C           CWE-787     281
-                           CWE-125     274
+web_app        PHP         CWE-434     303
+utility        C           CWE-787     285
+                           CWE-125     271
 extension      JavaScript  CWE-79      265
 web_app        PHP         CWE-22      259
-framework      C           CWE-476     232
-library        Java        CWE-79      223
+framework      C           CWE-476     236
+library        Java        CWE-79      224
 utility        PHP         CWE-79      204
 library        Java        CWE-352     190
                            CWE-862     186
                JavaScript  CWE-22      168
                            CWE-787     165
-utility        C           CWE-476     162
 server         PHP         CWE-79      160
-web_app        PHP         CWE-94      148
-
+utility        C           CWE-476     159
+extension      PHP         CWE-22      147

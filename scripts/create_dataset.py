@@ -6,6 +6,7 @@ from tqdm import tqdm
 from typing import List
 from pathlib import Path
 from typing import Optional
+from urllib.parse import urlparse
 
 from cpelib.types.definitions import CPEPart
 
@@ -41,6 +42,8 @@ EXT_GROUP = '|'.join(LANGUAGE_FILE_EXTENSIONS)
 
 # Regex: match strings like `index.php`, not `1.2.3`
 FILE_NAME_PATTERN = rf'\b[a-zA-Z0-9_\-/]+\.({EXT_GROUP})\b'
+# A rough pattern to detect if a match is part of a URL
+URL_PATTERN = re.compile(r'https?://[^\s]+')
 
 
 def get_product_details_df(product_lang_df_path: Path, product_sw_type_df_path: Path) -> dict:
@@ -99,6 +102,12 @@ def extract_file_names(description: str) -> List[str]:
         A list of potential file names found in the description
     """
     # Find all matches
+    urls = re.findall(URL_PATTERN, description)
+
+    for url in urls:
+        # remove the hostname so it does not pick the top-level domain
+        description = description.replace(urlparse(url).hostname, '')
+
     file_names = re.findall(FILE_NAME_PATTERN, description)
 
     return file_names

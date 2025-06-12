@@ -3,11 +3,18 @@
 \subsection{Phase I: Holistic Representation of Security Faults} \textbf{Aim:} Synthesize existing vulnerability taxonomies into a unified attribute schema. This phase consolidates diverse security-fault taxonomies (e.g. language-specific faults, technology categories, architectural layers, and root-cause taxonomies) to create a comprehensive representation of vulnerability attributes.
 \newline
 
+%Landwehr’s multi-dimensional foundation: NASA retains genesis (coding errors) and time (phase analysis) but replaces location with subsystem concentration (90% in 2–4 subsystems).
+
+%Piessens’ causal focus: Extends this by linking vulnerability causes to lifecycle phases (e.g., Exception Management flaws stemming from ambiguous error handling during implementation).
+
+%Weber’s tool-oriented schema: Complements by providing empirical data to train static analyzers on NASA’s dominant CWEs (e.g., Risky Values).
+
+
 \textbf{Steps:}
 
 \begin{itemize}
     \item \textbf{Survey taxonomies.} We collect relevant taxonomies from literature and standards. For example, language- and platform-based taxonomies (e.g. C/C++ errors vs. Web app issues), technology-focused taxonomies (e.g. web, database, OS level), software-layer taxonomies (e.g. presentation vs. business logic), and root-cause taxonomies (e.g. input validation, memory corruption).
-    \item \textbf{Identify attributes.} From each taxonomy we extract key fault attributes (e.g. "Buffer Overflow", "SQL Injection", "Cross-Site Scripting", "Race Condition", etc.) and note which taxonomies include each attribute.
+    \item \textbf{Identify attributes.} From each taxonomy we extract key attributes (e.g., "Buffer Overflow", "SQL Injection", "Cross-Site Scripting", "Race Condition", etc.) and note which taxonomies include each attribute.
     \item \textbf{Create Unified Attribute Matrix.} We compile these attributes into a matrix with rows as example attributes and columns indicating taxonomy source. Table~\ref{tab:attribute-matrix} (excerpt below) illustrates how attributes map across taxonomies. This "Unified Attribute Matrix" highlights overlaps and gaps, guiding later analysis.
 \end{itemize}
 
