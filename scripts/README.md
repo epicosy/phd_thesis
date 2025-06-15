@@ -14,10 +14,15 @@ This directory contains scripts used for data collection and processing as part 
    - Only include CVEs that affect applications (not operating systems or hardware)
    - Only include CVEs with primary weakness types (CWEs)
 2. Load CVE data from the NVD JSON data feeds using the nvdutils library
-3. Load CWE properties data including vulnerability mapping and abstraction
+3. Load CWE properties data including vulnerability mapping and abstraction using pydantic_cwe
 4. Filter the CVEs based on the defined criteria
 5. For each matching CVE:
    - Extract the CWE IDs associated with the CVE
+   - Filter for code-related weaknesses based on:
+     - Implementation phases (introduction or mitigation)
+     - Code examples
+     - Detection methods (static analysis, dynamic analysis, etc.)
+     - Related software attack patterns
    - Select the most appropriate CWE ID based on:
      - Vulnerability mapping (skipping DISCOURAGED mappings)
      - Abstraction level (preferring more specific abstractions like Variant over more general ones like Class)
@@ -28,6 +33,7 @@ This directory contains scripts used for data collection and processing as part 
 - pandas
 - nvdutils
 - cpelib
+- pydantic_cwe
 
 ### 2. get_products_language.py
 
@@ -155,6 +161,39 @@ This directory contains scripts used for data collection and processing as part 
 **Output**:
 - A Sankey diagram saved as `sankey_software_language_cwe.png` in the results/rq1 directory
 
+### 6. plots_methods.py
+
+**Purpose**: This script generates donut charts showing the distribution of data from various CSV files, providing visual representations of CWE-ID, Software Type, and Product-Language distributions.
+
+**Algorithm**:
+1. Load data from CSV files:
+   - CWE-ID data from cve_ids_in_apps_with_cwe.csv
+   - Software Type data from software_type.csv
+   - Product-Language data from products_language.csv
+2. For each dataset, create a donut chart by:
+   - Counting occurrences of each value in the specified column
+   - Calculating percentages for each value
+   - Grouping low occurrence values (below a configurable threshold) into an "Others" category
+   - Sorting values by count in descending order
+3. Configure the charts with:
+   - Labels outside the plot pointing to the slices
+   - Spacing between slices
+   - Custom center text
+   - Custom color schemes for each chart
+4. Save the charts as PNG images in the results/rq1 directory
+
+**Dependencies**:
+- pandas
+- plotly
+- os
+- kaleido (for saving plotly figures as static images)
+
+**Output**:
+- Three donut charts saved in the results/rq1 directory:
+  - `cwe_distribution_donut.png`: Shows the distribution of CWE-IDs in the CVE data
+  - `software_type_distribution_donut.png`: Shows the distribution of software types
+  - `product_language_distribution_donut.png`: Shows the distribution of programming languages in the products
+
 ## Programming Language Classification
 
 The script `get_products_language.py` uses a classification system for programming languages defined in `language_extension_mapping.json`. This classification is used to prioritize which language to associate with a software product when multiple languages are detected. The languages are categorized as follows:
@@ -221,7 +260,8 @@ The scripts are designed to be run in sequence:
 2. Then run `get_products_language.py` to map the products from the CVE data to their programming languages
 3. Run `get_software_type.py` to categorize the software products into different types
 4. Run `create_dataset.py` to create a consolidated dataset combining CVE-CWE data with product details
-5. Finally run `plots_rq1.py` to generate visualizations of the relationships between software types, languages, and CWEs
+5. Run `plots_rq1.py` to generate a Sankey diagram showing relationships between software types, languages, and CWEs
+6. Run `plots_methods.py` to generate donut charts showing the distribution of CWE-IDs, software types, and programming languages
 
 The output files are saved in the following directories:
 - `data/rq1`:
@@ -231,3 +271,6 @@ The output files are saved in the following directories:
   - `dataset.csv`: Contains consolidated data with CVE IDs, CWE IDs, vendors, products, software types, and languages
 - `results/rq1`:
   - `sankey_software_language_cwe.png`: Sankey diagram showing relationships between software types, languages, and CWEs
+  - `cwe_distribution_donut.png`: Donut chart showing the distribution of CWE-IDs
+  - `software_type_distribution_donut.png`: Donut chart showing the distribution of software types
+  - `product_language_distribution_donut.png`: Donut chart showing the distribution of programming languages

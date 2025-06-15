@@ -42,11 +42,14 @@ def label_product_name(product_name: str) -> Optional[str]:
     for sep in ['_', '-', ':', '.']:
         terms = set(product_name.split(sep))
 
-        if len(terms) == 1:
-            continue
-
         for label, keywords in KEYWORDS_MAPPING.items():
             if terms.intersection(keywords):
+                return label
+
+    # some product names have no separators, e.g., zlib, gnulib, libgcrypt, newsplugin, etc.
+    for label, keywords in KEYWORDS_MAPPING.items():
+        for keyword in keywords:
+            if product_name.startswith(keyword) or product_name.endswith(keyword):
                 return label
 
     return None

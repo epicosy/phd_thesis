@@ -34,7 +34,7 @@ def create_sankey_data(df):
     grouped = df.groupby(['software_type', 'language', 'cwe_id']).size().reset_index(name='count')
 
     # Filter to include only relationships with significant counts (optional)
-    min_count = 10  # Adjust this threshold as needed
+    min_count = 50  # Adjust this threshold as needed
     grouped = grouped[grouped['count'] >= min_count]
 
     # Create unique lists of nodes
@@ -80,15 +80,15 @@ def create_sankey_data(df):
 def create_military_hud_theme():
     """Create a serene, layered military-style Sankey theme suitable for papers."""
     return {
-        'bgcolor': '#E6E6E6',  # Light background for paper clarity
+        'bgcolor': '#EAEAF2',  # Light background for paper clarity
         'font': {
             'family': 'Arial, sans-serif',
-            'size': 12,
+            'size': 20,
             'color': '#002200'  # Deep green for contrast
         },
         'node': {
-            'pad': 10,
-            'thickness': 20,
+            'pad': 30,
+            'thickness': 30,
             'line': {
                 'color': '#004422',
                 'width': 1.5
@@ -164,14 +164,14 @@ def plot_sankey_diagram(df):
     )])
 
     fig.update_layout(
-        title_text="Vulnerability Relationships: Software Type → Language → CWE",
-        title_font=dict(size=24, color=theme['font']['color']),
+        #title_text="Vulnerability Relationships: Software Type → Language → CWE",
+        #title_font=dict(size=24, color=theme['font']['color']),
         font=theme['font'],
         paper_bgcolor=theme['bgcolor'],
         plot_bgcolor=theme['bgcolor'],
         width=1200,
         height=800,
-        margin=dict(l=25, r=25, t=50, b=25)
+        margin=dict(l=20, r=20, t=20, b=20)
     )
 
     # Add grid lines and other HUD elements
@@ -341,10 +341,10 @@ def main():
     plot_sankey_diagram(df)
 
     print("Creating 100% stacked bar chart of languages...")
-    plot_stacked_bar_chart(df)
+    #plot_stacked_bar_chart(df)
 
     print("Creating 100% stacked bar chart of CWEs...")
-    plot_stacked_bar_chart_cwe(df)
+    #plot_stacked_bar_chart_cwe(df)
 
     print("Done!")
 
